@@ -1,0 +1,11 @@
+# Preview screenshots (local only)
+preview-*.png
+screen.png
+
+# Source design files (not needed on GitHub Pages)
+DESIGN.md
+code.html
+brutal-catalog.pdf
+
+# macOS
+.DS_Store
