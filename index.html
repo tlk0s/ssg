@@ -4,469 +4,406 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>SSG Solutions — Модерни ремонти с BRUTAL система</title>
-<meta name="description" content="Цялостни ремонти на жилища и бани. Подготовка на баня за 3-4 дни, без мокри процеси и гарантирано качество. Система BRUTAL."/>
+<meta name="description" content="Цялостни ремонти на жилища и бани. Подготовка за 3–4 дни, без мокри процеси и гарантирано качество."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <script>
-tailwind.config = {
-  darkMode:"class",
-  theme:{extend:{
-    colors:{
-      "deep-charcoal":"#0A0A0A","surface":"#121414","surface-container":"#1e2020",
-      "surface-container-low":"#1a1c1c","surface-container-high":"#282a2b",
-      "secondary-container":"#4a4949","architectural-grey":"#8C8C8C",
-      "primary":"#fff3d5","primary-container":"#fad44b","gold":"#e8c33b",
-      "soft-white":"#FFFFFF","outline":"#99907b","on-surface":"#e2e2e2"
-    },
-    borderRadius:{"DEFAULT":"0px","sm":"0px","md":"0px","lg":"0px","xl":"0px","2xl":"0px","full":"9999px"},
-    fontFamily:{sans:["Lexend","sans-serif"]},
-    spacing:{"gutter":"32px","section-gap":"120px","margin-desktop":"80px","margin-mobile":"20px","container-max":"1440px"}
-  }}
-}
+tailwind.config={darkMode:"class",theme:{extend:{
+  colors:{"deep-charcoal":"#0A0A0A","surface":"#121414","surface-container":"#1e2020","surface-container-low":"#1a1c1c","surface-container-high":"#282a2b","secondary-container":"#4a4949","architectural-grey":"#8C8C8C","primary":"#fff3d5","primary-container":"#fad44b","gold":"#e8c33b","soft-white":"#FFFFFF","outline":"#99907b","on-surface":"#e2e2e2"},
+  borderRadius:{"DEFAULT":"0px","sm":"0px","md":"0px","lg":"0px","xl":"0px","2xl":"0px","full":"9999px"},
+  fontFamily:{sans:["Lexend","sans-serif"]},
+  spacing:{"gutter":"32px","section-gap":"120px","margin-desktop":"80px","margin-mobile":"20px","container-max":"1440px"}
+}}}
 </script>
 <style>
 *{box-sizing:border-box}
 body{background:#0A0A0A;color:#e2e2e2;font-family:'Lexend',sans-serif}
 .ms{font-family:'Material Symbols Outlined';font-size:inherit;font-style:normal;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
-#mobile-menu{display:none}
-#mobile-menu.open{display:block}
+#mobile-menu{display:none}#mobile-menu.open{display:block}
 html{scroll-behavior:smooth}
 .reveal{opacity:1;transform:none}
 .reveal.animate{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .reveal.animate.visible{opacity:1;transform:none}
-.img-bw{filter:grayscale(100%);transition:filter .6s ease}
-.img-bw:hover{filter:grayscale(0%)}
+.img-bw{filter:grayscale(100%);transition:filter .6s ease}.img-bw:hover{filter:grayscale(0%)}
+.label-caps{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 </style>
 </head>
 <body class="antialiased">
-
-<!-- NAV -->
-<nav class="sticky top-0 z-50 border-b border-secondary-container" style="background:rgba(10,10,10,.88);backdrop-filter:blur(20px)">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20 flex justify-between items-center h-20">
-    <a href="index.html" class="flex items-center gap-2">
-      <img src="https://ssg-solutions.eu/wp-content/uploads/2026/02/A-66843-_VJ_YSP_6-2-e1770826247689.png" alt="SSG Solutions" class="h-10 w-auto object-contain"/>
-    </a>
-    <ul class="hidden md:flex gap-8" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">
-      <li><a href="#" class="text-gold border-b border-gold pb-0.5">Начало</a></li>
-      <li><a href="#services" class="text-white/60 hover:text-white transition-colors">Услуги</a></li>
-      <li><a href="#about" class="text-white/60 hover:text-white transition-colors">За нас</a></li>
-      <li><a href="catalog.html" class="text-white/60 hover:text-white transition-colors">Каталог BRUTAL</a></li>
-      <li><a href="#contact" class="text-white/60 hover:text-white transition-colors">Контакти</a></li>
-    </ul>
-    <a href="#contact" class="hidden md:block bg-gold text-deep-charcoal px-6 py-3 hover:bg-primary-container transition-colors" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">
-      Направи запитване
-    </a>
-    <button id="menu-btn" class="md:hidden text-gold" aria-label="Меню">
-      <span class="ms text-3xl">menu</span>
-    </button>
-  </div>
-  <div id="mobile-menu" class="border-t border-secondary-container px-5 py-6 bg-deep-charcoal">
-    <ul class="space-y-5" style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">
-      <li><a href="#" class="text-gold block">Начало</a></li>
-      <li><a href="#services" class="text-white/70 hover:text-gold block">Услуги</a></li>
-      <li><a href="#about" class="text-white/70 hover:text-gold block">За нас</a></li>
-      <li><a href="catalog.html" class="text-white/70 hover:text-gold block">Каталог BRUTAL</a></li>
-      <li><a href="#contact" class="text-white/70 hover:text-gold block">Контакти</a></li>
-    </ul>
-    <a href="#contact" class="mt-6 block bg-gold text-deep-charcoal py-4 text-center" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">
-      Направи запитване
-    </a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header class="relative w-full overflow-hidden" style="min-height:92vh;background:#0A0A0A">
-  <div class="absolute inset-0 z-0">
-    <img src="https://ssg-solutions.eu/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-22-at-09.41.04.jpeg"
-         alt="Баня Орелиа — BRUTAL система" class="w-full h-full object-cover" style="opacity:.45"/>
-    <div class="absolute inset-0" style="background:linear-gradient(105deg,#0A0A0A 44%,rgba(10,10,10,.75) 68%,transparent 100%)"></div>
-  </div>
-  <!-- gold vertical accent -->
-  <div class="absolute left-0 top-0 h-full w-0.5 z-10" style="background:linear-gradient(180deg,transparent,#e8c33b 25%,#e8c33b 75%,transparent)"></div>
-
-  <div class="relative z-10 max-w-[1440px] mx-auto px-5 md:px-20 pt-28 pb-20">
-    <div class="max-w-2xl">
-      <div class="inline-flex items-center gap-2 border border-secondary-container px-3 py-1.5 mb-8" style="background:rgba(18,20,20,.55);backdrop-filter:blur(12px)">
-        <span class="ms text-gold" style="font-size:15px">verified</span>
-        <span style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase" class="text-white">Система BRUTAL — Сертифицирана</span>
-      </div>
-
-      <h1 class="font-bold text-white uppercase mb-6" style="font-size:clamp(38px,5.5vw,72px);line-height:1.05;letter-spacing:-.02em">
-        Модерни ремонти<br/>на бани<br/><span class="text-gold">с BRUTAL система</span>
-      </h1>
-
-      <p class="mb-10 border-l-2 border-gold pl-6" style="font-size:17px;line-height:27px;color:#8C8C8C;max-width:480px">
-        Цялостни ремонти на жилища и бани. Подготовка за
-        <strong class="text-white">3–4 дни</strong>, без мокри процеси и гарантирано качество.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="#contact" class="bg-gold text-deep-charcoal text-center px-8 py-4 hover:bg-primary-container transition-colors" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">
-          Направи запитване
-        </a>
-        <a href="catalog.html" class="border border-white/30 text-white text-center px-8 py-4 hover:border-gold hover:text-gold transition-colors" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">
-          Каталог BRUTAL
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-white/25">
-    <span style="font-size:9px;letter-spacing:.12em;text-transform:uppercase">Превъртете</span>
-    <span class="ms" style="font-size:22px;animation:bounce 2s infinite">expand_more</span>
-  </div>
-</header>
-<style>@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}</style>
-
-<!-- STATS -->
-<section class="border-b border-secondary-container bg-deep-charcoal">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20 py-14 grid grid-cols-2 md:grid-cols-4 gap-8">
-    <div class="border-t-2 border-gold pt-5 reveal">
-      <div class="font-bold text-white" style="font-size:clamp(28px,4vw,52px);line-height:1">15<span class="text-gold">+</span></div>
-      <div class="text-architectural-grey mt-1" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Години опит</div>
-    </div>
-    <div class="border-t-2 border-gold pt-5 reveal" style="transition-delay:.08s">
-      <div class="font-bold text-white" style="font-size:clamp(28px,4vw,52px);line-height:1">300<span class="text-gold">+</span></div>
-      <div class="text-architectural-grey mt-1" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Доволни клиента</div>
-    </div>
-    <div class="border-t-2 border-gold pt-5 reveal" style="transition-delay:.16s">
-      <div class="font-bold text-white" style="font-size:clamp(28px,4vw,52px);line-height:1">500<span class="text-gold">+</span></div>
-      <div class="text-architectural-grey mt-1" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Готови проекта</div>
-    </div>
-    <div class="border-t-2 border-gold pt-5 reveal" style="transition-delay:.24s">
-      <div class="font-bold text-white" style="font-size:clamp(28px,4vw,52px);line-height:1">99<span class="text-gold">%</span></div>
-      <div class="text-architectural-grey mt-1" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Положителни отзиви</div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="py-28 bg-surface" id="about">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-    <div class="reveal">
-      <span class="block text-gold mb-5" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">За нас</span>
-      <h2 class="font-bold text-white uppercase mb-6" style="font-size:clamp(26px,3.2vw,46px);line-height:1.1;letter-spacing:-.01em">
-        Безкомпромисно <span class="text-gold">качество</span>
-      </h2>
-      <p class="mb-6" style="font-size:16px;line-height:26px;color:#8C8C8C">
-        SSG Solutions е сертифициран дистрибутор и монтажник на системата <strong class="text-white">BRUTAL</strong> — иновативна технология за сухо строителство с XPS плоскости, готови за директно облицоване с плочки или микроцимент.
-      </p>
-      <p class="mb-10" style="font-size:16px;line-height:26px;color:#8C8C8C">
-        Технологията позволява подготовка на баня за <strong class="text-white">3–4 дни</strong>, без мокри процеси, без чакане на изсъхване и с гарантирана водоустойчивост 100%.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="#contact" class="bg-gold text-deep-charcoal text-center px-8 py-4 hover:bg-primary-container transition-colors" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Свържи се с нас</a>
-        <a href="catalog.html" class="border border-white/20 text-white text-center px-8 py-4 hover:border-gold hover:text-gold transition-colors" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Виж каталога</a>
-      </div>
-    </div>
-    <div class="relative reveal" style="transition-delay:.2s">
-      <div class="absolute top-4 left-4 right-0 bottom-0 border border-gold/25 pointer-events-none"></div>
-      <img src="https://ssg-solutions.eu/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-22-at-09.42.04.jpeg"
-           alt="SSG Solutions — BRUTAL монтаж" class="relative w-full object-cover img-bw" style="aspect-ratio:4/3"/>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES (PROCESS) BENTO -->
-<section class="py-28 bg-deep-charcoal" id="services">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20">
-    <div class="mb-16 reveal">
-      <span class="block text-gold mb-4" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Методология</span>
-      <h2 class="font-bold text-white uppercase" style="font-size:clamp(26px,3.2vw,46px);line-height:1.1;letter-spacing:-.01em">Процесът BRUTAL</h2>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-      <!-- 01 big -->
-      <div class="md:col-span-8 bg-surface-container border border-secondary-container p-10 flex flex-col justify-between hover:border-gold/50 transition-colors duration-500 reveal" style="min-height:280px">
-        <div>
-          <span class="ms text-gold block mb-5" style="font-size:40px">construction</span>
-          <h3 class="font-bold text-white uppercase mb-4" style="font-size:21px;line-height:29px">Подготовка на баня за 3–4 дни</h3>
-          <p style="font-size:15px;line-height:24px;color:#8C8C8C;max-width:500px">
-            Демонтаж и почистване, изравняване на основите, полагане на ВиК и електро, хидроизолация и готовност за монтаж — без традиционна зидария.
-          </p>
-        </div>
-        <div class="mt-8 flex items-center gap-3">
-          <span class="block w-8 h-px bg-gold"></span>
-          <span class="text-gold" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">01 / Подготовка</span>
-        </div>
-      </div>
-
-      <!-- image -->
-      <div class="md:col-span-4 border border-secondary-container overflow-hidden relative" style="min-height:280px">
-        <img src="https://ssg-solutions.eu/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-22-at-09.42.19.jpeg"
-             alt="BRUTAL монтаж" class="absolute inset-0 w-full h-full object-cover img-bw"/>
-        <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(to top,#0A0A0A,transparent 60%)"></div>
-      </div>
-
-      <!-- 02 -->
-      <div class="md:col-span-6 bg-surface-container border border-secondary-container p-10 flex flex-col justify-between hover:border-gold/50 transition-colors duration-500 reveal" style="min-height:260px;transition-delay:.08s">
-        <div>
-          <span class="ms text-gold block mb-5" style="font-size:40px">water_drop</span>
-          <h3 class="font-bold text-white uppercase mb-4" style="font-size:21px;line-height:29px">Без мокри процеси</h3>
-          <p style="font-size:15px;line-height:24px;color:#8C8C8C">
-            Бърз монтаж на плоскости BRUTAL върху подготвена основа — чисто, сухо, без прах и без чакане на изсъхване.
-          </p>
-        </div>
-        <div class="mt-8 flex items-center gap-3">
-          <span class="block w-8 h-px bg-gold"></span>
-          <span class="text-gold" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">02 / Монтаж</span>
-        </div>
-      </div>
-
-      <!-- 03 -->
-      <div class="md:col-span-6 bg-surface-container border border-secondary-container p-10 flex flex-col justify-between hover:border-gold/50 transition-colors duration-500 reveal" style="min-height:260px;transition-delay:.16s">
-        <div>
-          <span class="ms text-gold block mb-5" style="font-size:40px">architecture</span>
-          <h3 class="font-bold text-white uppercase mb-4" style="font-size:21px;line-height:29px">Гарантиран резултат</h3>
-          <p style="font-size:15px;line-height:24px;color:#8C8C8C">
-            Прецизен финален монтаж, гарантиращ дълготрайност, устойчивост и безупречна визия за много години.
-          </p>
-        </div>
-        <div class="mt-8 flex items-center gap-3">
-          <span class="block w-8 h-px bg-gold"></span>
-          <span class="text-gold" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">03 / Финал</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CAPABILITIES -->
-<section class="py-28 bg-surface border-t border-secondary-container">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-    <div class="reveal">
-      <span class="block text-gold mb-5" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Приложение</span>
-      <h3 class="font-bold text-white uppercase mb-8" style="font-size:clamp(24px,2.8vw,40px);line-height:1.1">
-        Повече от<br/>подготовка на баня
-      </h3>
-      <ul class="divide-y divide-secondary-container">
-        <li class="flex items-center gap-4 py-4" style="font-size:16px;color:#8C8C8C"><span class="ms text-gold" style="font-size:19px">check</span>Мивки и умивалници</li>
-        <li class="flex items-center gap-4 py-4" style="font-size:16px;color:#8C8C8C"><span class="ms text-gold" style="font-size:19px">check</span>Маси и кухненски плотове</li>
-        <li class="flex items-center gap-4 py-4" style="font-size:16px;color:#8C8C8C"><span class="ms text-gold" style="font-size:19px">check</span>Вани и душ зони</li>
-        <li class="flex items-center gap-4 py-4" style="font-size:16px;color:#8C8C8C"><span class="ms text-gold" style="font-size:19px">check</span>Тавани и окачени конструкции</li>
-        <li class="flex items-center gap-4 py-4" style="font-size:16px;color:#8C8C8C"><span class="ms text-gold" style="font-size:19px">check</span>Ниши и декоративни елементи</li>
-        <li class="flex items-center gap-4 py-4" style="font-size:16px;color:#8C8C8C"><span class="ms text-gold" style="font-size:19px">check</span>Обръщане на прозорци</li>
-        <li class="flex items-center gap-4 py-4" style="font-size:16px;color:#8C8C8C"><span class="ms text-gold" style="font-size:19px">check</span>Дизайнерски конструкции по проект</li>
-      </ul>
-    </div>
-    <div class="relative reveal" style="min-height:400px;transition-delay:.2s">
-      <div class="absolute inset-0 border border-gold/20 translate-x-4 translate-y-4 pointer-events-none"></div>
-      <img src="https://ssg-solutions.eu/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-22-at-10.40.15-3-396x360.jpeg"
-           alt="BRUTAL система — приложения" class="absolute inset-0 w-full h-full object-cover img-bw"/>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY / PROJECTS -->
-<section class="py-28 bg-deep-charcoal border-t border-secondary-container">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20">
-    <div class="mb-16 reveal">
-      <span class="block text-gold mb-5" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Портфолио</span>
-      <h2 class="font-bold text-white uppercase" style="font-size:clamp(26px,3.2vw,46px);line-height:1.1;letter-spacing:-.01em">Наши проекти</h2>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-      <div class="col-span-2 md:col-span-2 relative overflow-hidden border border-secondary-container reveal" style="min-height:380px">
-        <img src="https://ssg-solutions.eu/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-22-at-09.41.04.jpeg"
-             alt="Баня Орелиа" class="absolute inset-0 w-full h-full object-cover img-bw"/>
-        <div class="absolute bottom-0 left-0 right-0 p-6" style="background:linear-gradient(to top,rgba(10,10,10,.85),transparent)">
-          <span class="text-gold block" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Завършен проект</span>
-          <span class="text-white font-bold" style="font-size:18px">Баня Орелиа</span>
-        </div>
-      </div>
-      <div class="relative overflow-hidden border border-secondary-container reveal" style="min-height:380px;transition-delay:.1s">
-        <img src="https://ssg-solutions.eu/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-22-at-09.42.04.jpeg"
-             alt="Баня Бонбон" class="absolute inset-0 w-full h-full object-cover img-bw"/>
-        <div class="absolute bottom-0 left-0 right-0 p-6" style="background:linear-gradient(to top,rgba(10,10,10,.85),transparent)">
-          <span class="text-gold block" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Завършен проект</span>
-          <span class="text-white font-bold" style="font-size:18px">Баня Бонбон</span>
-        </div>
-      </div>
-      <div class="relative overflow-hidden border border-secondary-container reveal" style="min-height:260px;transition-delay:.15s">
-        <img src="https://ssg-solutions.eu/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-22-at-09.42.19.jpeg"
-             alt="Детайл BRUTAL" class="absolute inset-0 w-full h-full object-cover img-bw"/>
-      </div>
-      <div class="relative overflow-hidden border border-secondary-container reveal" style="min-height:260px;transition-delay:.2s">
-        <img src="https://ssg-solutions.eu/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-22-at-10.40.15-396x360.jpeg"
-             alt="BRUTAL детайл" class="absolute inset-0 w-full h-full object-cover img-bw"/>
-      </div>
-      <div class="relative overflow-hidden border border-secondary-container reveal" style="min-height:260px;transition-delay:.25s">
-        <img src="https://ssg-solutions.eu/wp-content/uploads/2026/04/image00501-396x360.jpeg"
-             alt="BRUTAL монтаж" class="absolute inset-0 w-full h-full object-cover img-bw"/>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CATALOG CTA -->
-<section class="py-28 bg-surface border-t border-secondary-container">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-8 reveal">
-        <span class="block text-gold mb-5" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Продуктова гама</span>
-        <h2 class="font-bold text-white uppercase mb-6" style="font-size:clamp(26px,3.2vw,46px);line-height:1.1;letter-spacing:-.01em">
-          Каталог BRUTAL <span class="text-gold">2025</span>
-        </h2>
-        <p class="mb-8" style="font-size:16px;line-height:26px;color:#8C8C8C;max-width:580px">
-          Разгледайте пълната продуктова гама — бордове, умивалници, душ табли, ниши, пейки, прагове, рампи, мембрани и аксесоари. Всички размери, характеристики и приложения на едно място.
-        </p>
-        <a href="catalog.html" class="inline-flex items-center gap-3 bg-gold text-deep-charcoal px-8 py-4 hover:bg-primary-container transition-colors" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">
-          <span class="ms" style="font-size:20px">menu_book</span>
-          Отвори пълния каталог
-        </a>
-      </div>
-      <div class="lg:col-span-4 reveal" style="transition-delay:.2s">
-        <div class="grid grid-cols-2 gap-3">
-          <div class="bg-surface-container border border-secondary-container p-5 flex flex-col gap-2 hover:border-gold/50 transition-colors">
-            <span class="ms text-gold" style="font-size:28px">view_quilt</span>
-            <span class="text-white font-bold" style="font-size:13px">Бордове</span>
-            <span class="text-architectural-grey" style="font-size:11px">14 размера</span>
-          </div>
-          <div class="bg-surface-container border border-secondary-container p-5 flex flex-col gap-2 hover:border-gold/50 transition-colors">
-            <span class="ms text-gold" style="font-size:28px">water</span>
-            <span class="text-white font-bold" style="font-size:13px">Душ табли</span>
-            <span class="text-architectural-grey" style="font-size:11px">5 размера</span>
-          </div>
-          <div class="bg-surface-container border border-secondary-container p-5 flex flex-col gap-2 hover:border-gold/50 transition-colors">
-            <span class="ms text-gold" style="font-size:28px">bathroom</span>
-            <span class="text-white font-bold" style="font-size:13px">Умивалници</span>
-            <span class="text-architectural-grey" style="font-size:11px">Конзолен дизайн</span>
-          </div>
-          <div class="bg-surface-container border border-gold/40 p-5 flex flex-col gap-2">
-            <span class="ms text-gold" style="font-size:28px">menu_book</span>
-            <span class="text-gold font-bold" style="font-size:13px">+ още</span>
-            <span class="text-architectural-grey" style="font-size:11px">30 стр. каталог</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="py-28 bg-deep-charcoal border-t border-secondary-container" id="contact">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-16">
-    <div class="reveal">
-      <span class="block text-gold mb-5" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Контакти</span>
-      <h2 class="font-bold text-white uppercase mb-6" style="font-size:clamp(26px,3.2vw,46px);line-height:1.1;letter-spacing:-.01em">
-        Свържете се<br/>с нас
-      </h2>
-      <p class="mb-12" style="font-size:16px;line-height:26px;color:#8C8C8C">
-        Не губете време — започнете своя проект сега. Консултацията е безплатна.
-      </p>
-      <div class="space-y-8">
-        <div class="flex items-start gap-6">
-          <span class="ms text-gold mt-1" style="font-size:26px">call</span>
-          <div>
-            <span class="block text-architectural-grey mb-1" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Телефон</span>
-            <a href="tel:+359878107395" class="text-white hover:text-gold transition-colors font-bold" style="font-size:22px">+359 878 107 395</a>
-          </div>
-        </div>
-        <div class="flex items-start gap-6">
-          <span class="ms text-gold mt-1" style="font-size:26px">mail</span>
-          <div>
-            <span class="block text-architectural-grey mb-1" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Имейл</span>
-            <a href="mailto:info@ssg-solutions.eu" class="text-white hover:text-gold transition-colors font-bold" style="font-size:20px">info@ssg-solutions.eu</a>
-          </div>
-        </div>
-        <div class="flex items-start gap-6">
-          <span class="ms text-gold mt-1" style="font-size:26px">person</span>
-          <div>
-            <span class="block text-architectural-grey mb-1" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Управител</span>
-            <span class="text-white font-bold" style="font-size:18px">Стоян Грозев</span>
-          </div>
-        </div>
-        <div class="flex gap-3 pt-2">
-          <a href="https://www.facebook.com/profile.php?id=61588379605038" target="_blank" rel="noopener"
-             class="w-12 h-12 border border-secondary-container flex items-center justify-center text-white hover:border-gold hover:text-gold transition-colors font-bold" style="font-size:11px">FB</a>
-          <a href="https://www.instagram.com/ssgssolutions" target="_blank" rel="noopener"
-             class="w-12 h-12 border border-secondary-container flex items-center justify-center text-white hover:border-gold hover:text-gold transition-colors font-bold" style="font-size:11px">IG</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-surface-container border border-secondary-container p-8 md:p-12 reveal" style="transition-delay:.2s">
-      <form id="contact-form" class="space-y-8">
-        <div>
-          <label for="f-name" class="block text-architectural-grey mb-2" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Три имена *</label>
-          <input id="f-name" name="name" type="text" required placeholder="Вашето пълно име"
-                 class="w-full bg-transparent border-0 border-b border-secondary-container focus:border-gold focus:ring-0 px-0 py-3 text-white transition-colors" style="font-size:15px;outline:none"/>
-        </div>
-        <div>
-          <label for="f-phone" class="block text-architectural-grey mb-2" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Телефон *</label>
-          <input id="f-phone" name="phone" type="tel" required placeholder="+359 8XX XXX XXX"
-                 class="w-full bg-transparent border-0 border-b border-secondary-container focus:border-gold focus:ring-0 px-0 py-3 text-white transition-colors" style="font-size:15px;outline:none"/>
-        </div>
-        <div>
-          <label for="f-email" class="block text-architectural-grey mb-2" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Имейл</label>
-          <input id="f-email" name="email" type="email" placeholder="вашият@имейл.com"
-                 class="w-full bg-transparent border-0 border-b border-secondary-container focus:border-gold focus:ring-0 px-0 py-3 text-white transition-colors" style="font-size:15px;outline:none"/>
-        </div>
-        <div>
-          <label for="f-msg" class="block text-architectural-grey mb-2" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Съобщение *</label>
-          <textarea id="f-msg" name="message" rows="4" required placeholder="Разкажете ни за вашия проект..."
-                    class="w-full bg-transparent border-0 border-b border-secondary-container focus:border-gold focus:ring-0 px-0 py-3 text-white transition-colors resize-none" style="font-size:15px;outline:none"></textarea>
-        </div>
-        <button type="submit" class="w-full bg-gold text-deep-charcoal py-4 hover:bg-primary-container transition-colors" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">
-          Изпрати запитване
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-deep-charcoal border-t border-secondary-container">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20 py-14 grid grid-cols-1 md:grid-cols-4 gap-8">
-    <div class="md:col-span-2">
-      <img src="https://ssg-solutions.eu/wp-content/uploads/2026/02/A-66843-_VJ_YSP_6-2-e1770826247689.png"
-           alt="SSG Solutions" class="h-10 w-auto mb-5 object-contain"/>
-      <p class="text-architectural-grey max-w-xs mb-6" style="font-size:14px;line-height:22px">
-        Модерни строителни методологии за луксозни жилищни ремонти. Сертифициран дистрибутор на системата BRUTAL.
-      </p>
-      <div class="text-architectural-grey" style="font-size:11px">© 2025 SSG Solutions. Всички права запазени.</div>
-    </div>
-    <div>
-      <h4 class="text-white mb-5" style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Навигация</h4>
-      <ul class="space-y-3" style="font-size:14px">
-        <li><a href="#" class="text-architectural-grey hover:text-white transition-colors">Начало</a></li>
-        <li><a href="#services" class="text-architectural-grey hover:text-white transition-colors">Услуги</a></li>
-        <li><a href="#about" class="text-architectural-grey hover:text-white transition-colors">За нас</a></li>
-        <li><a href="catalog.html" class="text-architectural-grey hover:text-white transition-colors">Каталог BRUTAL</a></li>
-        <li><a href="#contact" class="text-architectural-grey hover:text-white transition-colors">Контакти</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="text-white mb-5" style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Правна информация</h4>
-      <ul class="space-y-3" style="font-size:14px">
-        <li><a href="#" class="text-architectural-grey hover:text-white transition-colors">Политика за поверителност</a></li>
-        <li><a href="#" class="text-architectural-grey hover:text-white transition-colors">Условия за ползване</a></li>
-        <li><a href="#" class="text-architectural-grey hover:text-white transition-colors">Политика за бисквитки</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
-
+<div id="app"></div>
 <script>
-document.getElementById('menu-btn').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('open'));
-// Add animate class after paint so content is visible for crawlers/screenshots
-requestAnimationFrame(()=>{
-  const els=document.querySelectorAll('.reveal');
-  els.forEach(el=>el.classList.add('animate'));
-  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:0,rootMargin:'0px 0px -40px 0px'});
-  els.forEach(el=>{
-    const r=el.getBoundingClientRect();
-    if(r.top<window.innerHeight)el.classList.add('visible');
-    else obs.observe(el);
+/* ── helpers ─────────────────────────────────── */
+const h = (tag, attrs, ...children) => {
+  const el = document.createElement(tag);
+  for (const [k,v] of Object.entries(attrs||{})) {
+    if (k==='class') el.className=v;
+    else if (k==='innerHTML') el.innerHTML=v;
+    else if (k.startsWith('on')) el.addEventListener(k.slice(2),v);
+    else el.setAttribute(k,v);
+  }
+  children.flat().filter(Boolean).forEach(c => el.appendChild(typeof c==='string'?document.createTextNode(c):c));
+  return el;
+};
+const div  = (cls,...c) => h('div',{class:cls},...c);
+const span = (cls,...c) => h('span',{class:cls},...c);
+const a    = (href,cls,...c) => h('a',{href,class:cls},...c);
+const img  = (src,alt,cls) => h('img',{src,alt,class:cls||''});
+const sec  = (id,cls,...c) => h('section',{id,class:cls},...c);
+const wrap = (...c) => div('max-w-[1440px] mx-auto px-5 md:px-20',...c);
+
+/* ── shared component builders ───────────────── */
+function buildNav(d, activePage) {
+  const logoEl = h('a',{href:'index.html','class':'flex items-center'},
+    img(d.site.logo, d.site.name,'h-10 w-auto object-contain'));
+
+  const desktopLinks = h('ul',{class:'hidden md:flex gap-8'},
+    ...d.nav.map(n => h('li',{},
+      a(n.href, n.page===activePage
+        ? 'text-gold border-b border-gold pb-0.5 label-caps'
+        : 'text-white/60 hover:text-white transition-colors label-caps', n.label)
+    ))
+  );
+
+  const ctaBtn = a('index.html#contact','hidden md:block bg-gold text-deep-charcoal px-6 py-3 hover:bg-primary-container transition-colors label-caps','Направи запитване');
+
+  const mobileBtn = h('button',{id:'menu-btn','class':'md:hidden text-gold','aria-label':'Меню'},
+    span('ms text-3xl','menu'));
+
+  const mobileMenu = h('div',{id:'mobile-menu','class':'border-t border-secondary-container px-5 py-6 bg-deep-charcoal'},
+    h('ul',{class:'space-y-5'},
+      ...d.nav.map(n => h('li',{}, a(n.href,'text-white/70 hover:text-gold block label-caps', n.label)))
+    ),
+    a('index.html#contact','mt-6 block bg-gold text-deep-charcoal py-4 text-center label-caps','Направи запитване')
+  );
+
+  const nav = h('nav',{class:'sticky top-0 z-50 border-b border-secondary-container','style':'background:rgba(10,10,10,.88);backdrop-filter:blur(20px)'},
+    wrap(...[
+      h('div',{class:'flex justify-between items-center h-20'}, logoEl, desktopLinks, ctaBtn, mobileBtn)
+    ]),
+    mobileMenu
+  );
+  return nav;
+}
+
+function buildFooter(d) {
+  return h('footer',{class:'bg-deep-charcoal border-t border-secondary-container'},
+    h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20 py-14 grid grid-cols-1 md:grid-cols-4 gap-8'},
+      h('div',{class:'md:col-span-2'},
+        img(d.site.logo, d.site.name,'h-10 w-auto mb-5 object-contain'),
+        h('p',{class:'text-architectural-grey max-w-xs mb-6','style':'font-size:14px;line-height:22px'},d.footer.about),
+        h('div',{class:'text-architectural-grey','style':'font-size:11px'},d.site.copyright)
+      ),
+      buildFooterCol(d.footer.colNav),
+      buildFooterCol(d.footer.colLegal)
+    )
+  );
+}
+function buildFooterCol(col) {
+  return h('div',{},
+    h('h4',{class:'text-white mb-5 label-caps'},col.title),
+    h('ul',{class:'space-y-3','style':'font-size:14px'},
+      ...col.links.map(l => h('li',{}, a(l.href,'text-architectural-grey hover:text-white transition-colors',l.label)))
+    )
+  );
+}
+
+/* ── page sections ───────────────────────────── */
+function buildHero(d) {
+  const parts = d.hero.heading.split(d.hero.headingAccent);
+  const heading = h('h1',{class:'font-bold text-white uppercase mb-6','style':'font-size:clamp(38px,5.5vw,72px);line-height:1.05;letter-spacing:-.02em'},
+    parts[0], span('text-gold',d.hero.headingAccent), parts[1]||'');
+
+  return h('header',{class:'relative w-full overflow-hidden','style':'min-height:92vh;background:#0A0A0A'},
+    div('absolute inset-0 z-0',
+      img(d.hero.image, d.hero.imageAlt,'w-full h-full object-cover','style','opacity:.45'),
+      div('absolute inset-0','style','background:linear-gradient(105deg,#0A0A0A 44%,rgba(10,10,10,.75) 68%,transparent 100%)')
+    ),
+    div('absolute left-0 top-0 h-full w-0.5 z-10','style','background:linear-gradient(180deg,transparent,#e8c33b 25%,#e8c33b 75%,transparent)'),
+    div('relative z-10 max-w-[1440px] mx-auto px-5 md:px-20 pt-28 pb-20',
+      div('max-w-2xl',
+        div('inline-flex items-center gap-2 border border-secondary-container px-3 py-1.5 mb-8','style','background:rgba(18,20,20,.55);backdrop-filter:blur(12px)',
+          span('ms text-gold','style','font-size:15px','verified'),
+          span('text-white label-caps',d.hero.badge)
+        ),
+        heading,
+        h('p',{class:'mb-10 border-l-2 border-gold pl-6','style':'font-size:17px;line-height:27px;color:#8C8C8C;max-width:480px','innerHTML':d.hero.body}),
+        div('flex flex-col sm:flex-row gap-4',
+          a(d.hero.ctaPrimary.href,'bg-gold text-deep-charcoal text-center px-8 py-4 hover:bg-primary-container transition-colors label-caps',d.hero.ctaPrimary.label),
+          a(d.hero.ctaSecondary.href,'border border-white/30 text-white text-center px-8 py-4 hover:border-gold hover:text-gold transition-colors label-caps',d.hero.ctaSecondary.label)
+        )
+      )
+    ),
+    div('absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-white/25',
+      span('','style','font-size:9px;letter-spacing:.12em;text-transform:uppercase','Превъртете'),
+      span('ms','style','font-size:22px;animation:bounce 2s infinite','expand_more')
+    )
+  );
+}
+
+function buildStats(d) {
+  return sec('','border-b border-secondary-container bg-deep-charcoal',
+    div('max-w-[1440px] mx-auto px-5 md:px-20 py-14 grid grid-cols-2 md:grid-cols-4 gap-8',
+      ...d.stats.map((s,i) => div('border-t-2 border-gold pt-5 reveal','style',`transition-delay:${i*.08}s`,
+        div('font-bold text-white','style','font-size:clamp(28px,4vw,52px);line-height:1',
+          s.value, span('text-gold',s.suffix)
+        ),
+        div('text-architectural-grey mt-1 label-caps',s.label)
+      ))
+    )
+  );
+}
+
+function buildAbout(d) {
+  const ab = d.about;
+  return sec('about','py-28 bg-surface',
+    div('max-w-[1440px] mx-auto px-5 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center',
+      div('reveal',
+        span('block text-gold mb-5 label-caps',ab.label),
+        h('h2',{class:'font-bold text-white uppercase mb-6','style':'font-size:clamp(26px,3.2vw,46px);line-height:1.1;letter-spacing:-.01em','innerHTML':
+          ab.heading.replace(ab.headingAccent,`<span class="text-gold">${ab.headingAccent}</span>`)
+        }),
+        h('p',{class:'mb-6','style':'font-size:16px;line-height:26px;color:#8C8C8C','innerHTML':ab.body1}),
+        h('p',{class:'mb-10','style':'font-size:16px;line-height:26px;color:#8C8C8C','innerHTML':ab.body2}),
+        div('flex flex-col sm:flex-row gap-4',
+          a(ab.ctaPrimary.href,'bg-gold text-deep-charcoal text-center px-8 py-4 hover:bg-primary-container transition-colors label-caps',ab.ctaPrimary.label),
+          a(ab.ctaSecondary.href,'border border-white/20 text-white text-center px-8 py-4 hover:border-gold hover:text-gold transition-colors label-caps',ab.ctaSecondary.label)
+        )
+      ),
+      div('relative reveal','style','transition-delay:.2s',
+        div('absolute top-4 left-4 right-0 bottom-0 border border-gold/25 pointer-events-none'),
+        img(ab.image, ab.imageAlt,'relative w-full object-cover img-bw','style','aspect-ratio:4/3')
+      )
+    )
+  );
+}
+
+function buildServices(d) {
+  const sv = d.services;
+  const [wide, ...rest] = sv.steps;
+  return sec('services','py-28 bg-deep-charcoal',
+    div('max-w-[1440px] mx-auto px-5 md:px-20',
+      div('mb-16 reveal',
+        span('block text-gold mb-4 label-caps',sv.label),
+        h('h2',{class:'font-bold text-white uppercase','style':'font-size:clamp(26px,3.2vw,46px);line-height:1.1;letter-spacing:-.01em'},sv.heading)
+      ),
+      div('grid grid-cols-1 md:grid-cols-12 gap-4',
+        buildStepCard(wide, 8),
+        div('md:col-span-4 border border-secondary-container overflow-hidden relative','style','min-height:280px',
+          img(wide.image, wide.imageAlt,'absolute inset-0 w-full h-full object-cover img-bw'),
+          div('absolute inset-0 pointer-events-none','style','background:linear-gradient(to top,#0A0A0A,transparent 60%)')
+        ),
+        ...rest.map((s,i) => buildStepCard(s, 6, (i+1)*.08))
+      )
+    )
+  );
+}
+function buildStepCard(s, cols, delay=0) {
+  return div(`md:col-span-${cols} bg-surface-container border border-secondary-container p-10 flex flex-col justify-between hover:border-gold/50 transition-colors duration-500 reveal`,
+    'style',`min-height:${cols===8?280:260}px;transition-delay:${delay}s`,
+    div('',
+      span('ms text-gold block mb-5','style','font-size:40px',s.icon),
+      h('h3',{class:'font-bold text-white uppercase mb-4','style':'font-size:21px;line-height:29px'},s.title),
+      h('p',{style:'font-size:15px;line-height:24px;color:#8C8C8C;max-width:500px'},s.body)
+    ),
+    div('mt-8 flex items-center gap-3',
+      span('block w-8 h-px bg-gold'),
+      span('text-gold label-caps',s.label)
+    )
+  );
+}
+
+function buildCapabilities(d) {
+  const cp = d.capabilities;
+  return sec('','py-28 bg-surface border-t border-secondary-container',
+    div('max-w-[1440px] mx-auto px-5 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-16 items-center',
+      div('reveal',
+        span('block text-gold mb-5 label-caps',cp.label),
+        h('h3',{class:'font-bold text-white uppercase mb-8','style':'font-size:clamp(24px,2.8vw,40px);line-height:1.1'},cp.heading),
+        h('ul',{class:'divide-y divide-secondary-container'},
+          ...cp.items.map(item =>
+            h('li',{class:'flex items-center gap-4 py-4','style':'font-size:16px;color:#8C8C8C'},
+              span('ms text-gold','style','font-size:19px','check'), item
+            )
+          )
+        )
+      ),
+      div('relative reveal','style','min-height:400px;transition-delay:.2s',
+        div('absolute inset-0 border border-gold/20 translate-x-4 translate-y-4 pointer-events-none'),
+        img(cp.image, cp.imageAlt,'absolute inset-0 w-full h-full object-cover img-bw')
+      )
+    )
+  );
+}
+
+function buildGallery(d) {
+  const gl = d.gallery;
+  const [f1, f2, ...rest] = gl.projects;
+  const featuredCard = (p, delay=0) => {
+    const el = div(`relative overflow-hidden border border-secondary-container reveal`,'style',`min-height:380px;transition-delay:${delay}s`,
+      img(p.image, p.alt,'absolute inset-0 w-full h-full object-cover img-bw')
+    );
+    if (p.title) el.appendChild(
+      div('absolute bottom-0 left-0 right-0 p-6','style','background:linear-gradient(to top,rgba(10,10,10,.85),transparent)',
+        span('text-gold block label-caps',p.tag),
+        h('span',{class:'text-white font-bold','style':'font-size:18px'},p.title)
+      )
+    );
+    return el;
+  };
+  const thumbCard = (p,delay) => div(`relative overflow-hidden border border-secondary-container reveal`,'style',`min-height:260px;transition-delay:${delay}s`,
+    img(p.image, p.alt,'absolute inset-0 w-full h-full object-cover img-bw')
+  );
+  const f1el = featuredCard(f1,0); f1el.classList.add('col-span-2','md:col-span-2');
+  const f2el = featuredCard(f2,.1);
+
+  return sec('','py-28 bg-deep-charcoal border-t border-secondary-container',
+    div('max-w-[1440px] mx-auto px-5 md:px-20',
+      div('mb-16 reveal',
+        span('block text-gold mb-5 label-caps',gl.label),
+        h('h2',{class:'font-bold text-white uppercase','style':'font-size:clamp(26px,3.2vw,46px);line-height:1.1;letter-spacing:-.01em'},gl.heading)
+      ),
+      div('grid grid-cols-2 md:grid-cols-3 gap-3',
+        f1el, f2el,
+        ...rest.map((p,i) => thumbCard(p,.15+i*.05))
+      )
+    )
+  );
+}
+
+function buildCatalogCta(d) {
+  const cc = d.catalogCta;
+  return sec('catalog','py-28 bg-surface border-t border-secondary-container',
+    div('max-w-[1440px] mx-auto px-5 md:px-20',
+      div('grid grid-cols-1 lg:grid-cols-12 gap-12 items-center',
+        div('lg:col-span-8 reveal',
+          span('block text-gold mb-5 label-caps',cc.label),
+          h('h2',{class:'font-bold text-white uppercase mb-6','style':'font-size:clamp(26px,3.2vw,46px);line-height:1.1;letter-spacing:-.01em'},
+            cc.heading,' ',span('text-gold',cc.headingAccent)
+          ),
+          h('p',{class:'mb-8','style':'font-size:16px;line-height:26px;color:#8C8C8C;max-width:580px'},cc.body),
+          a(cc.cta.href,'inline-flex items-center gap-3 bg-gold text-deep-charcoal px-8 py-4 hover:bg-primary-container transition-colors label-caps',
+            span('ms','style','font-size:20px','menu_book'), cc.cta.label
+          )
+        ),
+        div('lg:col-span-4 reveal','style','transition-delay:.2s',
+          div('grid grid-cols-2 gap-3',
+            ...cc.highlights.map(hl =>
+              div(`bg-surface-container border ${hl.accent?'border-gold/40':'border-secondary-container'} p-5 flex flex-col gap-2 hover:border-gold/50 transition-colors`,
+                span('ms text-gold','style','font-size:28px',hl.icon),
+                span(`${hl.accent?'text-gold':'text-white'} font-bold`,'style','font-size:13px',hl.title),
+                span('text-architectural-grey','style','font-size:11px',hl.sub)
+              )
+            )
+          )
+        )
+      )
+    )
+  );
+}
+
+function buildContact(d) {
+  const ct = d.contact;
+  const fields = ct.formFields.map(f => {
+    let input;
+    if (f.type==='textarea') {
+      input = h('textarea',{id:f.id,name:f.name,rows:'4',placeholder:f.placeholder,
+        class:'w-full bg-transparent border-0 border-b border-secondary-container focus:border-gold focus:ring-0 px-0 py-3 text-white transition-colors resize-none',
+        style:'font-size:15px;outline:none',...(f.required?{required:''}:{})});
+    } else {
+      input = h('input',{id:f.id,name:f.name,type:f.type,placeholder:f.placeholder,
+        class:'w-full bg-transparent border-0 border-b border-secondary-container focus:border-gold focus:ring-0 px-0 py-3 text-white transition-colors',
+        style:'font-size:15px;outline:none',...(f.required?{required:''}:{})});
+    }
+    return div('',
+      h('label',{for:f.id,class:'block text-architectural-grey mb-2 label-caps'},f.label),
+      input
+    );
   });
-});
-document.getElementById('contact-form').addEventListener('submit',function(e){
-  e.preventDefault();
-  const btn=this.querySelector('button[type=submit]');
-  btn.textContent='ИЗПРАТЕНО ✓';
-  btn.style.cssText='width:100%;background:#1e2020;color:#e8c33b;border:1px solid #e8c33b;padding:16px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase';
-  btn.disabled=true;
-});
+
+  const submitBtn = h('button',{type:'submit',class:'w-full bg-gold text-deep-charcoal py-4 hover:bg-primary-container transition-colors label-caps'},ct.submitLabel);
+  const form = h('form',{id:'contact-form',class:'space-y-8'},...fields,submitBtn);
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    submitBtn.textContent=ct.submitSuccessLabel;
+    submitBtn.style.cssText='width:100%;background:#1e2020;color:#e8c33b;border:1px solid #e8c33b;padding:16px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase';
+    submitBtn.disabled=true;
+  });
+
+  return sec('contact','py-28 bg-deep-charcoal border-t border-secondary-container',
+    div('max-w-[1440px] mx-auto px-5 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-16',
+      div('reveal',
+        span('block text-gold mb-5 label-caps',ct.label||'Контакти'),
+        h('h2',{class:'font-bold text-white uppercase mb-6','style':'font-size:clamp(26px,3.2vw,46px);line-height:1.1;letter-spacing:-.01em'},d.contact.heading),
+        h('p',{class:'mb-12','style':'font-size:16px;line-height:26px;color:#8C8C8C'},ct.body),
+        div('space-y-8',
+          div('flex items-start gap-6',
+            span('ms text-gold mt-1','style','font-size:26px','call'),
+            div('',
+              span('block text-architectural-grey mb-1 label-caps','Телефон'),
+              a(d.site.phoneHref,'text-white hover:text-gold transition-colors font-bold','style','font-size:22px',d.site.phone)
+            )
+          ),
+          div('flex items-start gap-6',
+            span('ms text-gold mt-1','style','font-size:26px','mail'),
+            div('',
+              span('block text-architectural-grey mb-1 label-caps','Имейл'),
+              a(`mailto:${d.site.email}`,'text-white hover:text-gold transition-colors font-bold','style','font-size:20px',d.site.email)
+            )
+          ),
+          div('flex items-start gap-6',
+            span('ms text-gold mt-1','style','font-size:26px','person'),
+            div('',
+              span('block text-architectural-grey mb-1 label-caps','Управител'),
+              h('span',{class:'text-white font-bold','style':'font-size:18px'},d.site.manager)
+            )
+          ),
+          div('flex gap-3 pt-2',
+            a(d.site.facebook,'w-12 h-12 border border-secondary-container flex items-center justify-center text-white hover:border-gold hover:text-gold transition-colors font-bold','style','font-size:11px','FB'),
+            a(d.site.instagram,'w-12 h-12 border border-secondary-container flex items-center justify-center text-white hover:border-gold hover:text-gold transition-colors font-bold','style','font-size:11px','IG')
+          )
+        )
+      ),
+      div('bg-surface-container border border-secondary-container p-8 md:p-12 reveal','style','transition-delay:.2s',form)
+    )
+  );
+}
+
+/* ── render ──────────────────────────────────── */
+fetch('content.json')
+  .then(r=>r.json())
+  .then(d=>{
+    const app = document.getElementById('app');
+    app.append(
+      buildNav(d,'index'),
+      buildHero(d),
+      buildStats(d),
+      buildAbout(d),
+      buildServices(d),
+      buildCapabilities(d),
+      buildGallery(d),
+      buildCatalogCta(d),
+      buildContact(d),
+      buildFooter(d)
+    );
+    // mobile menu
+    document.getElementById('menu-btn').addEventListener('click',()=>
+      document.getElementById('mobile-menu').classList.toggle('open'));
+    // scroll reveal
+    requestAnimationFrame(()=>{
+      const els=document.querySelectorAll('.reveal');
+      els.forEach(el=>el.classList.add('animate'));
+      const obs=new IntersectionObserver(es=>es.forEach(e=>{
+        if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+      }),{threshold:0,rootMargin:'0px 0px -40px 0px'});
+      els.forEach(el=>{
+        if(el.getBoundingClientRect().top<window.innerHeight) el.classList.add('visible');
+        else obs.observe(el);
+      });
+    });
+  })
+  .catch(err=>document.getElementById('app').innerHTML=
+    `<p style="color:red;padding:40px">Грешка при зареждане на content.json: ${err}</p>`);
 </script>
 </body>
 </html>

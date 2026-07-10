@@ -9,894 +9,499 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <script>
-tailwind.config = {
-  darkMode:"class",
-  theme:{extend:{
-    colors:{
-      "deep-charcoal":"#0A0A0A","surface":"#121414","surface-container":"#1e2020",
-      "surface-container-low":"#1a1c1c","surface-container-high":"#282a2b",
-      "secondary-container":"#4a4949","architectural-grey":"#8C8C8C",
-      "primary":"#fff3d5","primary-container":"#fad44b","gold":"#e8c33b",
-      "soft-white":"#FFFFFF","outline":"#99907b","on-surface":"#e2e2e2"
-    },
-    borderRadius:{"DEFAULT":"0px","sm":"0px","md":"0px","lg":"0px","xl":"0px","2xl":"0px","full":"9999px"},
-    fontFamily:{sans:["Lexend","sans-serif"]},
-    spacing:{"gutter":"32px","section-gap":"120px","margin-desktop":"80px","margin-mobile":"20px","container-max":"1440px"}
-  }}
-}
+tailwind.config={darkMode:"class",theme:{extend:{
+  colors:{"deep-charcoal":"#0A0A0A","surface":"#121414","surface-container":"#1e2020","surface-container-low":"#1a1c1c","surface-container-high":"#282a2b","secondary-container":"#4a4949","architectural-grey":"#8C8C8C","primary":"#fff3d5","primary-container":"#fad44b","gold":"#e8c33b","soft-white":"#FFFFFF","outline":"#99907b","on-surface":"#e2e2e2"},
+  borderRadius:{"DEFAULT":"0px","sm":"0px","md":"0px","lg":"0px","xl":"0px","2xl":"0px","full":"9999px"},
+  fontFamily:{sans:["Lexend","sans-serif"]},
+  spacing:{"gutter":"32px","section-gap":"120px","margin-desktop":"80px","margin-mobile":"20px","container-max":"1440px"}
+}}}
 </script>
 <style>
 *{box-sizing:border-box}
 body{background:#0A0A0A;color:#e2e2e2;font-family:'Lexend',sans-serif}
 .ms{font-family:'Material Symbols Outlined';font-size:inherit;font-style:normal;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
-#mobile-menu{display:none}
-#mobile-menu.open{display:block}
+#mobile-menu{display:none}#mobile-menu.open{display:block}
 html{scroll-behavior:smooth}
 .reveal{opacity:1;transform:none}
 .reveal.animate{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .reveal.animate.visible{opacity:1;transform:none}
-
-/* Size table */
+.label-caps{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.product-card{background:#1e2020;border:1px solid #4a4949;transition:border-color .4s}
+.product-card:hover{border-color:rgba(232,195,59,.45)}
 .size-table{width:100%;border-collapse:collapse}
 .size-table th{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8C8C8C;padding:8px 12px;text-align:left;border-bottom:1px solid #4a4949}
 .size-table td{font-size:13px;color:#e2e2e2;padding:9px 12px;border-bottom:1px solid #282a2b;font-variant-numeric:tabular-nums}
 .size-table tr:last-child td{border-bottom:none}
 .size-table tr:hover td{background:#1e2020}
-
-/* Product card */
-.product-card{background:#1e2020;border:1px solid #4a4949;transition:border-color .4s}
-.product-card:hover{border-color:rgba(232,195,59,.45)}
-
-/* Sticky catalog nav */
 #cat-nav{position:sticky;top:80px;z-index:40;background:rgba(10,10,10,.92);backdrop-filter:blur(16px);border-bottom:1px solid #4a4949}
-.cat-nav-link{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8C8C8C;transition:color .2s;white-space:nowrap;padding:14px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.cat-nav-link{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8C8C8C;white-space:nowrap;padding:14px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;text-decoration:none;display:inline-block}
 .cat-nav-link:hover,.cat-nav-link.active{color:#e8c33b;border-bottom-color:#e8c33b}
 </style>
 </head>
 <body class="antialiased">
-
-<!-- NAV -->
-<nav class="sticky top-0 z-50 border-b border-secondary-container" style="background:rgba(10,10,10,.88);backdrop-filter:blur(20px)">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20 flex justify-between items-center h-20">
-    <a href="index.html" class="flex items-center gap-2">
-      <img src="https://ssg-solutions.eu/wp-content/uploads/2026/02/A-66843-_VJ_YSP_6-2-e1770826247689.png" alt="SSG Solutions" class="h-10 w-auto object-contain"/>
-    </a>
-    <ul class="hidden md:flex gap-8" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">
-      <li><a href="index.html" class="text-white/60 hover:text-white transition-colors">Начало</a></li>
-      <li><a href="index.html#services" class="text-white/60 hover:text-white transition-colors">Услуги</a></li>
-      <li><a href="index.html#about" class="text-white/60 hover:text-white transition-colors">За нас</a></li>
-      <li><a href="catalog.html" class="text-gold border-b border-gold pb-0.5">Каталог BRUTAL</a></li>
-      <li><a href="index.html#contact" class="text-white/60 hover:text-white transition-colors">Контакти</a></li>
-    </ul>
-    <a href="index.html#contact" class="hidden md:block bg-gold text-deep-charcoal px-6 py-3 hover:bg-primary-container transition-colors" style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">
-      Направи запитване
-    </a>
-    <button id="menu-btn" class="md:hidden text-gold" aria-label="Меню"><span class="ms text-3xl">menu</span></button>
-  </div>
-  <div id="mobile-menu" class="border-t border-secondary-container px-5 py-6 bg-deep-charcoal">
-    <ul class="space-y-5" style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">
-      <li><a href="index.html" class="text-white/70 hover:text-gold block">Начало</a></li>
-      <li><a href="catalog.html" class="text-gold block">Каталог BRUTAL</a></li>
-      <li><a href="index.html#contact" class="text-white/70 hover:text-gold block">Контакти</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header class="bg-surface border-b border-secondary-container">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20 py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-    <div class="lg:col-span-7">
-      <div class="inline-flex items-center gap-2 border border-secondary-container px-3 py-1.5 mb-8" style="background:rgba(30,32,32,.7)">
-        <span class="ms text-gold" style="font-size:14px">verified</span>
-        <span style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase" class="text-white/70">Каталог 2025 — актуални продукти</span>
-      </div>
-      <h1 class="font-bold text-white uppercase mb-5" style="font-size:clamp(34px,5vw,64px);line-height:1.05;letter-spacing:-.02em">
-        Продуктов<br/>каталог<br/><span class="text-gold">BRUTAL</span>
-      </h1>
-      <p style="font-size:16px;line-height:26px;color:#8C8C8C;max-width:480px">
-        Строителни решения за всеки проект — водоустойчиви бордове, душ системи, умивалници и аксесоари от XPS технология.
-      </p>
-    </div>
-    <div class="lg:col-span-5 grid grid-cols-3 gap-3">
-      <div class="bg-surface-container border border-secondary-container p-5">
-        <div class="text-gold font-bold mb-1" style="font-size:28px;line-height:1">11</div>
-        <div class="text-architectural-grey" style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Категории</div>
-      </div>
-      <div class="bg-surface-container border border-secondary-container p-5">
-        <div class="text-gold font-bold mb-1" style="font-size:28px;line-height:1">30+</div>
-        <div class="text-architectural-grey" style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Размера</div>
-      </div>
-      <div class="bg-surface-container border border-gold/40 p-5">
-        <div class="text-gold font-bold mb-1" style="font-size:28px;line-height:1">100%</div>
-        <div class="text-architectural-grey" style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Водоустойчив</div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<!-- CATALOG NAV (sticky) -->
-<div id="cat-nav">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20 overflow-x-auto">
-    <div class="flex gap-8 min-w-max">
-      <a href="#bordove" class="cat-nav-link">Бордове</a>
-      <a href="#izvit-bord" class="cat-nav-link">Извит борд</a>
-      <a href="#umivalnik" class="cat-nav-link">Умивалник</a>
-      <a href="#wc-panel" class="cat-nav-link">WC панел</a>
-      <a href="#dush-tabla" class="cat-nav-link">Душ табла</a>
-      <a href="#nisha" class="cat-nav-link">Ниша за душ</a>
-      <a href="#membrana" class="cat-nav-link">Мембрана</a>
-      <a href="#peika" class="cat-nav-link">Пейка за душ</a>
-      <a href="#prag" class="cat-nav-link">Праг за душ</a>
-      <a href="#rampa" class="cat-nav-link">Рампа</a>
-      <a href="#aksesоari" class="cat-nav-link">Аксесоари</a>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ INTRO ═══ -->
-<section class="py-20 bg-deep-charcoal border-b border-secondary-container">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-    <div class="reveal">
-      <span class="block text-gold mb-4" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">За системата</span>
-      <h2 class="font-bold text-white uppercase mb-6" style="font-size:clamp(22px,2.8vw,38px);line-height:1.1;letter-spacing:-.01em">
-        Brutal — професионално решение за дизайнери и строители с вкус към детайла
-      </h2>
-      <p class="mb-5" style="font-size:15px;line-height:25px;color:#8C8C8C">
-        Brutal предлага иновативно решение за водоустойчиви бордове, създадени да устоят на предизвикателствата на влагата. Те са идеални за всички пространства с постоянен контакт с вода — от тоалетни и бани, до спа центрове, мазета и повече.
-      </p>
-      <p style="font-size:15px;line-height:25px;color:#8C8C8C">
-        Продуктите са изключително удобни за монтаж върху дървени конструкции и осигуряват стабилна и надеждна основа за микроцимент и други декоративни мазилки. Идеални за обръщане на прозорци.
-      </p>
-    </div>
-    <div class="grid grid-cols-2 gap-4 reveal" style="transition-delay:.15s">
-      <div class="product-card p-6 flex flex-col gap-3">
-        <span class="ms text-gold" style="font-size:32px">shield</span>
-        <div class="text-white font-bold" style="font-size:14px">100% водоустойчив</div>
-        <div class="text-architectural-grey" style="font-size:13px;line-height:20px">XPS пяна без HCFC — без влага, без мухъл</div>
-      </div>
-      <div class="product-card p-6 flex flex-col gap-3">
-        <span class="ms text-gold" style="font-size:32px">bolt</span>
-        <div class="text-white font-bold" style="font-size:14px">Бърз монтаж</div>
-        <div class="text-architectural-grey" style="font-size:13px;line-height:20px">Рязане с макетен нож, без специални инструменти</div>
-      </div>
-      <div class="product-card p-6 flex flex-col gap-3">
-        <span class="ms text-gold" style="font-size:32px">thermostat</span>
-        <div class="text-white font-bold" style="font-size:14px">Топлоизолация</div>
-        <div class="text-architectural-grey" style="font-size:13px;line-height:20px">Пестене на енергия и пароизолация</div>
-      </div>
-      <div class="product-card p-6 flex flex-col gap-3">
-        <span class="ms text-gold" style="font-size:32px">tile</span>
-        <div class="text-white font-bold" style="font-size:14px">Готов за плочки</div>
-        <div class="text-architectural-grey" style="font-size:13px;line-height:20px">Директно облицоване без подготовка</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 1. БОРДОВЕ ═══ -->
-<section class="py-20 bg-surface border-b border-secondary-container" id="bordove">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20">
-    <div class="flex items-end gap-6 mb-12 reveal">
-      <div>
-        <span class="block text-gold mb-3" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">01 / Бордове</span>
-        <h2 class="font-bold text-white uppercase" style="font-size:clamp(22px,2.8vw,40px);line-height:1.1;letter-spacing:-.01em">BRUTAL Бордове</h2>
-      </div>
-      <div class="hidden md:block flex-1 h-px bg-secondary-container mb-2"></div>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-      <div class="lg:col-span-5 reveal">
-        <div class="border border-secondary-container overflow-hidden mb-6" style="aspect-ratio:4/3">
-          <img src="assets/catalog/page05_img1.jpeg" alt="BRUTAL бордове — XPS плоскости" class="w-full h-full object-cover"/>
-        </div>
-        <p class="mb-6" style="font-size:15px;line-height:25px;color:#8C8C8C">
-          Строителните бордове са универсално решение за хидроизолация, топлоизолация и сухо строителство. Леки, лесни за изрязване по размер — прилагат се върху подове, стени и тавани като повърхност, готова за плочки и микроцимент.
-        </p>
-        <div class="space-y-3 mb-8">
-          <div class="flex items-start gap-3" style="font-size:14px;color:#8C8C8C">
-            <span class="ms text-gold mt-0.5" style="font-size:17px">check_circle</span>
-            100% водоустойчива XPS пяна без HCFC
-          </div>
-          <div class="flex items-start gap-3" style="font-size:14px;color:#8C8C8C">
-            <span class="ms text-gold mt-0.5" style="font-size:17px">check_circle</span>
-            Висока твърдост и издръжливост
-          </div>
-          <div class="flex items-start gap-3" style="font-size:14px;color:#8C8C8C">
-            <span class="ms text-gold mt-0.5" style="font-size:17px">check_circle</span>
-            Отлично прилепване към всякакви стени и подове
-          </div>
-          <div class="flex items-start gap-3" style="font-size:14px;color:#8C8C8C">
-            <span class="ms text-gold mt-0.5" style="font-size:17px">check_circle</span>
-            Топлоизолация и пароизолация срещу мухъл
-          </div>
-          <div class="flex items-start gap-3" style="font-size:14px;color:#8C8C8C">
-            <span class="ms text-gold mt-0.5" style="font-size:17px">check_circle</span>
-            Лека, лесна за работа и рязане с макетен нож
-          </div>
-          <div class="flex items-start gap-3" style="font-size:14px;color:#8C8C8C">
-            <span class="ms text-gold mt-0.5" style="font-size:17px">check_circle</span>
-            Съвместима с множество видове основи
-          </div>
-        </div>
-      </div>
-
-      <div class="lg:col-span-7 reveal" style="transition-delay:.12s">
-        <div class="product-card overflow-hidden">
-          <div class="px-6 pt-6 pb-3 border-b border-secondary-container">
-            <span class="text-white font-bold" style="font-size:13px;letter-spacing:.04em">НАЛИЧНИ РАЗМЕРИ</span>
-          </div>
-          <table class="size-table">
-            <thead><tr>
-              <th>Размер Д×Ш×В (мм)</th>
-              <th>Дебелина</th>
-              <th>Формат</th>
-            </tr></thead>
-            <tbody>
-              <tr><td>1200 × 600 × 4</td><td><span class="text-gold">4 мм</span></td><td>120×60 см</td></tr>
-              <tr><td>1200 × 600 × 6</td><td><span class="text-gold">6 мм</span></td><td>120×60 см</td></tr>
-              <tr><td>600 × 2500 × 12</td><td>12 мм</td><td>60×250 см</td></tr>
-              <tr><td>600 × 2500 × 20</td><td>20 мм</td><td>60×250 см</td></tr>
-              <tr><td>600 × 2500 × 30</td><td>30 мм</td><td>60×250 см</td></tr>
-              <tr><td>600 × 2500 × 40</td><td>40 мм</td><td>60×250 см</td></tr>
-              <tr><td>600 × 2500 × 50</td><td>50 мм</td><td>60×250 см</td></tr>
-              <tr><td>600 × 2500 × 100</td><td>100 мм</td><td>60×250 см</td></tr>
-              <tr><td>1200 × 2500 × 12</td><td>12 мм</td><td>120×250 см</td></tr>
-              <tr><td>1200 × 2500 × 20</td><td>20 мм</td><td>120×250 см</td></tr>
-              <tr><td>1200 × 2500 × 30</td><td>30 мм</td><td>120×250 см</td></tr>
-              <tr><td>1200 × 2500 × 40</td><td>40 мм</td><td>120×250 см</td></tr>
-              <tr><td>1200 × 2500 × 50</td><td>50 мм</td><td>120×250 см</td></tr>
-              <tr><td>1200 × 2500 × 100</td><td>100 мм</td><td>120×250 см</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 2. ИЗВИТ БОРД ═══ -->
-<section class="py-20 bg-deep-charcoal border-b border-secondary-container" id="izvit-bord">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20">
-    <div class="flex items-end gap-6 mb-12 reveal">
-      <div>
-        <span class="block text-gold mb-3" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">02 / Извит борд</span>
-        <h2 class="font-bold text-white uppercase" style="font-size:clamp(22px,2.8vw,40px);line-height:1.1;letter-spacing:-.01em">Предварително нарязан извит борд</h2>
-      </div>
-      <div class="hidden md:block flex-1 h-px bg-secondary-container mb-2"></div>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-      <div class="reveal">
-        <div class="border border-secondary-container overflow-hidden mb-6" style="aspect-ratio:4/3">
-          <img src="assets/catalog/page07_img1.png" alt="BRUTAL извит борд — приложение" class="w-full h-full object-cover"/>
-        </div>
-        <p class="mb-6" style="font-size:15px;line-height:25px;color:#8C8C8C">
-          Предварително нарязаната извита плоскост е налична по ширина и по дължина. Използва се за вътрешна архитектура — рамки за обшиване, хидроизолация, топлоизолация и създаване на преградни стени, оформени пейки с плочки и заоблени кубове.
-        </p>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="product-card p-5">
-            <span class="ms text-gold block mb-3" style="font-size:26px">rounded_corner</span>
-            <div class="text-white font-bold mb-1" style="font-size:13px">Заоблени форми</div>
-            <div class="text-architectural-grey" style="font-size:12px;line-height:18px">Проектиране на заоблени кубове и нестандартни форми</div>
-          </div>
-          <div class="product-card p-5">
-            <span class="ms text-gold block mb-3" style="font-size:26px">speed</span>
-            <div class="text-white font-bold mb-1" style="font-size:13px">Бърз монтаж</div>
-            <div class="text-architectural-grey" style="font-size:12px;line-height:18px">Спестяване на време и пари при изпълнение</div>
-          </div>
-          <div class="product-card p-5">
-            <span class="ms text-gold block mb-3" style="font-size:26px">water_drop</span>
-            <div class="text-white font-bold mb-1" style="font-size:13px">Водоустойчив</div>
-            <div class="text-architectural-grey" style="font-size:12px;line-height:18px">Топлоизолация включена</div>
-          </div>
-          <div class="product-card p-5">
-            <span class="ms text-gold block mb-3" style="font-size:26px">tile</span>
-            <div class="text-white font-bold mb-1" style="font-size:13px">Идеална основа</div>
-            <div class="text-architectural-grey" style="font-size:12px;line-height:18px">Подсилен циментов слой за плочки</div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal" style="transition-delay:.12s">
-        <div class="product-card overflow-hidden">
-          <div class="px-6 pt-6 pb-3 border-b border-secondary-container">
-            <span class="text-white font-bold" style="font-size:13px;letter-spacing:.04em">НАЛИЧНИ РАЗМЕРИ</span>
-          </div>
-          <table class="size-table">
-            <thead><tr><th>Размер Д×Ш×В (мм)</th></tr></thead>
-            <tbody>
-              <tr><td>2500 × 600 × 20</td></tr>
-              <tr><td>2500 × 600 × 30</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 3. УМИВАЛНИК ═══ -->
-<section class="py-20 bg-surface border-b border-secondary-container" id="umivalnik">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20">
-    <div class="flex items-end gap-6 mb-12 reveal">
-      <div>
-        <span class="block text-gold mb-3" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">03 / Умивалник</span>
-        <h2 class="font-bold text-white uppercase" style="font-size:clamp(22px,2.8vw,40px);line-height:1.1;letter-spacing:-.01em">BRUTAL Умивалник</h2>
-      </div>
-      <div class="hidden md:block flex-1 h-px bg-secondary-container mb-2"></div>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-      <div class="lg:col-span-5 reveal">
-        <div class="border border-secondary-container overflow-hidden mb-6" style="aspect-ratio:4/3">
-          <img src="assets/catalog/page09_img1.png" alt="BRUTAL умивалник — конзолен дизайн" class="w-full h-full object-cover"/>
-        </div>
-        <p class="mb-6" style="font-size:15px;line-height:25px;color:#8C8C8C">
-          Създайте стилна и функционална баня без бариери. Лек, водоотблъскващ и готов за облицоване с плочки, Brutal умивалник комбинира модерен конзолен дизайн с лесен монтаж и пълна свобода на персонализация. Идеален за дизайнерски бани и уелнес зони.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          <div>
-            <div class="text-white font-bold mb-3" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase">Предимства</div>
-            <div class="space-y-2">
-              <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">check</span>Плочки директно — без допълнителна подготовка</div>
-              <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">check</span>Вградени елементи за стандартни смесители и сифони</div>
-              <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">check</span>Два здрави стоманени стенни конзола включени</div>
-            </div>
-          </div>
-          <div>
-            <div class="text-white font-bold mb-3" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase">Характеристики</div>
-            <div class="space-y-2">
-              <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">info</span>Изработен от XPS (екструдирана полистиролна пяна)</div>
-              <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">info</span>Якост на натиск &gt; 300 kPa</div>
-              <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">info</span>Тегло ≈ 3–6 кг/м²</div>
-              <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">info</span>Покрит със стъклофибърна мрежа</div>
-              <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">info</span>Подходящ за помещения с висока влажност</div>
-            </div>
-          </div>
-        </div>
-        <div class="bg-surface-container border border-gold/30 p-5">
-          <div class="text-gold mb-2" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Идеално приложение</div>
-          <p style="font-size:13px;line-height:21px;color:#8C8C8C">
-            Дизайнерски умивалник, облицован с плочки, подходящ за безбариерни бани и уелнес зони — бърз монтаж, без допълнителни подготвителни работи.
-          </p>
-        </div>
-      </div>
-      <div class="lg:col-span-7 reveal" style="transition-delay:.12s">
-        <div class="product-card overflow-hidden">
-          <div class="px-6 pt-6 pb-3 border-b border-secondary-container">
-            <span class="text-white font-bold" style="font-size:13px;letter-spacing:.04em">НАЛИЧЕН РАЗМЕР</span>
-          </div>
-          <table class="size-table">
-            <thead><tr><th>Размер Д×Ш×В (мм)</th></tr></thead>
-            <tbody>
-              <tr><td>1200 × 2500 × 100</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 4. WC ПАНЕЛ ═══ -->
-<section class="py-20 bg-deep-charcoal border-b border-secondary-container" id="wc-panel">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20">
-    <div class="flex items-end gap-6 mb-12 reveal">
-      <div>
-        <span class="block text-gold mb-3" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">04 / WC Панел</span>
-        <h2 class="font-bold text-white uppercase" style="font-size:clamp(22px,2.8vw,40px);line-height:1.1;letter-spacing:-.01em">BRUTAL WC Панел</h2>
-      </div>
-      <div class="hidden md:block flex-1 h-px bg-secondary-container mb-2"></div>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-      <div class="reveal">
-        <div class="border border-secondary-container overflow-hidden mb-6" style="aspect-ratio:4/3">
-          <img src="assets/catalog/page12_img1.png" alt="BRUTAL WC панел" class="w-full h-full object-cover"/>
-        </div>
-        <p class="mb-6" style="font-size:15px;line-height:25px;color:#8C8C8C">
-          Надеждно и готово решение за окачени тоалетни. Лек, здрав и водоустойчив — осигурява бърз монтаж и е идеална основа за всякакви дизайнерски идеи. Елегантни повърхности без фуги за стилна визия и лесна поддръжка.
-        </p>
-        <div class="space-y-3">
-          <div class="flex items-start gap-3 product-card p-4">
-            <span class="ms text-gold mt-0.5" style="font-size:20px">style</span>
-            <div>
-              <div class="text-white font-bold mb-1" style="font-size:13px">Модерен дизайн</div>
-              <div class="text-architectural-grey" style="font-size:12px">Безшевна, естетична визия за съвременен стил</div>
-            </div>
-          </div>
-          <div class="flex items-start gap-3 product-card p-4">
-            <span class="ms text-gold mt-0.5" style="font-size:20px">sanitizer</span>
-            <div>
-              <div class="text-white font-bold mb-1" style="font-size:13px">Хигиеничност</div>
-              <div class="text-architectural-grey" style="font-size:12px">Антибактериални и лесни за поддръжка повърхности</div>
-            </div>
-          </div>
-          <div class="flex items-start gap-3 product-card p-4">
-            <span class="ms text-gold mt-0.5" style="font-size:20px">security</span>
-            <div>
-              <div class="text-white font-bold mb-1" style="font-size:13px">Здравина</div>
-              <div class="text-architectural-grey" style="font-size:12px">Удароустойчив, гъвкав, водоустойчив и UV-устойчив</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal" style="transition-delay:.12s">
-        <div class="product-card overflow-hidden">
-          <div class="px-6 pt-6 pb-3 border-b border-secondary-container">
-            <span class="text-white font-bold" style="font-size:13px;letter-spacing:.04em">НАЛИЧНИ РАЗМЕРИ</span>
-          </div>
-          <table class="size-table">
-            <thead><tr><th>Размер Д×Ш×В (мм)</th></tr></thead>
-            <tbody>
-              <tr><td>1200 × 900 × 20</td></tr>
-              <tr><td>1300 × 1200 × 20</td></tr>
-              <tr><td>1500 × 1200</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 5. ДУШ ТАБЛА / ПОДЛОЖКА ═══ -->
-<section class="py-20 bg-surface border-b border-secondary-container" id="dush-tabla">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20">
-    <div class="flex items-end gap-6 mb-12 reveal">
-      <div>
-        <span class="block text-gold mb-3" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">05 / Душ табла</span>
-        <h2 class="font-bold text-white uppercase" style="font-size:clamp(22px,2.8vw,40px);line-height:1.1;letter-spacing:-.01em">Табла и подложка за душ</h2>
-      </div>
-      <div class="hidden md:block flex-1 h-px bg-secondary-container mb-2"></div>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-      <div class="lg:col-span-6 reveal">
-        <p class="mb-6" style="font-size:15px;line-height:25px;color:#8C8C8C">
-          Brutal табла за душ съчетава стил, удобство и надеждност — модерна алтернатива на традиционните плочки. С интегрирана дренажна система позволява изграждането на елегантни душ зони с равен достъп и безупречен дизайн. Доставя се готова за монтаж.
-        </p>
-        <div class="grid grid-cols-2 gap-3 mb-6">
-          <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">check</span>По-икономична хидроизолация</div>
-          <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">check</span>100% водонепропусклива</div>
-          <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">check</span>По-добра акустика от замазка</div>
-          <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">check</span>Лесен достъп — на ниво под</div>
-          <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">check</span>Предварително оформен наклон</div>
-          <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">check</span>Централно или изнесено оттичане</div>
-          <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">check</span>Лесно се изрязва на място</div>
-          <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">check</span>Хигиенична — не задържа влага</div>
-        </div>
-        <div class="border border-secondary-container overflow-hidden mt-6" style="aspect-ratio:16/9">
-          <img src="assets/catalog/page14_img1.png" alt="BRUTAL душ табла с дренаж" class="w-full h-full object-cover"/>
-        </div>
-      </div>
-
-      <div class="lg:col-span-6 reveal" style="transition-delay:.12s">
-        <div class="product-card overflow-hidden mb-4">
-          <div class="px-6 pt-6 pb-3 border-b border-secondary-container">
-            <span class="text-white font-bold" style="font-size:13px;letter-spacing:.04em">НАЛИЧНИ РАЗМЕРИ НА ПОДЛОЖКА</span>
-          </div>
-          <table class="size-table">
-            <thead><tr><th>Размер Д×Ш×В (мм)</th></tr></thead>
-            <tbody>
-              <tr><td>900 × 900 × 40</td></tr>
-              <tr><td>900 × 1200 × 40</td></tr>
-              <tr><td>900 × 1500 × 40</td></tr>
-              <tr><td>900 × 1800 × 40</td></tr>
-              <tr><td>1200 × 1200 × 40</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="product-card overflow-hidden">
-          <div class="px-6 pt-6 pb-3 border-b border-secondary-container">
-            <span class="text-white font-bold" style="font-size:13px;letter-spacing:.04em">РЕШЕТКИ ОТ НЕРЪЖДАЕМА СТОМАНА</span>
-          </div>
-          <div class="p-5 flex flex-wrap gap-2">
-            <span class="border border-secondary-container px-3 py-1.5 text-architectural-grey" style="font-size:11px;font-weight:700">G01-600mm</span>
-            <span class="border border-secondary-container px-3 py-1.5 text-architectural-grey" style="font-size:11px;font-weight:700">G03-600mm</span>
-            <span class="border border-secondary-container px-3 py-1.5 text-architectural-grey" style="font-size:11px;font-weight:700">G12-600mm</span>
-            <span class="border border-secondary-container px-3 py-1.5 text-architectural-grey" style="font-size:11px;font-weight:700">G15-600mm</span>
-            <span class="border border-secondary-container px-3 py-1.5 text-architectural-grey" style="font-size:11px;font-weight:700">T01-600mm</span>
-            <span class="border border-secondary-container px-3 py-1.5 text-architectural-grey" style="font-size:11px;font-weight:700">T02-600mm</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 6. НИША ═══ -->
-<section class="py-20 bg-deep-charcoal border-b border-secondary-container" id="nisha">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20">
-    <div class="flex items-end gap-6 mb-12 reveal">
-      <div>
-        <span class="block text-gold mb-3" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">06 / Ниша</span>
-        <h2 class="font-bold text-white uppercase" style="font-size:clamp(22px,2.8vw,40px);line-height:1.1;letter-spacing:-.01em">Ниша за душ</h2>
-      </div>
-      <div class="hidden md:block flex-1 h-px bg-secondary-container mb-2"></div>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      <div class="reveal">
-        <p class="mb-6" style="font-size:15px;line-height:25px;color:#8C8C8C">
-          Brutal готови ниши — стилно и практично решение за всяка баня. Изработени от XPS пяна с хидроизолационно покритие, 100% водонепропускливи. Едноцялата конструкция не гние, не протича и не задържа конденз.
-        </p>
-        <div class="mb-6">
-          <div class="text-white font-bold mb-3" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase">Препоръчителна употреба</div>
-          <div class="space-y-2">
-            <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">arrow_right</span>Баня, кухня, коридор или външни стени</div>
-            <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">arrow_right</span>Душ кабини и облицовки около вани</div>
-            <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">arrow_right</span>Жилищни, търговски и индустриални пространства</div>
-            <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">arrow_right</span>Декоративни приложения в стени</div>
-          </div>
-        </div>
-        <div class="border border-secondary-container overflow-hidden mt-6" style="aspect-ratio:4/3">
-          <img src="assets/catalog/page17_img1.png" alt="BRUTAL ниша за душ — приложение" class="w-full h-full object-cover"/>
-        </div>
-          <div class="product-card p-4 text-center">
-            <span class="ms text-gold block mb-2" style="font-size:22px">water_drop</span>
-            <div class="text-architectural-grey" style="font-size:11px;font-weight:700;text-transform:uppercase">100%<br/>Водоустойчив</div>
-          </div>
-          <div class="product-card p-4 text-center">
-            <span class="ms text-gold block mb-2" style="font-size:22px">bolt</span>
-            <div class="text-architectural-grey" style="font-size:11px;font-weight:700;text-transform:uppercase">Монтаж<br/>за минути</div>
-          </div>
-          <div class="product-card p-4 text-center">
-            <span class="ms text-gold block mb-2" style="font-size:22px">tile</span>
-            <div class="text-architectural-grey" style="font-size:11px;font-weight:700;text-transform:uppercase">Готов за<br/>плочки</div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal" style="transition-delay:.12s">
-        <div class="product-card overflow-hidden">
-          <div class="px-6 pt-6 pb-3 border-b border-secondary-container">
-            <span class="text-white font-bold" style="font-size:13px;letter-spacing:.04em">НАЛИЧНИ РАЗМЕРИ</span>
-          </div>
-          <table class="size-table">
-            <thead><tr><th>Размер Д×Ш (мм)</th></tr></thead>
-            <tbody>
-              <tr><td>200 × 200</td></tr>
-              <tr><td>300 × 300</td></tr>
-              <tr><td>300 × 510</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 7. МЕМБРАНА ═══ -->
-<section class="py-20 bg-surface border-b border-secondary-container" id="membrana">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20">
-    <div class="flex items-end gap-6 mb-12 reveal">
-      <div>
-        <span class="block text-gold mb-3" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">07 / Мембрана</span>
-        <h2 class="font-bold text-white uppercase" style="font-size:clamp(22px,2.8vw,40px);line-height:1.1;letter-spacing:-.01em">Разделителна мембрана</h2>
-      </div>
-      <div class="hidden md:block flex-1 h-px bg-secondary-container mb-2"></div>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-      <div class="reveal">
-        <p class="mb-6" style="font-size:15px;line-height:25px;color:#8C8C8C">
-          Революционна система за свободно полагане — осигурява 100% разединяване. Разделя напреженията между основата и настилката, предотвратява пукнатини и позволява безопасен монтаж на керамични и каменни плочи.
-        </p>
-        <div class="space-y-3">
-          <div class="flex items-start gap-3 product-card p-4">
-            <span class="ms text-gold" style="font-size:22px">shield</span>
-            <div>
-              <div class="text-white font-bold mb-0.5" style="font-size:13px">100% защита от пукнатини</div>
-              <div class="text-architectural-grey" style="font-size:12px">Разделя напреженията между основата и настилката</div>
-            </div>
-          </div>
-          <div class="flex items-start gap-3 product-card p-4">
-            <span class="ms text-gold" style="font-size:22px">water</span>
-            <div>
-              <div class="text-white font-bold mb-0.5" style="font-size:13px">Надеждна хидроизолация</div>
-              <div class="text-architectural-grey" style="font-size:12px">Ефективен контрол на влагата и конденза</div>
-            </div>
-          </div>
-          <div class="flex items-start gap-3 product-card p-4">
-            <span class="ms text-gold" style="font-size:22px">balance</span>
-            <div>
-              <div class="text-white font-bold mb-0.5" style="font-size:13px">Равномерно натоварване</div>
-              <div class="text-architectural-grey" style="font-size:12px">Дълготрайна устойчивост и сигурност</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal" style="transition-delay:.12s">
-        <div class="border border-secondary-container overflow-hidden mb-6" style="aspect-ratio:4/3">
-          <img src="assets/catalog/page20_img1.png" alt="BRUTAL разделителна мембрана" class="w-full h-full object-cover bg-white"/>
-        </div>
-        <div class="bg-surface-container border border-gold/30 p-8">
-          <div class="text-gold mb-4" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Предназначение</div>
-          <p style="font-size:14px;line-height:22px;color:#8C8C8C">
-            Създадена за изискванията на модерните керамични и каменни плочи. Комбинира защита от пукнатини, хидроизолация и контрол на влагата в едно решение. Лека, лесна за монтаж, с висока ефективност — гарантира безупречни резултати.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 8. ПЕЙКА ═══ -->
-<section class="py-20 bg-deep-charcoal border-b border-secondary-container" id="peika">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20">
-    <div class="flex items-end gap-6 mb-12 reveal">
-      <div>
-        <span class="block text-gold mb-3" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">08 / Пейка</span>
-        <h2 class="font-bold text-white uppercase" style="font-size:clamp(22px,2.8vw,40px);line-height:1.1;letter-spacing:-.01em">Пейка за душ</h2>
-      </div>
-      <div class="hidden md:block flex-1 h-px bg-secondary-container mb-2"></div>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-      <div class="lg:col-span-5 reveal">
-        <p class="mb-6" style="font-size:15px;line-height:25px;color:#8C8C8C">
-          Превърнете баните си в личен оазис на релакс с Brutal пейки за душ. Просторните седалки предлагат комфорт и грижа. Умният дизайн дава пълна свобода — подреждайте седалките и носещите елементи според желанията си.
-        </p>
-        <div class="product-card p-5 mb-3">
-          <div class="text-gold mb-2" style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Модел Kappa — 1200mm</div>
-          <div class="text-white font-bold mb-1" style="font-size:14px">Извита пейка за душ</div>
-          <div class="text-architectural-grey" style="font-size:13px">Радиус: 40 см · Височина: 50 см</div>
-        </div>
-        <div class="product-card p-5">
-          <div class="text-gold mb-2" style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Правоъгълна пейка за душ</div>
-          <div class="text-architectural-grey" style="font-size:13px">Ширина: 90 см · Дълбочина: 40 см · Височина: 50 см</div>
-        </div>
-      </div>
-      <div class="lg:col-span-7 reveal" style="transition-delay:.12s">
-        <div class="border border-secondary-container overflow-hidden mb-6" style="aspect-ratio:16/9">
-          <img src="assets/catalog/page22_img1.png" alt="BRUTAL пейка за душ" class="w-full h-full object-cover"/>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="product-card p-6">
-            <span class="ms text-gold block mb-3" style="font-size:28px">chair</span>
-            <div class="text-white font-bold mb-1" style="font-size:13px">Wellness у дома</div>
-            <div class="text-architectural-grey" style="font-size:12px;line-height:19px">Истинско wellness преживяване в собствената баня</div>
-          </div>
-          <div class="product-card p-6">
-            <span class="ms text-gold block mb-3" style="font-size:28px">tune</span>
-            <div class="text-white font-bold mb-1" style="font-size:13px">Модулна конфигурация</div>
-            <div class="text-architectural-grey" style="font-size:12px;line-height:19px">Свобода при подреждане на елементите</div>
-          </div>
-          <div class="product-card p-6">
-            <span class="ms text-gold block mb-3" style="font-size:28px">water_drop</span>
-            <div class="text-white font-bold mb-1" style="font-size:13px">Водоустойчив</div>
-            <div class="text-architectural-grey" style="font-size:12px;line-height:19px">Идеален за влажна среда</div>
-          </div>
-          <div class="product-card p-6">
-            <span class="ms text-gold block mb-3" style="font-size:28px">tile</span>
-            <div class="text-white font-bold mb-1" style="font-size:13px">Готов за облицовка</div>
-            <div class="text-architectural-grey" style="font-size:12px;line-height:19px">Директно плочки или микроцимент</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 9. ПРАГ ═══ -->
-<section class="py-20 bg-surface border-b border-secondary-container" id="prag">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20">
-    <div class="flex items-end gap-6 mb-12 reveal">
-      <div>
-        <span class="block text-gold mb-3" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">09 / Праг</span>
-        <h2 class="font-bold text-white uppercase" style="font-size:clamp(22px,2.8vw,40px);line-height:1.1;letter-spacing:-.01em">Праг за душ</h2>
-      </div>
-      <div class="hidden md:block flex-1 h-px bg-secondary-container mb-2"></div>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-      <div class="reveal">
-        <p class="mb-6" style="font-size:15px;line-height:25px;color:#8C8C8C">
-          Brutal прагове — водоустойчиви, гъвкави и лесни за инсталиране. Перфектно съчетават стил и функционалност, готови за плочки, стъклени врати или панели.
-        </p>
-        <div class="space-y-3">
-          <div class="flex items-start gap-3" style="font-size:14px;color:#8C8C8C"><span class="ms text-gold" style="font-size:16px">check</span>Водоустойчив и гъвкав материал</div>
-          <div class="flex items-start gap-3" style="font-size:14px;color:#8C8C8C"><span class="ms text-gold" style="font-size:16px">check</span>Готов за плочки, стъкло или панели</div>
-          <div class="flex items-start gap-3" style="font-size:14px;color:#8C8C8C"><span class="ms text-gold" style="font-size:16px">check</span>Лесна инсталация</div>
-          <div class="flex items-start gap-3" style="font-size:14px;color:#8C8C8C"><span class="ms text-gold" style="font-size:16px">check</span>Стилна визия без компромис</div>
-        </div>
-      </div>
-      <div class="reveal" style="transition-delay:.12s">
-        <div class="border border-secondary-container overflow-hidden mb-4" style="aspect-ratio:4/3">
-          <img src="assets/catalog/page24_img1.png" alt="BRUTAL праг за душ" class="w-full h-full object-cover"/>
-        </div>
-        <div class="product-card overflow-hidden">
-          <div class="px-6 pt-6 pb-3 border-b border-secondary-container">
-            <span class="text-white font-bold" style="font-size:13px;letter-spacing:.04em">НАЛИЧНИ РАЗМЕРИ (мм)</span>
-          </div>
-          <table class="size-table">
-            <thead><tr><th>Размер</th></tr></thead>
-            <tbody>
-              <tr><td>50 × 89 × 914</td></tr>
-              <tr><td>50 × 89 × 1524</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 10. РАМПА ═══ -->
-<section class="py-20 bg-deep-charcoal border-b border-secondary-container" id="rampa">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20">
-    <div class="flex items-end gap-6 mb-12 reveal">
-      <div>
-        <span class="block text-gold mb-3" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">10 / Рампа</span>
-        <h2 class="font-bold text-white uppercase" style="font-size:clamp(22px,2.8vw,40px);line-height:1.1;letter-spacing:-.01em">Рампа за душ</h2>
-      </div>
-      <div class="hidden md:block flex-1 h-px bg-secondary-container mb-2"></div>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-      <div class="reveal">
-        <p class="mb-6" style="font-size:15px;line-height:25px;color:#8C8C8C">
-          Различни опции за входове на душ — идеални за преходи и индивидуални дизайни. Brutal бордове и рампи могат да се инсталират с нашите душ-панели или с традиционни системи с полимеров цимент — максимална гъвкавост и удобство.
-        </p>
-        <div class="bg-surface-container border border-secondary-container p-5">
-          <div class="text-gold mb-3" style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Съвместимост</div>
-          <div class="space-y-2">
-            <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">check</span>BRUTAL душ-панели</div>
-            <div class="flex items-start gap-2" style="font-size:13px;color:#8C8C8C"><span class="ms text-gold" style="font-size:15px">check</span>Традиционни системи с полимеров цимент</div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal" style="transition-delay:.12s">
-        <div class="border border-secondary-container overflow-hidden mb-4" style="aspect-ratio:4/3">
-          <img src="assets/catalog/page26_img1.png" alt="BRUTAL рампа за душ" class="w-full h-full object-cover"/>
-        </div>
-        <div class="product-card overflow-hidden">
-          <div class="px-6 pt-6 pb-3 border-b border-secondary-container">
-            <span class="text-white font-bold" style="font-size:13px;letter-spacing:.04em">НАЛИЧНИ РАЗМЕРИ (мм)</span>
-          </div>
-          <table class="size-table">
-            <thead><tr><th>Размер</th><th>Модел</th></tr></thead>
-            <tbody>
-              <tr><td>305 × 1830</td><td>slope38-6</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 11. АКСЕСОАРИ ═══ -->
-<section class="py-20 bg-surface" id="aksesоari">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20">
-    <div class="flex items-end gap-6 mb-12 reveal">
-      <div>
-        <span class="block text-gold mb-3" style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">11 / Аксесоари</span>
-        <h2 class="font-bold text-white uppercase" style="font-size:clamp(22px,2.8vw,40px);line-height:1.1;letter-spacing:-.01em">Монтажни аксесоари</h2>
-      </div>
-      <div class="hidden md:block flex-1 h-px bg-secondary-container mb-2"></div>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
-      <div class="product-card p-6">
-        <span class="ms text-gold block mb-3" style="font-size:28px">hardware</span>
-        <div class="text-white font-bold mb-1" style="font-size:14px">Поцинкована метална шайба</div>
-        <div class="text-architectural-grey" style="font-size:12px;margin-bottom:12px">Диаметър 36 мм</div>
-      </div>
-      <div class="product-card p-6">
-        <span class="ms text-gold block mb-3" style="font-size:28px">build</span>
-        <div class="text-white font-bold mb-1" style="font-size:14px">Метални дюбели</div>
-        <div class="text-architectural-grey" style="font-size:12px;margin-bottom:12px">8×50мм · 8×80мм · 8×110мм</div>
-      </div>
-      <div class="product-card p-6">
-        <span class="ms text-gold block mb-3" style="font-size:28px">grid_on</span>
-        <div class="text-white font-bold mb-1" style="font-size:14px">Водоустойчива мембрана с решетка</div>
-        <div class="text-architectural-grey" style="font-size:12px;margin-bottom:12px">1м × 10м</div>
-      </div>
-      <div class="product-card p-6">
-        <span class="ms text-gold block mb-3" style="font-size:28px">layers</span>
-        <div class="text-white font-bold mb-1" style="font-size:14px">Водоустойчива мембрана</div>
-        <div class="text-architectural-grey" style="font-size:12px;margin-bottom:12px">12,5 см × 50 м</div>
-      </div>
-      <div class="product-card p-6">
-        <span class="ms text-gold block mb-3" style="font-size:28px">crop_square</span>
-        <div class="text-white font-bold mb-1" style="font-size:14px">Вътрешен и Външен ъгъл</div>
-        <div class="text-architectural-grey" style="font-size:12px;margin-bottom:12px">Стандартен размер</div>
-      </div>
-      <div class="product-card p-6">
-        <span class="ms text-gold block mb-3" style="font-size:28px">plumbing</span>
-        <div class="text-white font-bold mb-1" style="font-size:14px">Водоустойчив калъф</div>
-        <div class="text-architectural-grey" style="font-size:12px;margin-bottom:4px">120×120 φ=12мм</div>
-        <div class="text-architectural-grey" style="font-size:12px;margin-bottom:4px">120×120 φ=30мм</div>
-        <div class="text-architectural-grey" style="font-size:12px;margin-bottom:4px">150×150 φ=50мм</div>
-        <div class="text-architectural-grey" style="font-size:12px">190×190 φ=70мм</div>
-      </div>
-      <div class="product-card p-6">
-        <span class="ms text-gold block mb-3" style="font-size:28px">format_paint</span>
-        <div class="text-white font-bold mb-1" style="font-size:14px">Плоска шпатула</div>
-        <div class="text-architectural-grey" style="font-size:12px">Стандартен размер · Пластмаса</div>
-      </div>
-      <div class="product-card p-6">
-        <span class="ms text-gold block mb-3" style="font-size:28px">square_foot</span>
-        <div class="text-white font-bold mb-1" style="font-size:14px">Ъглова шпатула</div>
-        <div class="text-architectural-grey" style="font-size:12px">Стандартен размер · Пластмаса</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="py-24 bg-deep-charcoal border-t border-secondary-container">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20 flex flex-col md:flex-row items-center justify-between gap-8">
-    <div class="reveal">
-      <h2 class="font-bold text-white uppercase mb-3" style="font-size:clamp(20px,2.5vw,34px);line-height:1.1">
-        Готови да стартирате?
-      </h2>
-      <p style="font-size:15px;color:#8C8C8C">Свържете се с нас за безплатна консултация и оферта.</p>
-    </div>
-    <div class="flex flex-col sm:flex-row gap-4 reveal" style="transition-delay:.1s">
-      <a href="index.html#contact" class="bg-gold text-deep-charcoal text-center px-8 py-4 hover:bg-primary-container transition-colors" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">
-        Направи запитване
-      </a>
-      <a href="tel:+359878107395" class="border border-white/30 text-white text-center px-8 py-4 hover:border-gold hover:text-gold transition-colors" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">
-        +359 878 107 395
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-deep-charcoal border-t border-secondary-container">
-  <div class="max-w-[1440px] mx-auto px-5 md:px-20 py-12 flex flex-col md:flex-row justify-between gap-8 items-start">
-    <div>
-      <img src="https://ssg-solutions.eu/wp-content/uploads/2026/02/A-66843-_VJ_YSP_6-2-e1770826247689.png"
-           alt="SSG Solutions" class="h-10 w-auto mb-4 object-contain"/>
-      <div class="text-architectural-grey" style="font-size:11px">© 2025 SSG Solutions. Всички права запазени.</div>
-    </div>
-    <div class="flex flex-wrap gap-8">
-      <div>
-        <h4 class="text-white mb-4" style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Навигация</h4>
-        <ul class="space-y-2" style="font-size:13px">
-          <li><a href="index.html" class="text-architectural-grey hover:text-white transition-colors">Начало</a></li>
-          <li><a href="catalog.html" class="text-architectural-grey hover:text-white transition-colors">Каталог</a></li>
-          <li><a href="index.html#contact" class="text-architectural-grey hover:text-white transition-colors">Контакти</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-white mb-4" style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">Контакти</h4>
-        <ul class="space-y-2" style="font-size:13px">
-          <li><a href="tel:+359878107395" class="text-architectural-grey hover:text-white transition-colors">+359 878 107 395</a></li>
-          <li><a href="mailto:info@ssg-solutions.eu" class="text-architectural-grey hover:text-white transition-colors">info@ssg-solutions.eu</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
-
+<div id="app"></div>
 <script>
-document.getElementById('menu-btn').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('open'));
-requestAnimationFrame(()=>{
-  const els=document.querySelectorAll('.reveal');
-  els.forEach(el=>el.classList.add('animate'));
-  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:0,rootMargin:'0px 0px -40px 0px'});
-  els.forEach(el=>{
-    const r=el.getBoundingClientRect();
-    if(r.top<window.innerHeight)el.classList.add('visible');
-    else obs.observe(el);
-  });
-});
-
-// Active catalog nav on scroll
-const sections=document.querySelectorAll('section[id]');
-const links=document.querySelectorAll('.cat-nav-link');
-const onScroll=()=>{
-  let cur='';
-  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-160)cur=s.id});
-  links.forEach(l=>{
-    l.classList.remove('active');
-    if(l.getAttribute('href')==='#'+cur)l.classList.add('active');
-  });
+/* ── helpers ─────────────────────────────────── */
+const h=(tag,attrs,...children)=>{
+  const el=document.createElement(tag);
+  for(const[k,v]of Object.entries(attrs||{})){
+    if(k==='class')el.className=v;
+    else if(k==='innerHTML')el.innerHTML=v;
+    else if(k.startsWith('on'))el.addEventListener(k.slice(2),v);
+    else el.setAttribute(k,v);
+  }
+  children.flat().filter(Boolean).forEach(c=>el.appendChild(typeof c==='string'?document.createTextNode(c):c));
+  return el;
 };
-window.addEventListener('scroll',onScroll,{passive:true});
+const div=(cls,...c)=>h('div',{class:cls},...c);
+// ms(icon, fontSize?) — Material Symbol span with optional size
+const ms=(icon,size)=>{const e=document.createElement('span');e.className='ms';if(size)e.style.fontSize=size;e.textContent=icon;return e;};
+const span=(cls,styleOrChild,...c)=>{
+  if(typeof styleOrChild==='string'&&styleOrChild.includes(':')&&!c.length){
+    // it's a style string with no children — probably ms icon usage mistake; treat as child
+    return h('span',{class:cls},styleOrChild);
+  }
+  const hasStyle=typeof styleOrChild==='string'&&styleOrChild.includes(':')&&c.length>0;
+  if(hasStyle) return h('span',{class:cls,style:styleOrChild},...c);
+  return h('span',{class:cls},...[styleOrChild,...c].filter(Boolean));
+};
+const a=(href,cls,...c)=>h('a',{href,class:cls},...c);
+const img=(src,alt,cls)=>{const e=h('img',{src,alt});if(cls)e.className=cls;return e;};
+
+/* ── shared: nav + footer (same as index) ─────── */
+function buildNav(d){
+  const logoEl=h('a',{href:'index.html',class:'flex items-center'},img(d.site.logo,d.site.name,'h-10 w-auto object-contain'));
+  const links=h('ul',{class:'hidden md:flex gap-8'},
+    ...d.nav.map(n=>h('li',{},a(n.href,n.page==='catalog'?'text-gold border-b border-gold pb-0.5 label-caps':'text-white/60 hover:text-white transition-colors label-caps',n.label)))
+  );
+  const cta=a('index.html#contact','hidden md:block bg-gold text-deep-charcoal px-6 py-3 hover:bg-primary-container transition-colors label-caps','Направи запитване');
+  const mbtn=h('button',{id:'menu-btn',class:'md:hidden text-gold','aria-label':'Меню'},span('ms text-3xl','menu'));
+  const mmenu=h('div',{id:'mobile-menu',class:'border-t border-secondary-container px-5 py-6 bg-deep-charcoal'},
+    h('ul',{class:'space-y-5'},...d.nav.map(n=>h('li',{},a(n.href,'text-white/70 hover:text-gold block label-caps',n.label)))),
+    a('index.html#contact','mt-6 block bg-gold text-deep-charcoal py-4 text-center label-caps','Направи запитване')
+  );
+  return h('nav',{class:'sticky top-0 z-50 border-b border-secondary-container',style:'background:rgba(10,10,10,.88);backdrop-filter:blur(20px)'},
+    h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20'},
+      h('div',{class:'flex justify-between items-center h-20'},logoEl,links,cta,mbtn)
+    ),mmenu
+  );
+}
+function buildFooter(d){
+  return h('footer',{class:'bg-deep-charcoal border-t border-secondary-container'},
+    h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20 py-12 flex flex-col md:flex-row justify-between gap-8 items-start'},
+      h('div',{},img(d.site.logo,d.site.name,'h-10 w-auto mb-4 object-contain'),
+        h('div',{class:'text-architectural-grey',style:'font-size:11px'},d.site.copyright)),
+      h('div',{class:'flex flex-wrap gap-8'},
+        h('div',{},h('h4',{class:'text-white mb-4 label-caps'},'Навигация'),
+          h('ul',{class:'space-y-2',style:'font-size:13px'},
+            h('li',{},a('index.html','text-architectural-grey hover:text-white transition-colors','Начало')),
+            h('li',{},a('catalog.html','text-architectural-grey hover:text-white transition-colors','Каталог')),
+            h('li',{},a('index.html#contact','text-architectural-grey hover:text-white transition-colors','Контакти'))
+          )
+        ),
+        h('div',{},h('h4',{class:'text-white mb-4 label-caps'},'Контакти'),
+          h('ul',{class:'space-y-2',style:'font-size:13px'},
+            h('li',{},a(d.site.phoneHref,'text-architectural-grey hover:text-white transition-colors',d.site.phone)),
+            h('li',{},a(`mailto:${d.site.email}`,'text-architectural-grey hover:text-white transition-colors',d.site.email))
+          )
+        )
+      )
+    )
+  );
+}
+
+/* ── catalog sections ────────────────────────── */
+function buildCatalogHero(cat,site){
+  const ch=cat.hero;
+  const [h1txt,...rest]=ch.heading.split(ch.headingAccent);
+  return h('header',{class:'bg-surface border-b border-secondary-container'},
+    h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20 py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-end'},
+      h('div',{class:'lg:col-span-7'},
+        h('div',{class:'inline-flex items-center gap-2 border border-secondary-container px-3 py-1.5 mb-8',style:'background:rgba(30,32,32,.7)'},
+          h('span',{class:'ms text-gold',style:'font-size:14px'},'verified'),
+          span('text-white/70 label-caps',ch.badge)
+        ),
+        h('h1',{class:'font-bold text-white uppercase mb-5',style:'font-size:clamp(34px,5vw,64px);line-height:1.05;letter-spacing:-.02em'},
+          h1txt, span('text-gold',ch.headingAccent), rest[0]||''
+        ),
+        h('p',{style:'font-size:16px;line-height:26px;color:#8C8C8C;max-width:480px'},ch.body)
+      ),
+      h('div',{class:'lg:col-span-5 grid grid-cols-3 gap-3'},
+        ...ch.stats.map(s=>
+          h('div',{class:'bg-surface-container border border-secondary-container p-5',style:s.value.includes('%')?'border-color:rgba(232,195,59,.4)':''},
+            h('div',{class:'text-gold font-bold mb-1',style:'font-size:28px;line-height:1'},s.value),
+            h('div',{class:'text-architectural-grey label-caps'},s.label)
+          )
+        )
+      )
+    )
+  );
+}
+
+function buildCatNav(products){
+  const inner=h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20 overflow-x-auto'},
+    h('div',{class:'flex gap-8 min-w-max'},
+      ...products.map(p=>{
+        const lnk=h('a',{href:`#${p.id}`,class:'cat-nav-link'},p.label);
+        return lnk;
+      })
+    )
+  );
+  return h('div',{id:'cat-nav'},inner);
+}
+
+function buildIntro(intro){
+  return h('section',{class:'py-20 bg-deep-charcoal border-b border-secondary-container'},
+    h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center'},
+      h('div',{class:'reveal'},
+        span('block text-gold mb-4 label-caps',intro.label),
+        h('h2',{class:'font-bold text-white uppercase mb-6',style:'font-size:clamp(22px,2.8vw,38px);line-height:1.1;letter-spacing:-.01em'},intro.heading),
+        h('p',{class:'mb-5',style:'font-size:15px;line-height:25px;color:#8C8C8C'},intro.body1),
+        h('p',{style:'font-size:15px;line-height:25px;color:#8C8C8C'},intro.body2)
+      ),
+      h('div',{class:'grid grid-cols-2 gap-4 reveal',style:'transition-delay:.15s'},
+        ...intro.features.map(f=>
+          h('div',{class:'product-card p-6 flex flex-col gap-3'},
+            h('span',{class:'ms text-gold',style:'font-size:32px'},f.icon),
+            h('div',{class:'text-white font-bold',style:'font-size:14px'},f.title),
+            h('div',{class:'text-architectural-grey',style:'font-size:13px;line-height:20px'},f.body)
+          )
+        )
+      )
+    )
+  );
+}
+
+/* size table helper */
+function sizeTable(sizes){
+  if(!sizes) return null;
+  return h('div',{class:'product-card overflow-hidden'},
+    h('div',{class:'px-6 pt-6 pb-3 border-b border-secondary-container'},
+      h('span',{class:'text-white font-bold',style:'font-size:13px;letter-spacing:.04em'},sizes.title||'НАЛИЧНИ РАЗМЕРИ')
+    ),
+    h('table',{class:'size-table'},
+      h('thead',{},h('tr',{},...sizes.headers.map(hd=>h('th',{},hd)))),
+      h('tbody',{},...sizes.rows.map(row=>
+        h('tr',{},...row.map((cell,i)=>h('td',{},
+          i===1&&sizes.headers[1]==='Дебелина'?h('span',{class:'text-gold'},cell):cell
+        )))
+      ))
+    )
+  );
+}
+
+/* section header helper */
+function sectionHeader(p){
+  return h('div',{class:'flex items-end gap-6 mb-12 reveal'},
+    h('div',{},
+      span('block text-gold mb-3 label-caps',`${p.num} / ${p.label}`),
+      h('h2',{class:'font-bold text-white uppercase',style:'font-size:clamp(22px,2.8vw,40px);line-height:1.1;letter-spacing:-.01em'},p.title)
+    ),
+    h('div',{class:'hidden md:block flex-1 h-px bg-secondary-container mb-2'})
+  );
+}
+
+function productImg(p, ratio='4/3'){
+  if(!p.image) return null;
+  return h('div',{class:'border border-secondary-container overflow-hidden mb-6',style:`aspect-ratio:${ratio}`},
+    img(p.image, p.imageAlt||p.title,'w-full h-full object-cover')
+  );
+}
+
+function advantageList(items){
+  return h('div',{class:'space-y-3 mb-8'},
+    ...items.map(item=>
+      h('div',{class:'flex items-start gap-3',style:'font-size:14px;color:#8C8C8C'},
+        h('span',{class:'ms text-gold mt-0.5',style:'font-size:17px'},'check_circle'), item
+      )
+    )
+  );
+}
+
+/* ── individual product section builders ──────── */
+function buildProduct(p){
+  const bg = p.bg==='surface' ? 'bg-surface' : 'bg-deep-charcoal';
+  const wrapper = h('section',{id:p.id,class:`py-20 ${bg} border-b border-secondary-container`},
+    h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20'},
+      sectionHeader(p)
+    )
+  );
+  const inner = wrapper.querySelector('.max-w-\\[1440px\\]');
+
+  // Route to specialised layout based on product id
+  const layout = buildProductLayout(p);
+  if(layout) inner.appendChild(layout);
+  return wrapper;
+}
+
+function buildProductLayout(p){
+  // common two-col: left = image + body, right = sizes
+  if(['bordove','prag'].includes(p.id)){
+    const left = h('div',{class:'lg:col-span-5 reveal'},
+      productImg(p),
+      h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
+    );
+    if(p.advantages) left.appendChild(advantageList(p.advantages));
+    return h('div',{class:'grid grid-cols-1 lg:grid-cols-12 gap-8'},
+      left,
+      h('div',{class:'lg:col-span-7 reveal',style:'transition-delay:.12s'}, sizeTable(p.sizes))
+    );
+  }
+
+  if(p.id==='izvit-bord'){
+    return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'},
+      h('div',{class:'reveal'},
+        productImg(p),
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
+        p.features ? h('div',{class:'grid grid-cols-2 gap-4'},
+          ...p.features.map(f=>h('div',{class:'product-card p-5'},
+            h('span',{class:'ms text-gold block mb-3',style:'font-size:26px'},f.icon),
+            h('div',{class:'text-white font-bold mb-1',style:'font-size:13px'},f.title),
+            h('div',{class:'text-architectural-grey',style:'font-size:12px;line-height:18px'},f.body)
+          ))
+        ) : null
+      ),
+      h('div',{class:'reveal',style:'transition-delay:.12s'}, sizeTable(p.sizes))
+    );
+  }
+
+  if(p.id==='umivalnik'){
+    return h('div',{class:'grid grid-cols-1 lg:grid-cols-12 gap-8'},
+      h('div',{class:'lg:col-span-5 reveal'},
+        productImg(p),
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
+      ),
+      h('div',{class:'lg:col-span-7 reveal',style:'transition-delay:.12s'},
+        p.advantages ? h('div',{class:'mb-5'},
+          h('div',{class:'text-white font-bold mb-3 label-caps'},'Предимства'),
+          h('div',{class:'space-y-2'},...p.advantages.map(adv=>
+            h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#8C8C8C'},
+              h('span',{class:'ms text-gold',style:'font-size:15px'},'check'), adv)
+          ))
+        ) : null,
+        p.specs ? h('div',{class:'mb-5'},
+          h('div',{class:'text-white font-bold mb-3 label-caps'},'Характеристики'),
+          h('div',{class:'space-y-2'},...p.specs.map(sp=>
+            h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#8C8C8C'},
+              h('span',{class:'ms text-gold',style:'font-size:15px'},'info'), sp)
+          ))
+        ) : null,
+        p.note ? h('div',{class:'bg-surface-container border border-gold/30 p-5 mb-5'},
+          h('div',{class:'text-gold mb-2 label-caps'},p.noteLabel||'Забележка'),
+          h('p',{style:'font-size:13px;line-height:21px;color:#8C8C8C'},p.note)
+        ) : null,
+        sizeTable(p.sizes)
+      )
+    );
+  }
+
+  if(['wc-panel','membrana'].includes(p.id)){
+    return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'},
+      h('div',{class:'reveal'},
+        productImg(p),
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
+        p.features ? h('div',{class:'space-y-3'},
+          ...p.features.map(f=>h('div',{class:'flex items-start gap-3 product-card p-4'},
+            h('span',{class:'ms text-gold mt-0.5',style:'font-size:20px'},f.icon),
+            h('div',{},
+              h('div',{class:'text-white font-bold mb-1',style:'font-size:13px'},f.title),
+              h('div',{class:'text-architectural-grey',style:'font-size:12px'},f.body)
+            )
+          ))
+        ) : null
+      ),
+      h('div',{class:'reveal',style:'transition-delay:.12s'},
+        p.id==='membrana' ? h('div',{},
+          productImg(p,'4/3'),
+          p.note ? h('div',{class:'bg-surface-container border border-gold/30 p-8'},
+            h('div',{class:'text-gold mb-4 label-caps'},p.noteLabel),
+            h('p',{style:'font-size:14px;line-height:22px;color:#8C8C8C'},p.note)
+          ) : null
+        ) : sizeTable(p.sizes)
+      )
+    );
+  }
+
+  if(p.id==='dush-tabla'){
+    return h('div',{class:'grid grid-cols-1 lg:grid-cols-12 gap-8'},
+      h('div',{class:'lg:col-span-6 reveal'},
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
+        p.advantages ? h('div',{class:'grid grid-cols-2 gap-3 mb-6'},
+          ...p.advantages.map(adv=>
+            h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#8C8C8C'},
+              h('span',{class:'ms text-gold',style:'font-size:15px'},'check'), adv)
+          )
+        ) : null,
+        h('div',{class:'border border-secondary-container overflow-hidden',style:'aspect-ratio:16/9'},
+          img(p.image, p.imageAlt,'w-full h-full object-cover')
+        )
+      ),
+      h('div',{class:'lg:col-span-6 reveal',style:'transition-delay:.12s'},
+        sizeTable(p.sizes),
+        p.drains ? h('div',{class:'product-card overflow-hidden mt-4'},
+          h('div',{class:'px-6 pt-6 pb-3 border-b border-secondary-container'},
+            h('span',{class:'text-white font-bold',style:'font-size:13px;letter-spacing:.04em'},p.drains.title)
+          ),
+          h('div',{class:'p-5 flex flex-wrap gap-2'},
+            ...p.drains.models.map(m=>
+              h('span',{class:'border border-secondary-container px-3 py-1.5 text-architectural-grey',style:'font-size:11px;font-weight:700'},m)
+            )
+          )
+        ) : null
+      )
+    );
+  }
+
+  if(p.id==='nisha'){
+    return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12'},
+      h('div',{class:'reveal'},
+        productImg(p),
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
+        p.uses ? h('div',{class:'mb-6'},
+          h('div',{class:'text-white font-bold mb-3 label-caps'},'Препоръчителна употреба'),
+          h('div',{class:'space-y-2'},...p.uses.map(u=>
+            h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#8C8C8C'},
+              h('span',{class:'ms text-gold',style:'font-size:15px'},'arrow_right'), u)
+          ))
+        ) : null,
+        h('div',{class:'grid grid-cols-3 gap-3'},
+          [['water_drop','100%\nВодоустойчив'],['bolt','Монтаж\nза минути'],['tile','Готов за\nплочки']].map(([icon,txt])=>
+            h('div',{class:'product-card p-4 text-center'},
+              h('span',{class:'ms text-gold block mb-2',style:'font-size:22px'},icon),
+              h('div',{class:'text-architectural-grey label-caps'},txt.replace('\n',' '))
+            )
+          )
+        )
+      ),
+      h('div',{class:'reveal',style:'transition-delay:.12s'}, sizeTable(p.sizes))
+    );
+  }
+
+  if(p.id==='peika'){
+    return h('div',{class:'grid grid-cols-1 lg:grid-cols-12 gap-8'},
+      h('div',{class:'lg:col-span-5 reveal'},
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
+        ...(p.models||[]).map(m=>
+          h('div',{class:'product-card p-5 mb-3'},
+            h('div',{class:'text-gold mb-2 label-caps'},m.tag),
+            h('div',{class:'text-white font-bold mb-1',style:'font-size:14px'},m.title),
+            h('div',{class:'text-architectural-grey',style:'font-size:13px'},m.spec)
+          )
+        )
+      ),
+      h('div',{class:'lg:col-span-7 reveal',style:'transition-delay:.12s'},
+        h('div',{class:'border border-secondary-container overflow-hidden mb-6',style:'aspect-ratio:16/9'},
+          img(p.image, p.imageAlt,'w-full h-full object-cover')
+        ),
+        p.features ? h('div',{class:'grid grid-cols-2 gap-4'},
+          ...p.features.map(f=>h('div',{class:'product-card p-6'},
+            h('span',{class:'ms text-gold block mb-3',style:'font-size:28px'},f.icon),
+            h('div',{class:'text-white font-bold mb-1',style:'font-size:13px'},f.title),
+            h('div',{class:'text-architectural-grey',style:'font-size:12px;line-height:19px'},f.body)
+          ))
+        ) : null
+      )
+    );
+  }
+
+  if(p.id==='rampa'){
+    return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'},
+      h('div',{class:'reveal'},
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
+        p.compatible ? h('div',{class:'bg-surface-container border border-secondary-container p-5'},
+          h('div',{class:'text-gold mb-3 label-caps'},'Съвместимост'),
+          h('div',{class:'space-y-2'},...p.compatible.map(c=>
+            h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#8C8C8C'},
+              h('span',{class:'ms text-gold',style:'font-size:15px'},'check'), c)
+          ))
+        ) : null
+      ),
+      h('div',{class:'reveal',style:'transition-delay:.12s'},
+        h('div',{class:'border border-secondary-container overflow-hidden mb-4',style:'aspect-ratio:4/3'},
+          img(p.image, p.imageAlt,'w-full h-full object-cover')
+        ),
+        sizeTable(p.sizes)
+      )
+    );
+  }
+
+  if(p.id==='aksesоari'){
+    return h('div',{class:'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 reveal'},
+      ...p.items.map(it=>
+        h('div',{class:'product-card p-6'},
+          h('span',{class:'ms text-gold block mb-3',style:'font-size:28px'},it.icon),
+          h('div',{class:'text-white font-bold mb-2',style:'font-size:14px'},it.title),
+          ...it.specs.map(sp=>h('div',{class:'text-architectural-grey',style:'font-size:12px;margin-bottom:3px'},sp))
+        )
+      )
+    );
+  }
+
+  return null;
+}
+
+function buildCatalogCta(cta){
+  return h('section',{class:'py-24 bg-deep-charcoal border-t border-secondary-container'},
+    h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20 flex flex-col md:flex-row items-center justify-between gap-8'},
+      h('div',{class:'reveal'},
+        h('h2',{class:'font-bold text-white uppercase mb-3',style:'font-size:clamp(20px,2.5vw,34px);line-height:1.1'},cta.heading),
+        h('p',{style:'font-size:15px;color:#8C8C8C'},cta.body)
+      ),
+      h('div',{class:'flex flex-col sm:flex-row gap-4 reveal',style:'transition-delay:.1s'},
+        a(cta.ctaPrimary.href,'bg-gold text-deep-charcoal text-center px-8 py-4 hover:bg-primary-container transition-colors label-caps',cta.ctaPrimary.label),
+        a(cta.ctaSecondary.href,'border border-white/30 text-white text-center px-8 py-4 hover:border-gold hover:text-gold transition-colors label-caps',cta.ctaSecondary.label)
+      )
+    )
+  );
+}
+
+/* ── render ──────────────────────────────────── */
+fetch('content.json')
+  .then(r=>r.json())
+  .then(d=>{
+    const cat=d.catalog;
+    const app=document.getElementById('app');
+    app.append(
+      buildNav(d),
+      buildCatalogHero(cat,d.site),
+      buildCatNav(cat.products),
+      buildIntro(cat.intro),
+      ...cat.products.map(p=>buildProduct(p)),
+      buildCatalogCta(cat.cta),
+      buildFooter(d)
+    );
+
+    // mobile menu
+    document.getElementById('menu-btn').addEventListener('click',()=>
+      document.getElementById('mobile-menu').classList.toggle('open'));
+
+    // scroll reveal
+    requestAnimationFrame(()=>{
+      const els=document.querySelectorAll('.reveal');
+      els.forEach(el=>el.classList.add('animate'));
+      const obs=new IntersectionObserver(es=>es.forEach(e=>{
+        if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+      }),{threshold:0,rootMargin:'0px 0px -40px 0px'});
+      els.forEach(el=>{
+        if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible');
+        else obs.observe(el);
+      });
+    });
+
+    // active cat nav on scroll
+    const secEls=document.querySelectorAll('section[id]');
+    const navLinks=document.querySelectorAll('.cat-nav-link');
+    window.addEventListener('scroll',()=>{
+      let cur='';
+      secEls.forEach(s=>{if(window.scrollY>=s.offsetTop-180)cur=s.id});
+      navLinks.forEach(l=>{
+        l.classList.remove('active');
+        if(l.getAttribute('href')==='#'+cur)l.classList.add('active');
+      });
+    },{passive:true});
+  })
+  .catch(err=>document.getElementById('app').innerHTML=
+    `<p style="color:red;padding:40px">Грешка при зареждане на content.json: ${err}</p>`);
 </script>
 </body>
 </html>
