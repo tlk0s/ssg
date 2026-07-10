@@ -184,20 +184,42 @@ function buildStats(d) {
 
 function buildAbout(d) {
   const ab = d.about;
+  const leftCol = div('reveal',
+    span('block text-gold mb-5 label-caps', ab.label),
+    h('h2',{class:'font-bold text-white uppercase mb-6',style:'font-size:clamp(26px,3.2vw,46px);line-height:1.1;letter-spacing:-.01em',
+      innerHTML: ab.heading.replace(ab.headingAccent,`<span class="text-gold">${ab.headingAccent}</span>`)
+    }),
+    h('p',{class:'mb-5',style:'font-size:16px;line-height:26px;color:#8C8C8C'},ab.body1),
+    h('p',{class:'mb-8',style:'font-size:16px;line-height:26px;color:#8C8C8C'},ab.body2)
+  );
+
+  // Founder card
+  if (ab.founder) {
+    leftCol.appendChild(
+      div('bg-surface-container border border-secondary-container p-6 mb-8 flex items-start gap-5',
+        div('w-10 h-10 bg-gold flex items-center justify-center flex-shrink-0',
+          h('span',{class:'text-deep-charcoal font-bold',style:'font-size:16px'},
+            ab.founder.name.charAt(0))
+        ),
+        div('',
+          h('div',{class:'text-white font-bold',style:'font-size:14px'},ab.founder.name),
+          h('div',{class:'text-gold label-caps mb-2'},ab.founder.role),
+          h('p',{class:'text-architectural-grey',style:'font-size:13px;line-height:20px'},ab.founder.bio)
+        )
+      )
+    );
+  }
+
+  leftCol.appendChild(
+    div('flex flex-col sm:flex-row gap-4',
+      a(ab.ctaPrimary.href,'bg-gold text-deep-charcoal text-center px-8 py-4 hover:bg-primary-container transition-colors label-caps',ab.ctaPrimary.label),
+      a(ab.ctaSecondary.href,'border border-white/20 text-white text-center px-8 py-4 hover:border-gold hover:text-gold transition-colors label-caps',ab.ctaSecondary.label)
+    )
+  );
+
   return sec('about','py-28 bg-surface',
     div('max-w-[1440px] mx-auto px-5 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center',
-      div('reveal',
-        span('block text-gold mb-5 label-caps',ab.label),
-        h('h2',{class:'font-bold text-white uppercase mb-6','style':'font-size:clamp(26px,3.2vw,46px);line-height:1.1;letter-spacing:-.01em','innerHTML':
-          ab.heading.replace(ab.headingAccent,`<span class="text-gold">${ab.headingAccent}</span>`)
-        }),
-        h('p',{class:'mb-6','style':'font-size:16px;line-height:26px;color:#8C8C8C','innerHTML':ab.body1}),
-        h('p',{class:'mb-10','style':'font-size:16px;line-height:26px;color:#8C8C8C','innerHTML':ab.body2}),
-        div('flex flex-col sm:flex-row gap-4',
-          a(ab.ctaPrimary.href,'bg-gold text-deep-charcoal text-center px-8 py-4 hover:bg-primary-container transition-colors label-caps',ab.ctaPrimary.label),
-          a(ab.ctaSecondary.href,'border border-white/20 text-white text-center px-8 py-4 hover:border-gold hover:text-gold transition-colors label-caps',ab.ctaSecondary.label)
-        )
-      ),
+      leftCol,
       div('relative reveal','style','transition-delay:.2s',
         div('absolute top-4 left-4 right-0 bottom-0 border border-gold/25 pointer-events-none'),
         img(ab.image, ab.imageAlt,'relative w-full object-cover img-bw','style','aspect-ratio:4/3')
@@ -237,6 +259,31 @@ function buildStepCard(s, cols, delay=0) {
     div('mt-8 flex items-center gap-3',
       span('block w-8 h-px bg-gold'),
       span('text-gold label-caps',s.label)
+    )
+  );
+}
+
+function buildHowWeWork(d) {
+  if (!d.howWeWork) return null;
+  const hw = d.howWeWork;
+  return h('section', {id:'how-we-work', class:'py-28 bg-surface border-t border-secondary-container'},
+    h('div', {class:'max-w-[1440px] mx-auto px-5 md:px-20'},
+      h('div', {class:'mb-16 reveal'},
+        h('span', {class:'block text-gold mb-4 label-caps'}, hw.label),
+        h('h2', {class:'font-bold text-white uppercase', style:'font-size:clamp(26px,3.2vw,46px);line-height:1.1;letter-spacing:-.01em'}, hw.heading)
+      ),
+      h('div', {class:'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'},
+        ...hw.steps.map((s, i) =>
+          h('div', {class:'bg-surface-container border border-secondary-container p-8 hover:border-gold/40 transition-colors duration-300 reveal', style:`transition-delay:${i * 0.07}s`},
+            h('div', {class:'flex items-center gap-4 mb-5'},
+              h('div', {class:'text-gold font-bold', style:'font-size:32px;line-height:1;letter-spacing:-.02em'}, s.num),
+              h('div', {class:'flex-1 h-px bg-secondary-container'})
+            ),
+            h('h3', {class:'text-white font-bold uppercase mb-3', style:'font-size:15px;line-height:22px;letter-spacing:.02em'}, s.title),
+            h('p', {class:'text-architectural-grey', style:'font-size:14px;line-height:22px'}, s.body)
+          )
+        )
+      )
     )
   );
 }
@@ -408,6 +455,7 @@ fetch('content.json')
       buildStats(d),
       buildAbout(d),
       buildServices(d),
+      buildHowWeWork(d),
       buildCapabilities(d),
       buildGallery(d),
       buildCatalogCta(d),
