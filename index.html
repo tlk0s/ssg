@@ -79,11 +79,14 @@ function buildNav(d, activePage) {
     img(d.site.logo, d.site.name,'h-10 w-auto object-contain'));
 
   const desktopLinks = h('ul',{class:'hidden md:flex gap-8'},
-    ...d.nav.map(n => h('li',{},
-      a(n.href, n.page===activePage
+    ...d.nav.map(n => {
+      const cls = n.page===activePage
         ? 'text-gold border-b border-gold pb-0.5 label-caps'
-        : 'text-white/60 hover:text-white transition-colors label-caps', n.label)
-    ))
+        : 'text-white/60 hover:text-white transition-colors label-caps';
+      const attrs = {href: n.href, class: cls};
+      if (n.target) { attrs.target = n.target; attrs.rel = 'noopener noreferrer'; }
+      return h('li',{}, h('a', attrs, n.label));
+    })
   );
 
   const ctaBtn = a('index.html#contact','hidden md:block bg-gold text-deep-charcoal px-6 py-3 hover:bg-primary-container transition-colors label-caps','Направи запитване');
@@ -93,7 +96,11 @@ function buildNav(d, activePage) {
 
   const mobileMenu = h('div',{id:'mobile-menu','class':'border-t border-secondary-container px-5 py-6 bg-deep-charcoal'},
     h('ul',{class:'space-y-5'},
-      ...d.nav.map(n => h('li',{}, a(n.href,'text-white/70 hover:text-gold block label-caps', n.label)))
+      ...d.nav.map(n => {
+        const attrs = {href: n.href, class:'text-white/70 hover:text-gold block label-caps'};
+        if (n.target) { attrs.target = n.target; attrs.rel = 'noopener noreferrer'; }
+        return h('li',{}, h('a', attrs, n.label));
+      })
     ),
     a('index.html#contact','mt-6 block bg-gold text-deep-charcoal py-4 text-center label-caps','Направи запитване')
   );
