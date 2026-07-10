@@ -245,7 +245,7 @@ function buildProduct(p){
 
 function buildProductLayout(p){
   // common two-col: left = image + body, right = sizes
-  if(['bordove','prag'].includes(p.id)){
+  if(p.id==='bordove'){
     const left = h('div',{class:'lg:col-span-5 reveal'},
       productImg(p),
       h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
@@ -257,20 +257,35 @@ function buildProductLayout(p){
     );
   }
 
+  if(p.id==='prag'){
+    return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'},
+      h('div',{class:'reveal'},
+        productImg(p),
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
+      ),
+      h('div',{class:'reveal',style:'transition-delay:.12s'},
+        sizeTable(p.sizes),
+        p.advantages ? h('div',{class:'mt-6'},advantageList(p.advantages)) : null
+      )
+    );
+  }
+
   if(p.id==='izvit-bord'){
     return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'},
       h('div',{class:'reveal'},
         productImg(p),
-        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
-        p.features ? h('div',{class:'grid grid-cols-2 gap-4'},
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
+      ),
+      h('div',{class:'reveal',style:'transition-delay:.12s'},
+        sizeTable(p.sizes),
+        p.features ? h('div',{class:'grid grid-cols-2 gap-4 mt-6'},
           ...p.features.map(f=>h('div',{class:'product-card p-5'},
             h('span',{class:'ms text-gold block mb-3',style:'font-size:26px'},f.icon),
             h('div',{class:'text-white font-bold mb-1',style:'font-size:13px'},f.title),
             h('div',{class:'text-architectural-grey',style:'font-size:12px;line-height:18px'},f.body)
           ))
         ) : null
-      ),
-      h('div',{class:'reveal',style:'transition-delay:.12s'}, sizeTable(p.sizes))
+      )
     );
   }
 
@@ -309,7 +324,7 @@ function buildProductLayout(p){
       h('div',{class:'reveal'},
         p.id!=='membrana' ? productImg(p) : null,
         h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
-        p.features ? h('div',{class:'space-y-3'},
+        p.id==='membrana' && p.features ? h('div',{class:'space-y-3'},
           ...p.features.map(f=>h('div',{class:'flex items-start gap-3 product-card p-4'},
             h('span',{class:'ms text-gold mt-0.5',style:'font-size:20px'},f.icon),
             h('div',{},
@@ -322,11 +337,22 @@ function buildProductLayout(p){
       h('div',{class:'reveal',style:'transition-delay:.12s'},
         p.id==='membrana' ? h('div',{},
           productImg(p,'4/3'),
-          p.note ? h('div',{class:'bg-surface-container border border-gold/30 p-8'},
+          p.note ? h('div',{class:'bg-surface-container border border-gold/30 p-8 mt-4'},
             h('div',{class:'text-gold mb-4 label-caps'},p.noteLabel),
             h('p',{style:'font-size:14px;line-height:22px;color:#8C8C8C'},p.note)
           ) : null
-        ) : sizeTable(p.sizes)
+        ) : h('div',{},
+          sizeTable(p.sizes),
+          p.features ? h('div',{class:'space-y-3 mt-6'},
+            ...p.features.map(f=>h('div',{class:'flex items-start gap-3 product-card p-4'},
+              h('span',{class:'ms text-gold mt-0.5',style:'font-size:20px'},f.icon),
+              h('div',{},
+                h('div',{class:'text-white font-bold mb-1',style:'font-size:13px'},f.title),
+                h('div',{class:'text-architectural-grey',style:'font-size:12px'},f.body)
+              )
+            ))
+          ) : null
+        )
       )
     );
   }
@@ -365,24 +391,26 @@ function buildProductLayout(p){
     return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12'},
       h('div',{class:'reveal'},
         productImg(p),
-        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
-        p.uses ? h('div',{class:'mb-6'},
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
+      ),
+      h('div',{class:'reveal',style:'transition-delay:.12s'},
+        sizeTable(p.sizes),
+        p.uses ? h('div',{class:'mt-6 mb-4'},
           h('div',{class:'text-white font-bold mb-3 label-caps'},'Препоръчителна употреба'),
           h('div',{class:'space-y-2'},...p.uses.map(u=>
             h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#8C8C8C'},
               h('span',{class:'ms text-gold',style:'font-size:15px'},'arrow_right'), u)
           ))
         ) : null,
-        h('div',{class:'grid grid-cols-3 gap-3'},
-          [['water_drop','100%\nВодоустойчив'],['bolt','Монтаж\nза минути'],['tile','Готов за\nплочки']].map(([icon,txt])=>
+        h('div',{class:'grid grid-cols-3 gap-3 mt-4'},
+          [['water_drop','100% Водоустойчив'],['bolt','Монтаж за минути'],['tile','Готов за плочки']].map(([icon,txt])=>
             h('div',{class:'product-card p-4 text-center'},
               h('span',{class:'ms text-gold block mb-2',style:'font-size:22px'},icon),
-              h('div',{class:'text-architectural-grey label-caps'},txt.replace('\n',' '))
+              h('div',{class:'text-architectural-grey label-caps'},txt)
             )
           )
         )
-      ),
-      h('div',{class:'reveal',style:'transition-delay:.12s'}, sizeTable(p.sizes))
+      )
     );
   }
 
@@ -416,20 +444,20 @@ function buildProductLayout(p){
   if(p.id==='rampa'){
     return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'},
       h('div',{class:'reveal'},
-        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
-        p.compatible ? h('div',{class:'bg-surface-container border border-secondary-container p-5'},
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
+      ),
+      h('div',{class:'reveal',style:'transition-delay:.12s'},
+        h('div',{class:'border border-secondary-container overflow-hidden mb-4',style:'aspect-ratio:4/3'},
+          img(p.image, p.imageAlt,'w-full h-full object-cover')
+        ),
+        sizeTable(p.sizes),
+        p.compatible ? h('div',{class:'bg-surface-container border border-secondary-container p-5 mt-6'},
           h('div',{class:'text-gold mb-3 label-caps'},'Съвместимост'),
           h('div',{class:'space-y-2'},...p.compatible.map(c=>
             h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#8C8C8C'},
               h('span',{class:'ms text-gold',style:'font-size:15px'},'check'), c)
           ))
         ) : null
-      ),
-      h('div',{class:'reveal',style:'transition-delay:.12s'},
-        h('div',{class:'border border-secondary-container overflow-hidden mb-4',style:'aspect-ratio:4/3'},
-          img(p.image, p.imageAlt,'w-full h-full object-cover')
-        ),
-        sizeTable(p.sizes)
       )
     );
   }
