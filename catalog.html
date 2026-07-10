@@ -21,7 +21,7 @@ tailwind.config={darkMode:"class",theme:{extend:{
 body{background:#0A0A0A;color:#e2e2e2;font-family:'Lexend',sans-serif}
 .ms{font-family:'Material Symbols Outlined';font-size:inherit;font-style:normal;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
 #mobile-menu{display:none}#mobile-menu.open{display:block}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 .reveal{opacity:1;transform:none}
 .reveal.animate{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .reveal.animate.visible{opacity:1;transform:none}
@@ -34,6 +34,7 @@ html{scroll-behavior:smooth}
 .size-table tr:last-child td{border-bottom:none}
 .size-table tr:hover td{background:#1e2020}
 #cat-nav{position:sticky;top:80px;z-index:40;background:rgba(10,10,10,.92);backdrop-filter:blur(16px);border-bottom:1px solid #4a4949}
+#cat-nav-inner{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .cat-nav-link{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8C8C8C;white-space:nowrap;padding:14px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;text-decoration:none;display:inline-block}
 .cat-nav-link:hover,.cat-nav-link.active{color:#e8c33b;border-bottom-color:#e8c33b}
 </style>
@@ -144,11 +145,11 @@ function buildCatalogHero(cat,site){
         ),
         h('p',{style:'font-size:16px;line-height:26px;color:#8C8C8C;max-width:480px'},ch.body)
       ),
-      h('div',{class:'lg:col-span-5 grid grid-cols-3 gap-3'},
+      h('div',{class:'lg:col-span-5 grid grid-cols-3 gap-2'},
         ...ch.stats.map(s=>
-          h('div',{class:'bg-surface-container border border-secondary-container p-5',style:s.value.includes('%')?'border-color:rgba(232,195,59,.4)':''},
-            h('div',{class:'text-gold font-bold mb-1',style:'font-size:28px;line-height:1'},s.value),
-            h('div',{class:'text-architectural-grey label-caps'},s.label)
+          h('div',{class:'bg-surface-container border border-secondary-container p-3 sm:p-5',style:s.value.includes('%')?'border-color:rgba(232,195,59,.4)':''},
+            h('div',{class:'text-gold font-bold mb-1',style:'font-size:clamp(20px,5vw,28px);line-height:1'},s.value),
+            h('div',{class:'text-architectural-grey leading-tight',style:'font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;word-break:break-word'},s.label)
           )
         )
       )
@@ -157,15 +158,16 @@ function buildCatalogHero(cat,site){
 }
 
 function buildCatNav(products){
-  const inner=h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20 overflow-x-auto'},
-    h('div',{class:'flex gap-8 min-w-max'},
-      ...products.map(p=>{
-        const lnk=h('a',{href:`#${p.id}`,class:'cat-nav-link'},p.label);
-        return lnk;
-      })
+  return h('div',{id:'cat-nav'},
+    h('div',{id:'cat-nav-inner'},
+      h('div',{class:'flex gap-8 min-w-max px-5 md:px-20'},
+        ...products.map(p=>{
+          const lnk=h('a',{href:`#${p.id}`,class:'cat-nav-link'},p.label);
+          return lnk;
+        })
+      )
     )
   );
-  return h('div',{id:'cat-nav'},inner);
 }
 
 function buildIntro(intro){
@@ -197,6 +199,7 @@ function sizeTable(sizes){
     h('div',{class:'px-6 pt-6 pb-3 border-b border-secondary-container'},
       h('span',{class:'text-white font-bold',style:'font-size:13px;letter-spacing:.04em'},sizes.title||'НАЛИЧНИ РАЗМЕРИ')
     ),
+    h('div',{class:'overflow-x-auto'},
     h('table',{class:'size-table'},
       h('thead',{},h('tr',{},...sizes.headers.map(hd=>h('th',{},hd)))),
       h('tbody',{},...sizes.rows.map(row=>
@@ -204,7 +207,7 @@ function sizeTable(sizes){
           i===1&&sizes.headers[1]==='Дебелина'?h('span',{class:'text-gold'},cell):cell
         )))
       ))
-    )
+    ))
   );
 }
 
