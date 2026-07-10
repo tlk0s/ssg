@@ -45,12 +45,33 @@ const h = (tag, attrs, ...children) => {
   children.flat().filter(Boolean).forEach(c => el.appendChild(typeof c==='string'?document.createTextNode(c):c));
   return el;
 };
-const div  = (cls,...c) => h('div',{class:cls},...c);
-const span = (cls,...c) => h('span',{class:cls},...c);
-const a    = (href,cls,...c) => h('a',{href,class:cls},...c);
-const img  = (src,alt,cls) => h('img',{src,alt,class:cls||''});
-const sec  = (id,cls,...c) => h('section',{id,class:cls},...c);
+// Shorthand helpers — optional 2nd arg 'style','value' pair sets inline style
+function _el(tag, cls, rest) {
+  let style = null;
+  if (rest.length >= 2 && rest[0] === 'style') { style = rest[1]; rest = rest.slice(2); }
+  const el = h(tag, {class: cls}, ...rest);
+  if (style) el.style.cssText = style;
+  return el;
+}
+const div  = (cls,...c) => _el('div', cls, c);
+const span = (cls,...c) => _el('span', cls, c);
+const sec  = (id,cls,...c) => { const e = _el('section', cls, c); e.id=id; return e; };
 const wrap = (...c) => div('max-w-[1440px] mx-auto px-5 md:px-20',...c);
+// a and img keep their own signature
+const a = (href, cls, ...c) => {
+  let style = null, rest = c;
+  if (rest.length >= 2 && rest[0] === 'style') { style = rest[1]; rest = rest.slice(2); }
+  const el = h('a', {href, class: cls}, ...rest);
+  if (style) el.style.cssText = style;
+  return el;
+};
+const img = (src, alt, cls, ...extra) => {
+  let style = null;
+  if (extra.length >= 2 && extra[0] === 'style') style = extra[1];
+  const el = h('img', {src, alt, class: cls||''});
+  if (style) el.style.cssText = style;
+  return el;
+};
 
 /* ── shared component builders ───────────────── */
 function buildNav(d, activePage) {
@@ -123,7 +144,7 @@ function buildHero(d) {
     div('relative z-10 max-w-[1440px] mx-auto px-5 md:px-20 pt-28 pb-20',
       div('max-w-2xl',
         div('inline-flex items-center gap-2 border border-secondary-container px-3 py-1.5 mb-8','style','background:rgba(18,20,20,.55);backdrop-filter:blur(12px)',
-          span('ms text-gold','style','font-size:15px','verified'),
+          h('span',{class:'ms text-gold',style:'font-size:15px'},'verified'),
           span('text-white label-caps',d.hero.badge)
         ),
         heading,
@@ -136,7 +157,7 @@ function buildHero(d) {
     ),
     div('absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-white/25',
       span('','style','font-size:9px;letter-spacing:.12em;text-transform:uppercase','Превъртете'),
-      span('ms','style','font-size:22px;animation:bounce 2s infinite','expand_more')
+      h('span',{class:'ms',style:'font-size:22px;animation:bounce 2s infinite'},'expand_more')
     )
   );
 }
@@ -202,7 +223,7 @@ function buildStepCard(s, cols, delay=0) {
   return div(`md:col-span-${cols} bg-surface-container border border-secondary-container p-10 flex flex-col justify-between hover:border-gold/50 transition-colors duration-500 reveal`,
     'style',`min-height:${cols===8?280:260}px;transition-delay:${delay}s`,
     div('',
-      span('ms text-gold block mb-5','style','font-size:40px',s.icon),
+      h('span',{class:'ms text-gold block mb-5',style:'font-size:40px'},s.icon),
       h('h3',{class:'font-bold text-white uppercase mb-4','style':'font-size:21px;line-height:29px'},s.title),
       h('p',{style:'font-size:15px;line-height:24px;color:#8C8C8C;max-width:500px'},s.body)
     ),
@@ -223,7 +244,7 @@ function buildCapabilities(d) {
         h('ul',{class:'divide-y divide-secondary-container'},
           ...cp.items.map(item =>
             h('li',{class:'flex items-center gap-4 py-4','style':'font-size:16px;color:#8C8C8C'},
-              span('ms text-gold','style','font-size:19px','check'), item
+              h('span',{class:'ms text-gold',style:'font-size:19px'},'check'), item
             )
           )
         )
@@ -283,16 +304,16 @@ function buildCatalogCta(d) {
           ),
           h('p',{class:'mb-8','style':'font-size:16px;line-height:26px;color:#8C8C8C;max-width:580px'},cc.body),
           a(cc.cta.href,'inline-flex items-center gap-3 bg-gold text-deep-charcoal px-8 py-4 hover:bg-primary-container transition-colors label-caps',
-            span('ms','style','font-size:20px','menu_book'), cc.cta.label
+            h('span',{class:'ms',style:'font-size:20px'},'menu_book'), cc.cta.label
           )
         ),
         div('lg:col-span-4 reveal','style','transition-delay:.2s',
           div('grid grid-cols-2 gap-3',
             ...cc.highlights.map(hl =>
               div(`bg-surface-container border ${hl.accent?'border-gold/40':'border-secondary-container'} p-5 flex flex-col gap-2 hover:border-gold/50 transition-colors`,
-                span('ms text-gold','style','font-size:28px',hl.icon),
+                h('span',{class:'ms text-gold',style:'font-size:28px'},hl.icon),
                 span(`${hl.accent?'text-gold':'text-white'} font-bold`,'style','font-size:13px',hl.title),
-                span('text-architectural-grey','style','font-size:11px',hl.sub)
+                h('span',{class:'text-architectural-grey',style:'font-size:11px'},hl.sub)
               )
             )
           )
@@ -338,21 +359,21 @@ function buildContact(d) {
         h('p',{class:'mb-12','style':'font-size:16px;line-height:26px;color:#8C8C8C'},ct.body),
         div('space-y-8',
           div('flex items-start gap-6',
-            span('ms text-gold mt-1','style','font-size:26px','call'),
+            h('span',{class:'ms text-gold mt-1',style:'font-size:26px'},'call'),
             div('',
               span('block text-architectural-grey mb-1 label-caps','Телефон'),
               a(d.site.phoneHref,'text-white hover:text-gold transition-colors font-bold','style','font-size:22px',d.site.phone)
             )
           ),
           div('flex items-start gap-6',
-            span('ms text-gold mt-1','style','font-size:26px','mail'),
+            h('span',{class:'ms text-gold mt-1',style:'font-size:26px'},'mail'),
             div('',
               span('block text-architectural-grey mb-1 label-caps','Имейл'),
               a(`mailto:${d.site.email}`,'text-white hover:text-gold transition-colors font-bold','style','font-size:20px',d.site.email)
             )
           ),
           div('flex items-start gap-6',
-            span('ms text-gold mt-1','style','font-size:26px','person'),
+            h('span',{class:'ms text-gold mt-1',style:'font-size:26px'},'person'),
             div('',
               span('block text-architectural-grey mb-1 label-caps','Управител'),
               h('span',{class:'text-white font-bold','style':'font-size:18px'},d.site.manager)

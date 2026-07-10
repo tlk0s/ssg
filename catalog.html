@@ -53,20 +53,29 @@ const h=(tag,attrs,...children)=>{
   children.flat().filter(Boolean).forEach(c=>el.appendChild(typeof c==='string'?document.createTextNode(c):c));
   return el;
 };
-const div=(cls,...c)=>h('div',{class:cls},...c);
-// ms(icon, fontSize?) — Material Symbol span with optional size
-const ms=(icon,size)=>{const e=document.createElement('span');e.className='ms';if(size)e.style.fontSize=size;e.textContent=icon;return e;};
-const span=(cls,styleOrChild,...c)=>{
-  if(typeof styleOrChild==='string'&&styleOrChild.includes(':')&&!c.length){
-    // it's a style string with no children — probably ms icon usage mistake; treat as child
-    return h('span',{class:cls},styleOrChild);
-  }
-  const hasStyle=typeof styleOrChild==='string'&&styleOrChild.includes(':')&&c.length>0;
-  if(hasStyle) return h('span',{class:cls,style:styleOrChild},...c);
-  return h('span',{class:cls},...[styleOrChild,...c].filter(Boolean));
+function _el(tag,cls,rest){
+  let style=null;
+  if(rest.length>=2&&rest[0]==='style'){style=rest[1];rest=rest.slice(2);}
+  const el=h(tag,{class:cls},...rest);
+  if(style)el.style.cssText=style;
+  return el;
+}
+const div=(cls,...c)=>_el('div',cls,c);
+const span=(cls,...c)=>_el('span',cls,c);
+const a=(href,cls,...c)=>{
+  let style=null,rest=c;
+  if(rest.length>=2&&rest[0]==='style'){style=rest[1];rest=rest.slice(2);}
+  const el=h('a',{href,class:cls},...rest);
+  if(style)el.style.cssText=style;
+  return el;
 };
-const a=(href,cls,...c)=>h('a',{href,class:cls},...c);
-const img=(src,alt,cls)=>{const e=h('img',{src,alt});if(cls)e.className=cls;return e;};
+const img=(src,alt,cls,...extra)=>{
+  let style=null;
+  if(extra.length>=2&&extra[0]==='style')style=extra[1];
+  const el=h('img',{src,alt,class:cls||''});
+  if(style)el.style.cssText=style;
+  return el;
+};
 
 /* ── shared: nav + footer (same as index) ─────── */
 function buildNav(d){
@@ -298,7 +307,7 @@ function buildProductLayout(p){
   if(['wc-panel','membrana'].includes(p.id)){
     return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'},
       h('div',{class:'reveal'},
-        productImg(p),
+        p.id!=='membrana' ? productImg(p) : null,
         h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
         p.features ? h('div',{class:'space-y-3'},
           ...p.features.map(f=>h('div',{class:'flex items-start gap-3 product-card p-4'},
