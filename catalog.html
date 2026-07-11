@@ -279,11 +279,11 @@ function buildProductLayout(p){
 
   if(p.id==='prag'){
     return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'},
-      h('div',{class:'reveal lg:order-2'},
+      h('div',{class:'reveal'},
         productImg(p),
         h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
       ),
-      h('div',{class:'reveal lg:order-1',style:'transition-delay:.12s'},
+      h('div',{class:'reveal',style:'transition-delay:.12s'},
         sizeTable(p.sizes),
         p.advantages ? h('div',{class:'mt-6'},advantageList(p.advantages)) : null
       )
@@ -444,16 +444,6 @@ function buildProductLayout(p){
   if(p.id==='peika'){
     return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-8'},
       h('div',{class:'reveal'},
-        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
-        ...(p.models||[]).map(m=>
-          h('div',{class:'product-card p-5 mb-3'},
-            h('div',{class:'text-gold mb-2 label-caps'},m.tag),
-            h('div',{class:'text-white font-bold mb-1',style:'font-size:14px'},m.title),
-            h('div',{class:'text-architectural-grey',style:'font-size:13px'},m.spec)
-          )
-        )
-      ),
-      h('div',{class:'reveal',style:'transition-delay:.12s'},
         h('div',{class:'border border-secondary-container overflow-hidden mb-6',style:'aspect-ratio:16/9'},
           img(p.image, p.imageAlt,'w-full h-full object-cover')
         ),
@@ -464,6 +454,16 @@ function buildProductLayout(p){
             h('div',{class:'text-architectural-grey',style:'font-size:12px;line-height:19px'},f.body)
           ))
         ) : null
+      ),
+      h('div',{class:'reveal',style:'transition-delay:.12s'},
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
+        ...(p.models||[]).map(m=>
+          h('div',{class:'product-card p-5 mb-3'},
+            h('div',{class:'text-gold mb-2 label-caps'},m.tag),
+            h('div',{class:'text-white font-bold mb-1',style:'font-size:14px'},m.title),
+            h('div',{class:'text-architectural-grey',style:'font-size:13px'},m.spec)
+          )
+        )
       )
     );
   }
@@ -471,12 +471,12 @@ function buildProductLayout(p){
   if(p.id==='rampa'){
     return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'},
       h('div',{class:'reveal'},
-        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
-      ),
-      h('div',{class:'reveal',style:'transition-delay:.12s'},
         h('div',{class:'border border-secondary-container overflow-hidden mb-4',style:'aspect-ratio:4/3'},
           img(p.image, p.imageAlt,'w-full h-full object-cover')
-        ),
+        )
+      ),
+      h('div',{class:'reveal',style:'transition-delay:.12s'},
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
         sizeTable(p.sizes),
         p.compatible ? h('div',{class:'bg-surface-container border border-secondary-container p-5 mt-6'},
           h('div',{class:'text-gold mb-3 label-caps'},'Съвместимост'),
