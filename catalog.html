@@ -33,7 +33,10 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 .size-table td{font-size:13px;color:#e2e2e2;padding:9px 12px;border-bottom:1px solid #282a2b;font-variant-numeric:tabular-nums}
 .size-table tr:last-child td{border-bottom:none}
 .size-table tr:hover td{background:#1e2020}
-#cat-nav{display:none}
+@media(min-width:1024px){
+  .flip-layout .grid > *:first-child{order:2}
+  .flip-layout .grid > *:last-child{order:1}
+}
 @media(min-width:640px){
   #cat-nav{display:block;position:sticky;top:80px;z-index:40;background:rgba(10,10,10,.92);backdrop-filter:blur(16px);border-bottom:1px solid #4a4949}
 }
@@ -244,9 +247,10 @@ function advantageList(items){
 }
 
 /* ── individual product section builders ──────── */
-function buildProduct(p){
+function buildProduct(p, idx){
   const bg = p.bg==='surface' ? 'bg-surface' : 'bg-deep-charcoal';
-  const wrapper = h('section',{id:p.id,class:`py-20 ${bg} border-b border-secondary-container`},
+  const flip = idx % 2 === 1;
+  const wrapper = h('section',{id:p.id,class:`py-20 ${bg} border-b border-secondary-container${flip?' flip-layout':''}`},
     h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20'},
       sectionHeader(p)
     )
@@ -262,24 +266,24 @@ function buildProduct(p){
 function buildProductLayout(p){
   // common two-col: left = image + body, right = sizes
   if(p.id==='bordove'){
-    const left = h('div',{class:'lg:col-span-5 reveal'},
+    const left = h('div',{class:'reveal'},
       productImg(p),
       h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
     );
     if(p.advantages) left.appendChild(advantageList(p.advantages));
-    return h('div',{class:'grid grid-cols-1 lg:grid-cols-12 gap-8'},
+    return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-8'},
       left,
-      h('div',{class:'lg:col-span-7 reveal',style:'transition-delay:.12s'}, sizeTable(p.sizes))
+      h('div',{class:'reveal',style:'transition-delay:.12s'}, sizeTable(p.sizes))
     );
   }
 
   if(p.id==='prag'){
     return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'},
-      h('div',{class:'reveal'},
+      h('div',{class:'reveal lg:order-2'},
         productImg(p),
         h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
       ),
-      h('div',{class:'reveal',style:'transition-delay:.12s'},
+      h('div',{class:'reveal lg:order-1',style:'transition-delay:.12s'},
         sizeTable(p.sizes),
         p.advantages ? h('div',{class:'mt-6'},advantageList(p.advantages)) : null
       )
@@ -306,12 +310,12 @@ function buildProductLayout(p){
   }
 
   if(p.id==='umivalnik'){
-    return h('div',{class:'grid grid-cols-1 lg:grid-cols-12 gap-8'},
-      h('div',{class:'lg:col-span-5 reveal'},
+    return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-8'},
+      h('div',{class:'reveal'},
         productImg(p),
         h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
       ),
-      h('div',{class:'lg:col-span-7 reveal',style:'transition-delay:.12s'},
+      h('div',{class:'reveal',style:'transition-delay:.12s'},
         p.advantages ? h('div',{class:'mb-5'},
           h('div',{class:'text-white font-bold mb-3 label-caps'},'Предимства'),
           h('div',{class:'space-y-2'},...p.advantages.map(adv=>
@@ -374,8 +378,8 @@ function buildProductLayout(p){
   }
 
   if(p.id==='dush-tabla'){
-    return h('div',{class:'grid grid-cols-1 lg:grid-cols-12 gap-8'},
-      h('div',{class:'lg:col-span-6 reveal'},
+    return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-8'},
+      h('div',{class:'reveal'},
         h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
         p.advantages ? h('div',{class:'grid grid-cols-2 gap-3 mb-6'},
           ...p.advantages.map(adv=>
@@ -387,7 +391,7 @@ function buildProductLayout(p){
           img(p.image, p.imageAlt,'w-full h-full object-cover')
         )
       ),
-      h('div',{class:'lg:col-span-6 reveal',style:'transition-delay:.12s'},
+      h('div',{class:'reveal',style:'transition-delay:.12s'},
         sizeTable(p.sizes),
         p.drains ? h('div',{class:'product-card overflow-hidden mt-4'},
           h('div',{class:'px-6 pt-6 pb-3 border-b border-secondary-container'},
@@ -431,8 +435,8 @@ function buildProductLayout(p){
   }
 
   if(p.id==='peika'){
-    return h('div',{class:'grid grid-cols-1 lg:grid-cols-12 gap-8'},
-      h('div',{class:'lg:col-span-5 reveal'},
+    return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-8'},
+      h('div',{class:'reveal'},
         h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
         ...(p.models||[]).map(m=>
           h('div',{class:'product-card p-5 mb-3'},
@@ -442,7 +446,7 @@ function buildProductLayout(p){
           )
         )
       ),
-      h('div',{class:'lg:col-span-7 reveal',style:'transition-delay:.12s'},
+      h('div',{class:'reveal',style:'transition-delay:.12s'},
         h('div',{class:'border border-secondary-container overflow-hidden mb-6',style:'aspect-ratio:16/9'},
           img(p.image, p.imageAlt,'w-full h-full object-cover')
         ),
@@ -519,7 +523,7 @@ fetch('content.json')
       buildCatalogHero(cat,d.site),
       buildCatNav(cat.products),
       buildIntro(cat.intro),
-      ...cat.products.map(p=>buildProduct(p)),
+      ...cat.products.map((p,i)=>buildProduct(p,i)),
       buildCatalogCta(cat.cta),
       buildFooter(d)
     );
