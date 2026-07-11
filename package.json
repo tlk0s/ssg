@@ -1,0 +1,13 @@
+{
+  "name": "ssg-solutions",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prerender": "node prerender.js",
+    "build": "node prerender.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.47.0",
+    "serve": "^14.2.3"
+  }
+}

@@ -1,0 +1,107 @@
+- generic [active] [ref=f3e1]:
+  - link "Skip to content" [ref=f3e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=f3e3]:
+    - banner:
+      - generic [ref=f3e8]:
+        - link [ref=f3e12] [cursor=pointer]:
+          - /url: https://ssg-solutions.eu/
+          - img "ssg-solutions.eu" [ref=f3e13]
+        - navigation "Main Menu" [ref=f3e16]:
+          - list [ref=f3e17]:
+            - listitem [ref=f3e18]:
+              - link "Начало" [ref=f3e19] [cursor=pointer]:
+                - /url: https://ssg-solutions.eu/
+            - listitem [ref=f3e20]:
+              - link "Услуги" [ref=f3e21] [cursor=pointer]:
+                - /url: https://ssg-solutions.eu/services/
+            - listitem [ref=f3e22]:
+              - link "За нас" [ref=f3e23] [cursor=pointer]:
+                - /url: https://ssg-solutions.eu/about/
+            - listitem [ref=f3e24]:
+              - link "Каталог" [ref=f3e25] [cursor=pointer]:
+                - /url: https://ssg-solutions.eu/%d0%ba%d0%b0%d1%82%d0%b0%d0%bb%d0%be%d0%b3/
+            - listitem [ref=f3e26]:
+              - link "Контакти" [ref=f3e27] [cursor=pointer]:
+                - /url: https://ssg-solutions.eu/contact/
+        - generic [ref=f3e29]:
+          - paragraph [ref=f3e32]:
+            - strong [ref=f3e33]:
+              - link "+359878107395" [ref=f3e34] [cursor=pointer]:
+                - /url: tel:359878107395
+          - button "Search" [ref=f3e35] [cursor=pointer]
+    - main [ref=f3e38]:
+      - article [ref=f3e40]:
+        - generic [ref=f3e42]:
+          - generic [ref=f3e49]:
+            - generic [ref=f3e50]:
+              - heading "Вашият партньор в довършителните ремонти!" [level=5] [ref=f3e52]
+              - link "Свържи се с нас!" [ref=f3e54] [cursor=pointer]:
+                - /url: https://ssg-solutions.eu/contact/
+            - generic [ref=f3e58]:
+              - heading "Качество" [level=6] [ref=f3e66]
+              - heading "Срокове" [level=6] [ref=f3e74]
+              - heading "Подход" [level=6] [ref=f3e82]
+          - generic [ref=f3e84]:
+            - paragraph [ref=f3e86]: Как работим?
+            - heading "Нашият доказан 6-стъпков процес" [level=2] [ref=f3e88]
+          - generic [ref=f3e90]:
+            - generic [ref=f3e140]:
+              - heading "#1 Първоначална консултация" [level=6] [ref=f3e141]
+              - paragraph [ref=f3e142]: Обсъждаме вашите идеи, нужди и бюджет, за да предложим най-доброто решение за вашия ремонт.
+            - generic [ref=f3e162]:
+              - heading "#2 Концепция и осъществимост" [level=6] [ref=f3e163]
+              - paragraph [ref=f3e164]: Изготвяме ясна концепция и оценяваме възможностите, за да превърнем вашите идеи в реален и изпълним проект.
+            - generic [ref=f3e271]:
+              - heading "#3 Планиране и бюджетиране" [level=6] [ref=f3e272]
+              - paragraph [ref=f3e273]: Изготвяме подробен план и ясен бюджет, за да осигурим ефективно и навременно изпълнение на проекта.
+          - generic [ref=f3e275]:
+            - generic [ref=f3e369]:
+              - heading "#4 Определяме етапите" [level=6] [ref=f3e370]
+              - paragraph [ref=f3e371]: Разделяме проекта на ясни етапи, за да осигурим организирана работа и плавно изпълнение на ремонта.
+            - generic [ref=f3e389]:
+              - heading "#5 Финални щрихи" [level=6] [ref=f3e390]
+              - paragraph [ref=f3e391]: Завършваме проекта с внимание към детайла, за да постигнем перфектен краен резултат.
+            - generic [ref=f3e418]:
+              - heading "#6 Почистване и декорация" [level=6] [ref=f3e419]
+              - paragraph [ref=f3e420]: След завършване на ремонта почистваме обекта и добавяме финални декоративни елементи за завършен и уютен вид.
+          - heading "Превърнете визията си в реалност" [level=2] [ref=f3e424]
+          - generic [ref=f3e431]:
+            - heading "Нашите услуги" [level=4] [ref=f3e435]
+            - heading "Довършителни ремонти" [level=4] [ref=f3e439]
+            - heading "Ремонт на бании" [level=4] [ref=f3e443]
+          - generic [ref=f3e451]:
+            - heading "Направи запитване!" [level=2] [ref=f3e453]
+            - paragraph [ref=f3e455]: Не губо време, направи запитване сега!
+            - link "Запитване" [ref=f3e457] [cursor=pointer]:
+              - /url: https://ssg-solutions.eu/contact/
+    - contentinfo [ref=f3e461]:
+      - generic [ref=f3e463]:
+        - figure [ref=f3e466]
+        - list [ref=f3e469]:
+          - listitem [ref=f3e470]:
+            - link "Facebook" [ref=f3e471] [cursor=pointer]:
+              - /url: https://www.facebook.com/profile.php?id=61588379605038
+          - listitem [ref=f3e474]:
+            - link "Instagram" [ref=f3e475] [cursor=pointer]:
+              - /url: https://www.instagram.com/ssgssolutions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==
+        - generic [ref=f3e480]:
+          - paragraph [ref=f3e481]:
+            - text: "Телефон:"
+            - strong [ref=f3e482]:
+              - link "+359878107395" [ref=f3e483] [cursor=pointer]:
+                - /url: tel:359878107395
+          - paragraph [ref=f3e484]:
+            - text: "Имейл:"
+            - link:
+              - /url: mailto:info@ssg-solutions.eu
+          - paragraph [ref=f3e485]:
+            - link [ref=f3e486] [cursor=pointer]:
+              - /url: mailto:info@ssg-solutions.eu
+              - strong [ref=f3e487]: info@
+              - text: ssg-solutions.eu
+      - paragraph [ref=f3e492]:
+        - text: Copyright ©
+        - link "Innovate Visionary" [ref=f3e493] [cursor=pointer]:
+          - /url: http://www.innovatevisionary.com
+  - generic [ref=f3e494]: desktop

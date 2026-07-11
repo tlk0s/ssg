@@ -1,0 +1,283 @@
+- generic [ref=f28e2]:
+  - navigation [ref=f28e3]:
+    - generic [ref=f28e5]:
+      - link [ref=f28e6] [cursor=pointer]:
+        - /url: index.html
+        - img "SSG Solutions" [ref=f28e7]
+      - list [ref=f28e8]:
+        - listitem [ref=f28e9]:
+          - link "Начало" [ref=f28e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f28e11]:
+          - link "Услуги" [ref=f28e12] [cursor=pointer]:
+            - /url: index.html#services
+        - listitem [ref=f28e13]:
+          - link "За нас" [ref=f28e14] [cursor=pointer]:
+            - /url: index.html#about
+        - listitem [ref=f28e15]:
+          - link "Каталог BRUTAL" [ref=f28e16] [cursor=pointer]:
+            - /url: catalog.html
+        - listitem [ref=f28e17]:
+          - link "Проекти" [ref=f28e18] [cursor=pointer]:
+            - /url: https://www.instagram.com/ssgssolutions
+        - listitem [ref=f28e19]:
+          - link "Контакти" [ref=f28e20] [cursor=pointer]:
+            - /url: index.html#contact
+      - link "Направи запитване" [ref=f28e21] [cursor=pointer]:
+        - /url: index.html#contact
+  - banner [ref=f28e22]:
+    - img "Баня Орелиа — BRUTAL система" [ref=f28e24]
+    - generic [ref=f28e28]:
+      - generic [ref=f28e29]:
+        - generic [ref=f28e30]: verified
+        - generic [ref=f28e31]: Система BRUTAL — Сертифицирана
+      - heading "Модерни ремонти на бани с BRUTAL система" [level=1] [ref=f28e32]
+      - paragraph [ref=f28e33]:
+        - text: Цялостни ремонти на жилища и бани. Подготовка за
+        - strong [ref=f28e34]: 3–4 дни
+        - text: ", без мокри процеси и гарантирано качество."
+      - generic [ref=f28e35]:
+        - link "Направи запитване" [ref=f28e36] [cursor=pointer]:
+          - /url: index.html#contact
+        - link "Каталог BRUTAL" [ref=f28e37] [cursor=pointer]:
+          - /url: catalog.html
+    - generic [ref=f28e38]:
+      - generic [ref=f28e39]: Превъртете
+      - generic [ref=f28e40]: expand_more
+  - generic [ref=f28e42]:
+    - generic [ref=f28e43]:
+      - generic [ref=f28e44]: 15+
+      - generic [ref=f28e45]: Години опит
+    - generic [ref=f28e46]:
+      - generic [ref=f28e47]: 300+
+      - generic [ref=f28e48]: Доволни клиента
+    - generic [ref=f28e49]:
+      - generic [ref=f28e50]: 500+
+      - generic [ref=f28e51]: Готови проекта
+    - generic [ref=f28e52]:
+      - generic [ref=f28e53]: 99%
+      - generic [ref=f28e54]: Положителни отзиви
+  - generic [ref=f28e56]:
+    - generic [ref=f28e57]:
+      - generic [ref=f28e58]: За нас
+      - heading "Безкомпромисно качество" [level=2] [ref=f28e59]
+      - paragraph [ref=f28e60]: Домът не е просто място за живеене – той е отражение на личността и стила на своите обитатели. Затова ние се фокусираме изключително върху дизайнерски ремонти, където всяка детайлна завършваща работа и всяка баня се превръщат в уникално произведение на изкуството.
+      - paragraph [ref=f28e61]: Не просто ремонтираме, а създаваме пространства, в които комфортът среща естетиката. Нашата мисия е да превърнем всяка стая в стилен и функционален оазис, където красотата и практичността вървят ръка за ръка.
+      - generic [ref=f28e62]:
+        - generic [ref=f28e63]: С
+        - generic [ref=f28e65]:
+          - generic [ref=f28e66]: Стоян Грозев
+          - generic [ref=f28e67]: Основател & CEO
+          - paragraph [ref=f28e68]: С над 15 години опит в сферата на ремонтите и интериорните решения. През годините реализирал повече от 150 успешни проекта, всеки от които носи неговия отличителен стил и внимание към детайла.
+      - generic [ref=f28e69]:
+        - link "Свържи се с нас" [ref=f28e70] [cursor=pointer]:
+          - /url: index.html#contact
+        - link "Виж каталога" [ref=f28e71] [cursor=pointer]:
+          - /url: catalog.html
+    - img "Стоян Грозев — Основател SSG Solutions" [ref=f28e73]
+  - generic [ref=f28e75]:
+    - generic [ref=f28e76]:
+      - generic [ref=f28e77]: Нашите услуги
+      - heading "Процесът BRUTAL" [level=2] [ref=f28e78]
+    - generic [ref=f28e79]:
+      - generic [ref=f28e80]:
+        - generic [ref=f28e81]:
+          - generic [ref=f28e82]: forum
+          - heading "Подготовка на баня за 3–4 дни" [level=3] [ref=f28e83]
+          - paragraph [ref=f28e84]: Демонтаж и почистване, изравняване на основите, полагане на ВиК и електро, хидроизолация и готовност за монтаж — без традиционна зидария.
+        - generic [ref=f28e85]: 01 / Подготовка
+      - img "BRUTAL монтаж" [ref=f28e89]
+      - generic [ref=f28e90]:
+        - generic [ref=f28e91]:
+          - generic [ref=f28e92]: water_drop
+          - heading "Без мокри процеси" [level=3] [ref=f28e93]
+          - paragraph [ref=f28e94]: Бърз монтаж на плоскости BRUTAL върху подготвена основа — чисто, сухо, без прах и без чакане на изсъхване.
+        - generic [ref=f28e95]: 02 / Монтаж
+      - generic [ref=f28e98]:
+        - generic [ref=f28e99]:
+          - generic [ref=f28e100]: architecture
+          - heading "Гарантиран резултат" [level=3] [ref=f28e101]
+          - paragraph [ref=f28e102]: Прецизен финален монтаж, гарантиращ дълготрайност, устойчивост и безупречна визия за много години.
+        - generic [ref=f28e103]: 03 / Финал
+  - generic [ref=f28e107]:
+    - generic [ref=f28e108]:
+      - generic [ref=f28e109]: Как работим
+      - heading "Нашият доказан 6-стъпков процес" [level=2] [ref=f28e110]
+    - generic [ref=f28e111]:
+      - generic [ref=f28e112]:
+        - generic [ref=f28e113]: "01"
+        - heading "Първоначална консултация" [level=3] [ref=f28e116]
+        - paragraph [ref=f28e117]: Обсъждаме вашите идеи, нужди и бюджет, за да предложим най-доброто решение за вашия ремонт.
+      - generic [ref=f28e118]:
+        - generic [ref=f28e119]: "02"
+        - heading "Концепция и осъществимост" [level=3] [ref=f28e122]
+        - paragraph [ref=f28e123]: Изготвяме ясна концепция и оценяваме възможностите, за да превърнем вашите идеи в реален и изпълним проект.
+      - generic [ref=f28e124]:
+        - generic [ref=f28e125]: "03"
+        - heading "Планиране и бюджетиране" [level=3] [ref=f28e128]
+        - paragraph [ref=f28e129]: Изготвяме подробен план и ясен бюджет, за да осигурим ефективно и навременно изпълнение на проекта.
+      - generic [ref=f28e130]:
+        - generic [ref=f28e131]: "04"
+        - heading "Определяме етапите" [level=3] [ref=f28e134]
+        - paragraph [ref=f28e135]: Разделяме проекта на ясни етапи, за да осигурим организирана работа и плавно изпълнение на ремонта.
+      - generic [ref=f28e136]:
+        - generic [ref=f28e137]: "05"
+        - heading "Финални щрихи" [level=3] [ref=f28e140]
+        - paragraph [ref=f28e141]: Завършваме проекта с внимание към детайла, за да постигнем перфектен краен резултат.
+      - generic [ref=f28e142]:
+        - generic [ref=f28e143]: "06"
+        - heading "Почистване и декорация" [level=3] [ref=f28e146]
+        - paragraph [ref=f28e147]: След завършване на ремонта почистваме обекта и добавяме финални декоративни елементи за завършен и уютен вид.
+  - generic [ref=f28e149]:
+    - generic [ref=f28e150]:
+      - generic [ref=f28e151]: Приложение
+      - heading "Повече от подготовка на баня" [level=3] [ref=f28e152]
+      - list [ref=f28e153]:
+        - listitem [ref=f28e154]:
+          - generic [ref=f28e155]: check
+          - text: Мивки и умивалници
+        - listitem [ref=f28e156]:
+          - generic [ref=f28e157]: check
+          - text: Маси и кухненски плотове
+        - listitem [ref=f28e158]:
+          - generic [ref=f28e159]: check
+          - text: Вани и душ зони
+        - listitem [ref=f28e160]:
+          - generic [ref=f28e161]: check
+          - text: Тавани и окачени конструкции
+        - listitem [ref=f28e162]:
+          - generic [ref=f28e163]: check
+          - text: Ниши и декоративни елементи
+        - listitem [ref=f28e164]:
+          - generic [ref=f28e165]: check
+          - text: Обръщане на прозорци
+        - listitem [ref=f28e166]:
+          - generic [ref=f28e167]: check
+          - text: Дизайнерски конструкции по проект
+    - img "BRUTAL система — приложения" [ref=f28e169]
+  - generic [ref=f28e171]:
+    - generic [ref=f28e172]:
+      - generic [ref=f28e173]: Портфолио
+      - heading "Наши проекти" [level=2] [ref=f28e174]
+    - generic [ref=f28e175]:
+      - generic [ref=f28e176]:
+        - img "Баня Орелиа" [ref=f28e177]
+        - generic [ref=f28e178]:
+          - generic [ref=f28e179]: Завършен проект
+          - text: Баня Орелиа
+      - generic [ref=f28e180]:
+        - img "Баня Бонбон" [ref=f28e181]
+        - generic [ref=f28e182]:
+          - generic [ref=f28e183]: Завършен проект
+          - text: Баня Бонбон
+      - img "Детайл BRUTAL" [ref=f28e185]
+      - img "BRUTAL детайл" [ref=f28e187]
+      - img "BRUTAL монтаж" [ref=f28e189]
+  - generic [ref=f28e192]:
+    - generic [ref=f28e193]:
+      - generic [ref=f28e194]: Продуктова гама
+      - heading "Каталог BRUTAL 2025" [level=2] [ref=f28e195]
+      - paragraph [ref=f28e196]: Разгледайте пълната продуктова гама — бордове, умивалници, душ табли, ниши, пейки, прагове, рампи, мембрани и аксесоари. Всички размери, характеристики и приложения на едно място.
+      - link "menu_book Отвори пълния каталог" [ref=f28e197] [cursor=pointer]:
+        - /url: catalog.html
+        - generic [ref=f28e198]: menu_book
+        - text: Отвори пълния каталог
+    - generic [ref=f28e200]:
+      - generic [ref=f28e201]:
+        - generic [ref=f28e202]: view_quilt
+        - generic [ref=f28e203]: Бордове
+        - generic [ref=f28e204]: 14 размера
+      - generic [ref=f28e205]:
+        - generic [ref=f28e206]: water
+        - generic [ref=f28e207]: Душ табли
+        - generic [ref=f28e208]: 5 размера
+      - generic [ref=f28e209]:
+        - generic [ref=f28e210]: bathroom
+        - generic [ref=f28e211]: Умивалници
+        - generic [ref=f28e212]: Конзолен дизайн
+      - generic [ref=f28e213]:
+        - generic [ref=f28e214]: menu_book
+        - generic [ref=f28e215]: + още
+        - generic [ref=f28e216]: 30 стр. каталог
+  - generic [ref=f28e218]:
+    - generic [ref=f28e219]:
+      - generic [ref=f28e220]: Контакти
+      - heading "Свържете се с нас" [level=2] [ref=f28e221]
+      - paragraph [ref=f28e222]: Не губете време — започнете своя проект сега. Консултацията е безплатна.
+      - generic [ref=f28e223]:
+        - generic [ref=f28e224]:
+          - generic [ref=f28e225]: call
+          - generic [ref=f28e226]:
+            - generic [ref=f28e227]: Телефон
+            - link "+359 878 107 395" [ref=f28e228] [cursor=pointer]:
+              - /url: tel:+359878107395
+        - generic [ref=f28e229]:
+          - generic [ref=f28e230]: mail
+          - generic [ref=f28e231]:
+            - generic [ref=f28e232]: Имейл
+            - link "info@ssg-solutions.eu" [ref=f28e233] [cursor=pointer]:
+              - /url: mailto:info@ssg-solutions.eu
+        - generic [ref=f28e234]:
+          - generic [ref=f28e235]: person
+          - generic [ref=f28e236]:
+            - generic [ref=f28e237]: Управител
+            - text: Стоян Грозев
+        - generic [ref=f28e238]:
+          - link "FB" [ref=f28e239] [cursor=pointer]:
+            - /url: https://www.facebook.com/profile.php?id=61588379605038
+          - link "IG" [ref=f28e240] [cursor=pointer]:
+            - /url: https://www.instagram.com/ssgssolutions
+    - generic [ref=f28e242]:
+      - generic [ref=f28e243]:
+        - generic [ref=f28e244]: Три имена *
+        - textbox "Три имена *" [ref=f28e245]:
+          - /placeholder: Вашето пълно име
+      - generic [ref=f28e246]:
+        - generic [ref=f28e247]: Телефон *
+        - textbox "Телефон *" [ref=f28e248]:
+          - /placeholder: +359 8XX XXX XXX
+      - generic [ref=f28e249]:
+        - generic [ref=f28e250]: Имейл
+        - textbox "Имейл" [ref=f28e251]:
+          - /placeholder: вашият@имейл.com
+      - generic [ref=f28e252]:
+        - generic [ref=f28e253]: Съобщение *
+        - textbox "Съобщение *" [ref=f28e254]:
+          - /placeholder: Разкажете ни за вашия проект...
+      - button "Изпрати запитване" [ref=f28e255] [cursor=pointer]
+  - contentinfo [ref=f28e256]:
+    - generic [ref=f28e257]:
+      - generic [ref=f28e258]:
+        - img "SSG Solutions" [ref=f28e259]
+        - paragraph [ref=f28e260]: Модерни строителни методологии за луксозни жилищни ремонти. Сертифициран дистрибутор на системата BRUTAL.
+        - generic [ref=f28e261]: © 2025 SSG Solutions. Всички права запазени.
+      - generic [ref=f28e262]:
+        - heading "Навигация" [level=4] [ref=f28e263]
+        - list [ref=f28e264]:
+          - listitem [ref=f28e265]:
+            - link "Начало" [ref=f28e266] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=f28e267]:
+            - link "Услуги" [ref=f28e268] [cursor=pointer]:
+              - /url: index.html#services
+          - listitem [ref=f28e269]:
+            - link "За нас" [ref=f28e270] [cursor=pointer]:
+              - /url: index.html#about
+          - listitem [ref=f28e271]:
+            - link "Каталог BRUTAL" [ref=f28e272] [cursor=pointer]:
+              - /url: catalog.html
+          - listitem [ref=f28e273]:
+            - link "Контакти" [ref=f28e274] [cursor=pointer]:
+              - /url: index.html#contact
+      - generic [ref=f28e275]:
+        - heading "Правна информация" [level=4] [ref=f28e276]
+        - list [ref=f28e277]:
+          - listitem [ref=f28e278]:
+            - link "Политика за поверителност" [ref=f28e279] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f28e280]:
+            - link "Условия за ползване" [ref=f28e281] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f28e282]:
+            - link "Политика за бисквитки" [ref=f28e283] [cursor=pointer]:
+              - /url: "#"

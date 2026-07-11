@@ -1,0 +1,251 @@
+- generic [active] [ref=f24e1]:
+  - navigation [ref=f24e2]:
+    - generic [ref=f24e3]:
+      - link [ref=f24e4] [cursor=pointer]:
+        - /url: index.html
+        - img "SSG Solutions" [ref=f24e5]
+      - list [ref=f24e6]:
+        - listitem [ref=f24e7]:
+          - link "Начало" [ref=f24e8] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f24e9]:
+          - link "Услуги" [ref=f24e10] [cursor=pointer]:
+            - /url: "#services"
+        - listitem [ref=f24e11]:
+          - link "За нас" [ref=f24e12] [cursor=pointer]:
+            - /url: "#about"
+        - listitem [ref=f24e13]:
+          - link "Каталог BRUTAL" [ref=f24e14] [cursor=pointer]:
+            - /url: catalog.html
+        - listitem [ref=f24e15]:
+          - link "Контакти" [ref=f24e16] [cursor=pointer]:
+            - /url: "#contact"
+      - link "Направи запитване" [ref=f24e17] [cursor=pointer]:
+        - /url: "#contact"
+  - banner [ref=f24e18]:
+    - img "Баня Орелиа — BRUTAL система" [ref=f24e20]
+    - generic [ref=f24e24]:
+      - generic [ref=f24e25]:
+        - generic [ref=f24e26]: verified
+        - generic [ref=f24e27]: Система BRUTAL — Сертифицирана
+      - heading "Модерни ремонти на бани с BRUTAL система" [level=1] [ref=f24e28]: Модерни ремонтина банис BRUTAL система
+      - paragraph [ref=f24e29]:
+        - text: Цялостни ремонти на жилища и бани. Подготовка за
+        - strong [ref=f24e30]: 3–4 дни
+        - text: ", без мокри процеси и гарантирано качество."
+      - generic [ref=f24e31]:
+        - link "Направи запитване" [ref=f24e32] [cursor=pointer]:
+          - /url: "#contact"
+        - link "Каталог BRUTAL" [ref=f24e33] [cursor=pointer]:
+          - /url: catalog.html
+    - generic [ref=f24e34]:
+      - generic [ref=f24e35]: Превъртете
+      - generic [ref=f24e36]: expand_more
+  - generic [ref=f24e38]:
+    - generic [ref=f24e39]:
+      - generic [ref=f24e40]: 15+
+      - generic [ref=f24e41]: Години опит
+    - generic [ref=f24e42]:
+      - generic [ref=f24e43]: 300+
+      - generic [ref=f24e44]: Доволни клиента
+    - generic [ref=f24e45]:
+      - generic [ref=f24e46]: 500+
+      - generic [ref=f24e47]: Готови проекта
+    - generic [ref=f24e48]:
+      - generic [ref=f24e49]: 99%
+      - generic [ref=f24e50]: Положителни отзиви
+  - generic [ref=f24e52]:
+    - generic [ref=f24e53]:
+      - generic [ref=f24e54]: За нас
+      - heading "Безкомпромисно качество" [level=2] [ref=f24e55]
+      - paragraph [ref=f24e56]:
+        - text: SSG Solutions е сертифициран дистрибутор и монтажник на системата
+        - strong [ref=f24e57]: BRUTAL
+        - text: — иновативна технология за сухо строителство с XPS плоскости, готови за директно облицоване с плочки или микроцимент.
+      - paragraph [ref=f24e58]:
+        - text: Технологията позволява подготовка на баня за
+        - strong [ref=f24e59]: 3–4 дни
+        - text: ", без мокри процеси, без чакане на изсъхване и с гарантирана водоустойчивост 100%."
+      - generic [ref=f24e60]:
+        - link "Свържи се с нас" [ref=f24e61] [cursor=pointer]:
+          - /url: "#contact"
+        - link "Виж каталога" [ref=f24e62] [cursor=pointer]:
+          - /url: catalog.html
+    - img "SSG Solutions — BRUTAL монтаж" [ref=f24e64]
+  - generic [ref=f24e66]:
+    - generic [ref=f24e67]:
+      - generic [ref=f24e68]: Методология
+      - heading "Процесът BRUTAL" [level=2] [ref=f24e69]
+    - generic [ref=f24e70]:
+      - generic [ref=f24e71]:
+        - generic [ref=f24e72]:
+          - generic [ref=f24e73]: construction
+          - heading "Подготовка на баня за 3–4 дни" [level=3] [ref=f24e74]
+          - paragraph [ref=f24e75]: Демонтаж и почистване, изравняване на основите, полагане на ВиК и електро, хидроизолация и готовност за монтаж — без традиционна зидария.
+        - generic [ref=f24e76]: 01 / Подготовка
+      - img "BRUTAL монтаж" [ref=f24e80]
+      - generic [ref=f24e81]:
+        - generic [ref=f24e82]:
+          - generic [ref=f24e83]: water_drop
+          - heading "Без мокри процеси" [level=3] [ref=f24e84]
+          - paragraph [ref=f24e85]: Бърз монтаж на плоскости BRUTAL върху подготвена основа — чисто, сухо, без прах и без чакане на изсъхване.
+        - generic [ref=f24e86]: 02 / Монтаж
+      - generic [ref=f24e89]:
+        - generic [ref=f24e90]:
+          - generic [ref=f24e91]: architecture
+          - heading "Гарантиран резултат" [level=3] [ref=f24e92]
+          - paragraph [ref=f24e93]: Прецизен финален монтаж, гарантиращ дълготрайност, устойчивост и безупречна визия за много години.
+        - generic [ref=f24e94]: 03 / Финал
+  - generic [ref=f24e98]:
+    - generic [ref=f24e99]:
+      - generic [ref=f24e100]: Приложение
+      - heading "Повече от подготовка на баня" [level=3] [ref=f24e101]: Повече отподготовка на баня
+      - list [ref=f24e102]:
+        - listitem [ref=f24e103]:
+          - generic [ref=f24e104]: check
+          - text: Мивки и умивалници
+        - listitem [ref=f24e105]:
+          - generic [ref=f24e106]: check
+          - text: Маси и кухненски плотове
+        - listitem [ref=f24e107]:
+          - generic [ref=f24e108]: check
+          - text: Вани и душ зони
+        - listitem [ref=f24e109]:
+          - generic [ref=f24e110]: check
+          - text: Тавани и окачени конструкции
+        - listitem [ref=f24e111]:
+          - generic [ref=f24e112]: check
+          - text: Ниши и декоративни елементи
+        - listitem [ref=f24e113]:
+          - generic [ref=f24e114]: check
+          - text: Обръщане на прозорци
+        - listitem [ref=f24e115]:
+          - generic [ref=f24e116]: check
+          - text: Дизайнерски конструкции по проект
+    - img "BRUTAL система — приложения" [ref=f24e118]
+  - generic [ref=f24e120]:
+    - generic [ref=f24e121]:
+      - generic [ref=f24e122]: Портфолио
+      - heading "Наши проекти" [level=2] [ref=f24e123]
+    - generic [ref=f24e124]:
+      - generic [ref=f24e125]:
+        - img "Баня Орелиа" [ref=f24e126]
+        - generic [ref=f24e127]:
+          - generic [ref=f24e128]: Завършен проект
+          - text: Баня Орелиа
+      - generic [ref=f24e129]:
+        - img "Баня Бонбон" [ref=f24e130]
+        - generic [ref=f24e131]:
+          - generic [ref=f24e132]: Завършен проект
+          - text: Баня Бонбон
+      - img "Детайл BRUTAL" [ref=f24e134]
+      - img "BRUTAL детайл" [ref=f24e136]
+      - img "BRUTAL монтаж" [ref=f24e138]
+  - generic [ref=f24e141]:
+    - generic [ref=f24e142]:
+      - generic [ref=f24e143]: Продуктова гама
+      - heading "Каталог BRUTAL 2025" [level=2] [ref=f24e144]
+      - paragraph [ref=f24e145]: Разгледайте пълната продуктова гама — бордове, умивалници, душ табли, ниши, пейки, прагове, рампи, мембрани и аксесоари. Всички размери, характеристики и приложения на едно място.
+      - link "menu_book Отвори пълния каталог" [ref=f24e146] [cursor=pointer]:
+        - /url: catalog.html
+        - generic [ref=f24e147]: menu_book
+        - text: Отвори пълния каталог
+    - generic [ref=f24e149]:
+      - generic [ref=f24e150]:
+        - generic [ref=f24e151]: view_quilt
+        - generic [ref=f24e152]: Бордове
+        - generic [ref=f24e153]: 14 размера
+      - generic [ref=f24e154]:
+        - generic [ref=f24e155]: water
+        - generic [ref=f24e156]: Душ табли
+        - generic [ref=f24e157]: 5 размера
+      - generic [ref=f24e158]:
+        - generic [ref=f24e159]: bathroom
+        - generic [ref=f24e160]: Умивалници
+        - generic [ref=f24e161]: Конзолен дизайн
+      - generic [ref=f24e162]:
+        - generic [ref=f24e163]: menu_book
+        - generic [ref=f24e164]: + още
+        - generic [ref=f24e165]: 30 стр. каталог
+  - generic [ref=f24e167]:
+    - generic [ref=f24e168]:
+      - generic [ref=f24e169]: Контакти
+      - heading "Свържете се с нас" [level=2] [ref=f24e170]: Свържете сес нас
+      - paragraph [ref=f24e171]: Не губете време — започнете своя проект сега. Консултацията е безплатна.
+      - generic [ref=f24e172]:
+        - generic [ref=f24e173]:
+          - generic [ref=f24e174]: call
+          - generic [ref=f24e175]:
+            - generic [ref=f24e176]: Телефон
+            - link "+359 878 107 395" [ref=f24e177] [cursor=pointer]:
+              - /url: tel:+359878107395
+        - generic [ref=f24e178]:
+          - generic [ref=f24e179]: mail
+          - generic [ref=f24e180]:
+            - generic [ref=f24e181]: Имейл
+            - link "info@ssg-solutions.eu" [ref=f24e182] [cursor=pointer]:
+              - /url: mailto:info@ssg-solutions.eu
+        - generic [ref=f24e183]:
+          - generic [ref=f24e184]: person
+          - generic [ref=f24e185]:
+            - generic [ref=f24e186]: Управител
+            - text: Стоян Грозев
+        - generic [ref=f24e187]:
+          - link "FB" [ref=f24e188] [cursor=pointer]:
+            - /url: https://www.facebook.com/profile.php?id=61588379605038
+          - link "IG" [ref=f24e189] [cursor=pointer]:
+            - /url: https://www.instagram.com/ssgssolutions
+    - generic [ref=f24e191]:
+      - generic [ref=f24e192]:
+        - generic [ref=f24e193]: Три имена *
+        - textbox "Три имена *" [ref=f24e194]:
+          - /placeholder: Вашето пълно име
+      - generic [ref=f24e195]:
+        - generic [ref=f24e196]: Телефон *
+        - textbox "Телефон *" [ref=f24e197]:
+          - /placeholder: +359 8XX XXX XXX
+      - generic [ref=f24e198]:
+        - generic [ref=f24e199]: Имейл
+        - textbox "Имейл" [ref=f24e200]:
+          - /placeholder: вашият@имейл.com
+      - generic [ref=f24e201]:
+        - generic [ref=f24e202]: Съобщение *
+        - textbox "Съобщение *" [ref=f24e203]:
+          - /placeholder: Разкажете ни за вашия проект...
+      - button "Изпрати запитване" [ref=f24e204] [cursor=pointer]
+  - contentinfo [ref=f24e205]:
+    - generic [ref=f24e206]:
+      - generic [ref=f24e207]:
+        - img "SSG Solutions" [ref=f24e208]
+        - paragraph [ref=f24e209]: Модерни строителни методологии за луксозни жилищни ремонти. Сертифициран дистрибутор на системата BRUTAL.
+        - generic [ref=f24e210]: © 2025 SSG Solutions. Всички права запазени.
+      - generic [ref=f24e211]:
+        - heading "Навигация" [level=4] [ref=f24e212]
+        - list [ref=f24e213]:
+          - listitem [ref=f24e214]:
+            - link "Начало" [ref=f24e215] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f24e216]:
+            - link "Услуги" [ref=f24e217] [cursor=pointer]:
+              - /url: "#services"
+          - listitem [ref=f24e218]:
+            - link "За нас" [ref=f24e219] [cursor=pointer]:
+              - /url: "#about"
+          - listitem [ref=f24e220]:
+            - link "Каталог BRUTAL" [ref=f24e221] [cursor=pointer]:
+              - /url: catalog.html
+          - listitem [ref=f24e222]:
+            - link "Контакти" [ref=f24e223] [cursor=pointer]:
+              - /url: "#contact"
+      - generic [ref=f24e224]:
+        - heading "Правна информация" [level=4] [ref=f24e225]
+        - list [ref=f24e226]:
+          - listitem [ref=f24e227]:
+            - link "Политика за поверителност" [ref=f24e228] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f24e229]:
+            - link "Условия за ползване" [ref=f24e230] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f24e231]:
+            - link "Политика за бисквитки" [ref=f24e232] [cursor=pointer]:
+              - /url: "#"

@@ -1,0 +1,612 @@
+- generic [ref=f3e2]:
+  - navigation [ref=f3e3]:
+    - generic [ref=f3e5]:
+      - link [ref=f3e6] [cursor=pointer]:
+        - /url: index.html
+        - img "SSG Solutions" [ref=f3e7]
+      - list [ref=f3e8]:
+        - listitem [ref=f3e9]:
+          - link "Начало" [ref=f3e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f3e11]:
+          - link "Услуги" [ref=f3e12] [cursor=pointer]:
+            - /url: index.html#services
+        - listitem [ref=f3e13]:
+          - link "За нас" [ref=f3e14] [cursor=pointer]:
+            - /url: index.html#about
+        - listitem [ref=f3e15]:
+          - link "Каталог BRUTAL" [ref=f3e16] [cursor=pointer]:
+            - /url: catalog.html
+        - listitem [ref=f3e17]:
+          - link "Контакти" [ref=f3e18] [cursor=pointer]:
+            - /url: index.html#contact
+      - link "Направи запитване" [ref=f3e19] [cursor=pointer]:
+        - /url: index.html#contact
+  - banner [ref=f3e20]:
+    - generic [ref=f3e21]:
+      - generic [ref=f3e22]:
+        - generic [ref=f3e23]:
+          - generic [ref=f3e24]: verified
+          - generic [ref=f3e25]: Каталог 2025 — актуални продукти
+        - heading "Продуктов каталог BRUTAL" [level=1] [ref=f3e26]
+        - paragraph [ref=f3e27]: Строителни решения за всеки проект — водоустойчиви бордове, душ системи, умивалници и аксесоари от XPS технология.
+      - generic [ref=f3e28]:
+        - generic [ref=f3e29]:
+          - generic [ref=f3e30]: "11"
+          - generic [ref=f3e31]: Категории
+        - generic [ref=f3e32]:
+          - generic [ref=f3e33]: 30+
+          - generic [ref=f3e34]: Размера
+        - generic [ref=f3e35]:
+          - generic [ref=f3e36]: 100%
+          - generic [ref=f3e37]: Водоустойчив
+  - generic [ref=f3e40]:
+    - link "Бордове" [ref=f3e41] [cursor=pointer]:
+      - /url: "#bordove"
+    - link "Извит борд" [ref=f3e42] [cursor=pointer]:
+      - /url: "#izvit-bord"
+    - link "Умивалник" [ref=f3e43] [cursor=pointer]:
+      - /url: "#umivalnik"
+    - link "WC Панел" [ref=f3e44] [cursor=pointer]:
+      - /url: "#wc-panel"
+    - link "Душ табла" [ref=f3e45] [cursor=pointer]:
+      - /url: "#dush-tabla"
+    - link "Ниша" [ref=f3e46] [cursor=pointer]:
+      - /url: "#nisha"
+    - link "Мембрана" [ref=f3e47] [cursor=pointer]:
+      - /url: "#membrana"
+    - link "Пейка" [ref=f3e48] [cursor=pointer]:
+      - /url: "#peika"
+    - link "Праг" [ref=f3e49] [cursor=pointer]:
+      - /url: "#prag"
+    - link "Рампа" [ref=f3e50] [cursor=pointer]:
+      - /url: "#rampa"
+    - link "Аксесоари" [ref=f3e51] [cursor=pointer]:
+      - /url: "#aksesоari"
+  - generic [ref=f3e53]:
+    - generic [ref=f3e54]:
+      - generic [ref=f3e55]: За системата
+      - heading "Brutal — професионално решение за дизайнери и строители с вкус към детайла" [level=2] [ref=f3e56]
+      - paragraph [ref=f3e57]: Brutal предлага иновативно решение за водоустойчиви бордове, създадени да устоят на предизвикателствата на влагата. Идеални за всички пространства с постоянен контакт с вода — от тоалетни и бани, до спа центрове, мазета и повече.
+      - paragraph [ref=f3e58]: Продуктите са изключително удобни за монтаж върху дървени конструкции и осигуряват стабилна основа за микроцимент и декоративни мазилки. Идеални за обръщане на прозорци.
+    - generic [ref=f3e59]:
+      - generic [ref=f3e60]:
+        - generic [ref=f3e61]: shield
+        - generic [ref=f3e62]: 100% водоустойчив
+        - generic [ref=f3e63]: XPS пяна без HCFC — без влага, без мухъл
+      - generic [ref=f3e64]:
+        - generic [ref=f3e65]: bolt
+        - generic [ref=f3e66]: Бърз монтаж
+        - generic [ref=f3e67]: Рязане с макетен нож, без специални инструменти
+      - generic [ref=f3e68]:
+        - generic [ref=f3e69]: thermostat
+        - generic [ref=f3e70]: Топлоизолация
+        - generic [ref=f3e71]: Пестене на енергия и пароизолация
+      - generic [ref=f3e72]:
+        - generic [ref=f3e73]: tile
+        - generic [ref=f3e74]: Готов за плочки
+        - generic [ref=f3e75]: Директно облицоване без подготовка
+  - generic [ref=f3e77]:
+    - generic [ref=f3e79]:
+      - generic [ref=f3e80]: 01 / Бордове
+      - heading "BRUTAL Бордове" [level=2] [ref=f3e81]
+    - generic [ref=f3e83]:
+      - generic [ref=f3e84]:
+        - img "BRUTAL бордове — XPS плоскости" [ref=f3e86]
+        - paragraph [ref=f3e87]: Строителните бордове са универсално решение за хидроизолация, топлоизолация и сухо строителство. Леки, лесни за изрязване по размер — прилагат се върху подове, стени и тавани като повърхност, готова за плочки и микроцимент.
+        - generic [ref=f3e88]:
+          - generic [ref=f3e89]:
+            - generic [ref=f3e90]: check_circle
+            - text: 100% водоустойчива XPS пяна без HCFC
+          - generic [ref=f3e91]:
+            - generic [ref=f3e92]: check_circle
+            - text: Висока твърдост и издръжливост
+          - generic [ref=f3e93]:
+            - generic [ref=f3e94]: check_circle
+            - text: Отлично прилепване към всякакви стени и подове
+          - generic [ref=f3e95]:
+            - generic [ref=f3e96]: check_circle
+            - text: Топлоизолация и пароизолация срещу мухъл
+          - generic [ref=f3e97]:
+            - generic [ref=f3e98]: check_circle
+            - text: Лека, лесна за работа и рязане с макетен нож
+          - generic [ref=f3e99]:
+            - generic [ref=f3e100]: check_circle
+            - text: Съвместима с множество видове основи
+      - generic [ref=f3e102]:
+        - generic [ref=f3e103]: НАЛИЧНИ РАЗМЕРИ
+        - table [ref=f3e104]:
+          - rowgroup [ref=f3e105]:
+            - row [ref=f3e106]:
+              - columnheader "Размер Д×Ш×В (мм)" [ref=f3e107]
+              - columnheader "Дебелина" [ref=f3e108]
+              - columnheader "Формат" [ref=f3e109]
+          - rowgroup [ref=f3e110]:
+            - row [ref=f3e111]:
+              - cell "1200 × 600 × 4" [ref=f3e112]
+              - cell "4 мм" [ref=f3e113]
+              - cell "120×60 см" [ref=f3e114]
+            - row [ref=f3e115]:
+              - cell "1200 × 600 × 6" [ref=f3e116]
+              - cell "6 мм" [ref=f3e117]
+              - cell "120×60 см" [ref=f3e118]
+            - row [ref=f3e119]:
+              - cell "600 × 2500 × 12" [ref=f3e120]
+              - cell "12 мм" [ref=f3e121]
+              - cell "60×250 см" [ref=f3e122]
+            - row [ref=f3e123]:
+              - cell "600 × 2500 × 20" [ref=f3e124]
+              - cell "20 мм" [ref=f3e125]
+              - cell "60×250 см" [ref=f3e126]
+            - row [ref=f3e127]:
+              - cell "600 × 2500 × 30" [ref=f3e128]
+              - cell "30 мм" [ref=f3e129]
+              - cell "60×250 см" [ref=f3e130]
+            - row [ref=f3e131]:
+              - cell "600 × 2500 × 40" [ref=f3e132]
+              - cell "40 мм" [ref=f3e133]
+              - cell "60×250 см" [ref=f3e134]
+            - row [ref=f3e135]:
+              - cell "600 × 2500 × 50" [ref=f3e136]
+              - cell "50 мм" [ref=f3e137]
+              - cell "60×250 см" [ref=f3e138]
+            - row [ref=f3e139]:
+              - cell "600 × 2500 × 100" [ref=f3e140]
+              - cell "100 мм" [ref=f3e141]
+              - cell "60×250 см" [ref=f3e142]
+            - row [ref=f3e143]:
+              - cell "1200 × 2500 × 12" [ref=f3e144]
+              - cell "12 мм" [ref=f3e145]
+              - cell "120×250 см" [ref=f3e146]
+            - row [ref=f3e147]:
+              - cell "1200 × 2500 × 20" [ref=f3e148]
+              - cell "20 мм" [ref=f3e149]
+              - cell "120×250 см" [ref=f3e150]
+            - row [ref=f3e151]:
+              - cell "1200 × 2500 × 30" [ref=f3e152]
+              - cell "30 мм" [ref=f3e153]
+              - cell "120×250 см" [ref=f3e154]
+            - row [ref=f3e155]:
+              - cell "1200 × 2500 × 40" [ref=f3e156]
+              - cell "40 мм" [ref=f3e157]
+              - cell "120×250 см" [ref=f3e158]
+            - row [ref=f3e159]:
+              - cell "1200 × 2500 × 50" [ref=f3e160]
+              - cell "50 мм" [ref=f3e161]
+              - cell "120×250 см" [ref=f3e162]
+            - row [ref=f3e163]:
+              - cell "1200 × 2500 × 100" [ref=f3e164]
+              - cell "100 мм" [ref=f3e165]
+              - cell "120×250 см" [ref=f3e166]
+  - generic [ref=f3e168]:
+    - generic [ref=f3e170]:
+      - generic [ref=f3e171]: 02 / Извит борд
+      - heading "Предварително нарязан извит борд" [level=2] [ref=f3e172]
+    - generic [ref=f3e174]:
+      - generic [ref=f3e175]:
+        - img "BRUTAL извит борд" [ref=f3e177]
+        - paragraph [ref=f3e178]: Предварително нарязаната извита плоскост е налична по ширина и по дължина. Използва се за вътрешна архитектура — рамки за обшиване, хидроизолация, топлоизолация и създаване на преградни стени, оформени пейки с плочки и заоблени кубове.
+        - generic [ref=f3e179]:
+          - generic [ref=f3e180]:
+            - generic [ref=f3e181]: rounded_corner
+            - generic [ref=f3e182]: Заоблени форми
+            - generic [ref=f3e183]: Проектиране на заоблени кубове и нестандартни форми
+          - generic [ref=f3e184]:
+            - generic [ref=f3e185]: speed
+            - generic [ref=f3e186]: Бърз монтаж
+            - generic [ref=f3e187]: Спестяване на време и пари при изпълнение
+          - generic [ref=f3e188]:
+            - generic [ref=f3e189]: water_drop
+            - generic [ref=f3e190]: Водоустойчив
+            - generic [ref=f3e191]: Топлоизолация включена
+          - generic [ref=f3e192]:
+            - generic [ref=f3e193]: tile
+            - generic [ref=f3e194]: Идеална основа
+            - generic [ref=f3e195]: Подсилен циментов слой за плочки
+      - generic [ref=f3e197]:
+        - generic [ref=f3e198]: НАЛИЧНИ РАЗМЕРИ
+        - table [ref=f3e199]:
+          - rowgroup [ref=f3e200]:
+            - row [ref=f3e201]:
+              - columnheader "Размер Д×Ш×В (мм)" [ref=f3e202]
+          - rowgroup [ref=f3e203]:
+            - row [ref=f3e204]:
+              - cell "2500 × 600 × 20" [ref=f3e205]
+            - row [ref=f3e206]:
+              - cell "2500 × 600 × 30" [ref=f3e207]
+  - generic [ref=f3e209]:
+    - generic [ref=f3e211]:
+      - generic [ref=f3e212]: 03 / Умивалник
+      - heading "BRUTAL Умивалник" [level=2] [ref=f3e213]
+    - generic [ref=f3e215]:
+      - generic [ref=f3e216]:
+        - img "BRUTAL умивалник — конзолен дизайн" [ref=f3e218]
+        - paragraph [ref=f3e219]: Създайте стилна и функционална баня без бариери. Лек, водоотблъскващ и готов за облицоване с плочки, Brutal умивалник комбинира модерен конзолен дизайн с лесен монтаж и пълна свобода на персонализация.
+      - generic [ref=f3e220]:
+        - generic [ref=f3e221]:
+          - generic [ref=f3e222]: Предимства
+          - generic [ref=f3e223]:
+            - generic [ref=f3e224]:
+              - generic [ref=f3e225]: check
+              - text: Плочки директно — без допълнителна подготовка
+            - generic [ref=f3e226]:
+              - generic [ref=f3e227]: check
+              - text: Вградени елементи за стандартни смесители и сифони
+            - generic [ref=f3e228]:
+              - generic [ref=f3e229]: check
+              - text: Два здрави стоманени стенни конзола включени
+        - generic [ref=f3e230]:
+          - generic [ref=f3e231]: Характеристики
+          - generic [ref=f3e232]:
+            - generic [ref=f3e233]:
+              - generic [ref=f3e234]: info
+              - text: Изработен от XPS (екструдирана полистиролна пяна)
+            - generic [ref=f3e235]:
+              - generic [ref=f3e236]: info
+              - text: Якост на натиск > 300 kPa
+            - generic [ref=f3e237]:
+              - generic [ref=f3e238]: info
+              - text: Тегло ≈ 3–6 кг/м²
+            - generic [ref=f3e239]:
+              - generic [ref=f3e240]: info
+              - text: Покрит със стъклофибърна мрежа
+            - generic [ref=f3e241]:
+              - generic [ref=f3e242]: info
+              - text: Подходящ за помещения с висока влажност
+        - generic [ref=f3e243]:
+          - generic [ref=f3e244]: Идеално приложение
+          - paragraph [ref=f3e245]: Дизайнерски умивалник, облицован с плочки, подходящ за безбариерни бани и уелнес зони — бърз монтаж, без допълнителни подготвителни работи.
+        - generic [ref=f3e246]:
+          - generic [ref=f3e247]: НАЛИЧНИ РАЗМЕРИ
+          - table [ref=f3e248]:
+            - rowgroup [ref=f3e249]:
+              - row [ref=f3e250]:
+                - columnheader "Размер Д×Ш×В (мм)" [ref=f3e251]
+            - rowgroup [ref=f3e252]:
+              - row [ref=f3e253]:
+                - cell "1200 × 2500 × 100" [ref=f3e254]
+  - generic [ref=f3e256]:
+    - generic [ref=f3e258]:
+      - generic [ref=f3e259]: 04 / WC Панел
+      - heading "BRUTAL WC Панел" [level=2] [ref=f3e260]
+    - generic [ref=f3e262]:
+      - generic [ref=f3e263]:
+        - img "BRUTAL WC панел" [ref=f3e265]
+        - paragraph [ref=f3e266]: Надеждно и готово решение за окачени тоалетни. Лек, здрав и водоустойчив — осигурява бърз монтаж и е идеална основа за всякакви дизайнерски идеи.
+        - generic [ref=f3e267]:
+          - generic [ref=f3e268]:
+            - generic [ref=f3e269]: style
+            - generic [ref=f3e270]:
+              - generic [ref=f3e271]: Модерен дизайн
+              - generic [ref=f3e272]: Безшевна, естетична визия за съвременен стил
+          - generic [ref=f3e273]:
+            - generic [ref=f3e274]: sanitizer
+            - generic [ref=f3e275]:
+              - generic [ref=f3e276]: Хигиеничност
+              - generic [ref=f3e277]: Антибактериални и лесни за поддръжка повърхности
+          - generic [ref=f3e278]:
+            - generic [ref=f3e279]: security
+            - generic [ref=f3e280]:
+              - generic [ref=f3e281]: Здравина
+              - generic [ref=f3e282]: Удароустойчив, гъвкав, водоустойчив и UV-устойчив
+      - generic [ref=f3e284]:
+        - generic [ref=f3e285]: НАЛИЧНИ РАЗМЕРИ
+        - table [ref=f3e286]:
+          - rowgroup [ref=f3e287]:
+            - row [ref=f3e288]:
+              - columnheader "Размер Д×Ш×В (мм)" [ref=f3e289]
+          - rowgroup [ref=f3e290]:
+            - row [ref=f3e291]:
+              - cell "1200 × 900 × 20" [ref=f3e292]
+            - row [ref=f3e293]:
+              - cell "1300 × 1200 × 20" [ref=f3e294]
+            - row [ref=f3e295]:
+              - cell "1500 × 1200" [ref=f3e296]
+  - generic [ref=f3e298]:
+    - generic [ref=f3e300]:
+      - generic [ref=f3e301]: 05 / Душ табла
+      - heading "Табла и подложка за душ" [level=2] [ref=f3e302]
+    - generic [ref=f3e304]:
+      - generic [ref=f3e305]:
+        - paragraph [ref=f3e306]: Brutal табла за душ съчетава стил, удобство и надеждност — модерна алтернатива на традиционните плочки. С интегрирана дренажна система позволява изграждането на елегантни душ зони с равен достъп.
+        - generic [ref=f3e307]:
+          - generic [ref=f3e308]:
+            - generic [ref=f3e309]: check
+            - text: По-икономична хидроизолация
+          - generic [ref=f3e310]:
+            - generic [ref=f3e311]: check
+            - text: 100% водонепропусклива
+          - generic [ref=f3e312]:
+            - generic [ref=f3e313]: check
+            - text: По-добра акустика от замазка
+          - generic [ref=f3e314]:
+            - generic [ref=f3e315]: check
+            - text: Лесен достъп — на ниво под
+          - generic [ref=f3e316]:
+            - generic [ref=f3e317]: check
+            - text: Предварително оформен наклон
+          - generic [ref=f3e318]:
+            - generic [ref=f3e319]: check
+            - text: Централно или изнесено оттичане
+          - generic [ref=f3e320]:
+            - generic [ref=f3e321]: check
+            - text: Лесно се изрязва на място
+          - generic [ref=f3e322]:
+            - generic [ref=f3e323]: check
+            - text: Хигиенична — не задържа влага
+        - img "BRUTAL душ табла с дренаж" [ref=f3e325]
+      - generic [ref=f3e326]:
+        - generic [ref=f3e327]:
+          - generic [ref=f3e328]: НАЛИЧНИ РАЗМЕРИ НА ПОДЛОЖКА
+          - table [ref=f3e329]:
+            - rowgroup [ref=f3e330]:
+              - row [ref=f3e331]:
+                - columnheader "Размер Д×Ш×В (мм)" [ref=f3e332]
+            - rowgroup [ref=f3e333]:
+              - row [ref=f3e334]:
+                - cell "900 × 900 × 40" [ref=f3e335]
+              - row [ref=f3e336]:
+                - cell "900 × 1200 × 40" [ref=f3e337]
+              - row [ref=f3e338]:
+                - cell "900 × 1500 × 40" [ref=f3e339]
+              - row [ref=f3e340]:
+                - cell "900 × 1800 × 40" [ref=f3e341]
+              - row [ref=f3e342]:
+                - cell "1200 × 1200 × 40" [ref=f3e343]
+        - generic [ref=f3e344]:
+          - generic [ref=f3e345]: РЕШЕТКИ ОТ НЕРЪЖДАЕМА СТОМАНА
+          - generic [ref=f3e346]:
+            - generic [ref=f3e347]: G01-600mm
+            - generic [ref=f3e348]: G03-600mm
+            - generic [ref=f3e349]: G12-600mm
+            - generic [ref=f3e350]: G15-600mm
+            - generic [ref=f3e351]: T01-600mm
+            - generic [ref=f3e352]: T02-600mm
+  - generic [ref=f3e354]:
+    - generic [ref=f3e356]:
+      - generic [ref=f3e357]: 06 / Ниша
+      - heading "Ниша за душ" [level=2] [ref=f3e358]
+    - generic [ref=f3e360]:
+      - generic [ref=f3e361]:
+        - img "BRUTAL ниша за душ" [ref=f3e363]
+        - paragraph [ref=f3e364]: Brutal готови ниши — стилно и практично решение за всяка баня. Изработени от XPS пяна с хидроизолационно покритие, 100% водонепропускливи. Едноцялата конструкция не гние, не протича и не задържа конденз.
+        - generic [ref=f3e365]:
+          - generic [ref=f3e366]: Препоръчителна употреба
+          - generic [ref=f3e367]:
+            - generic [ref=f3e368]:
+              - generic [ref=f3e369]: arrow_right
+              - text: Баня, кухня, коридор или външни стени
+            - generic [ref=f3e370]:
+              - generic [ref=f3e371]: arrow_right
+              - text: Душ кабини и облицовки около вани
+            - generic [ref=f3e372]:
+              - generic [ref=f3e373]: arrow_right
+              - text: Жилищни, търговски и индустриални пространства
+            - generic [ref=f3e374]:
+              - generic [ref=f3e375]: arrow_right
+              - text: Декоративни приложения в стени
+        - generic [ref=f3e376]:
+          - generic [ref=f3e377]:
+            - generic [ref=f3e378]: water_drop
+            - generic [ref=f3e379]: 100% Водоустойчив
+          - generic [ref=f3e380]:
+            - generic [ref=f3e381]: bolt
+            - generic [ref=f3e382]: Монтаж за минути
+          - generic [ref=f3e383]:
+            - generic [ref=f3e384]: tile
+            - generic [ref=f3e385]: Готов за плочки
+      - generic [ref=f3e387]:
+        - generic [ref=f3e388]: НАЛИЧНИ РАЗМЕРИ
+        - table [ref=f3e389]:
+          - rowgroup [ref=f3e390]:
+            - row [ref=f3e391]:
+              - columnheader "Размер Д×Ш (мм)" [ref=f3e392]
+          - rowgroup [ref=f3e393]:
+            - row [ref=f3e394]:
+              - cell "200 × 200" [ref=f3e395]
+            - row [ref=f3e396]:
+              - cell "300 × 300" [ref=f3e397]
+            - row [ref=f3e398]:
+              - cell "300 × 510" [ref=f3e399]
+  - generic [ref=f3e401]:
+    - generic [ref=f3e403]:
+      - generic [ref=f3e404]: 07 / Мембрана
+      - heading "Разделителна мембрана" [level=2] [ref=f3e405]
+    - generic [ref=f3e407]:
+      - generic [ref=f3e408]:
+        - img "BRUTAL разделителна мембрана" [ref=f3e410]
+        - paragraph [ref=f3e411]: Революционна система за свободно полагане — осигурява 100% разединяване. Разделя напреженията между основата и настилката, предотвратява пукнатини и позволява безопасен монтаж на керамични и каменни плочи.
+        - generic [ref=f3e412]:
+          - generic [ref=f3e413]:
+            - generic [ref=f3e414]: shield
+            - generic [ref=f3e415]:
+              - generic [ref=f3e416]: 100% защита от пукнатини
+              - generic [ref=f3e417]: Разделя напреженията между основата и настилката
+          - generic [ref=f3e418]:
+            - generic [ref=f3e419]: water
+            - generic [ref=f3e420]:
+              - generic [ref=f3e421]: Надеждна хидроизолация
+              - generic [ref=f3e422]: Ефективен контрол на влагата и конденза
+          - generic [ref=f3e423]:
+            - generic [ref=f3e424]: balance
+            - generic [ref=f3e425]:
+              - generic [ref=f3e426]: Равномерно натоварване
+              - generic [ref=f3e427]: Дълготрайна устойчивост и сигурност
+      - generic [ref=f3e429]:
+        - img "BRUTAL разделителна мембрана" [ref=f3e431]
+        - generic [ref=f3e432]:
+          - generic [ref=f3e433]: Предназначение
+          - paragraph [ref=f3e434]: Създадена за изискванията на модерните керамични и каменни плочи. Комбинира защита от пукнатини, хидроизолация и контрол на влагата в едно решение.
+  - generic [ref=f3e436]:
+    - generic [ref=f3e438]:
+      - generic [ref=f3e439]: 08 / Пейка
+      - heading "Пейка за душ" [level=2] [ref=f3e440]
+    - generic [ref=f3e442]:
+      - generic [ref=f3e443]:
+        - paragraph [ref=f3e444]: Превърнете баните си в личен оазис на релакс с Brutal пейки за душ. Просторните седалки предлагат комфорт и грижа. Умният дизайн дава пълна свобода — подреждайте елементите според желанията си.
+        - generic [ref=f3e445]:
+          - generic [ref=f3e446]: Модел Kappa — 1200mm
+          - generic [ref=f3e447]: Извита пейка за душ
+          - generic [ref=f3e448]: "Радиус: 40 см · Височина: 50 см"
+        - generic [ref=f3e449]:
+          - generic [ref=f3e450]: Правоъгълна пейка
+          - generic [ref=f3e451]: Правоъгълна пейка за душ
+          - generic [ref=f3e452]: "Ширина: 90 см · Дълбочина: 40 см · Височина: 50 см"
+      - generic [ref=f3e453]:
+        - img "BRUTAL пейка за душ" [ref=f3e455]
+        - generic [ref=f3e456]:
+          - generic [ref=f3e457]:
+            - generic [ref=f3e458]: chair
+            - generic [ref=f3e459]: Wellness у дома
+            - generic [ref=f3e460]: Истинско wellness преживяване в собствената баня
+          - generic [ref=f3e461]:
+            - generic [ref=f3e462]: tune
+            - generic [ref=f3e463]: Модулна конфигурация
+            - generic [ref=f3e464]: Свобода при подреждане на елементите
+          - generic [ref=f3e465]:
+            - generic [ref=f3e466]: water_drop
+            - generic [ref=f3e467]: Водоустойчив
+            - generic [ref=f3e468]: Идеален за влажна среда
+          - generic [ref=f3e469]:
+            - generic [ref=f3e470]: tile
+            - generic [ref=f3e471]: Готов за облицовка
+            - generic [ref=f3e472]: Директно плочки или микроцимент
+  - generic [ref=f3e474]:
+    - generic [ref=f3e476]:
+      - generic [ref=f3e477]: 09 / Праг
+      - heading "Праг за душ" [level=2] [ref=f3e478]
+    - generic [ref=f3e480]:
+      - generic [ref=f3e481]:
+        - img "BRUTAL праг за душ" [ref=f3e483]
+        - paragraph [ref=f3e484]: Brutal прагове — водоустойчиви, гъвкави и лесни за инсталиране. Перфектно съчетават стил и функционалност, готови за плочки, стъклени врати или панели.
+        - generic [ref=f3e485]:
+          - generic [ref=f3e486]:
+            - generic [ref=f3e487]: check_circle
+            - text: Водоустойчив и гъвкав материал
+          - generic [ref=f3e488]:
+            - generic [ref=f3e489]: check_circle
+            - text: Готов за плочки, стъкло или панели
+          - generic [ref=f3e490]:
+            - generic [ref=f3e491]: check_circle
+            - text: Лесна инсталация
+          - generic [ref=f3e492]:
+            - generic [ref=f3e493]: check_circle
+            - text: Стилна визия без компромис
+      - generic [ref=f3e495]:
+        - generic [ref=f3e496]: НАЛИЧНИ РАЗМЕРИ
+        - table [ref=f3e497]:
+          - rowgroup [ref=f3e498]:
+            - row [ref=f3e499]:
+              - columnheader "Размер (мм)" [ref=f3e500]
+          - rowgroup [ref=f3e501]:
+            - row [ref=f3e502]:
+              - cell "50 × 89 × 914" [ref=f3e503]
+            - row [ref=f3e504]:
+              - cell "50 × 89 × 1524" [ref=f3e505]
+  - generic [ref=f3e507]:
+    - generic [ref=f3e509]:
+      - generic [ref=f3e510]: 10 / Рампа
+      - heading "Рампа за душ" [level=2] [ref=f3e511]
+    - generic [ref=f3e513]:
+      - generic [ref=f3e514]:
+        - paragraph [ref=f3e515]: Различни опции за входове на душ — идеални за преходи и индивидуални дизайни. Brutal бордове и рампи могат да се инсталират с нашите душ-панели или с традиционни системи с полимеров цимент.
+        - generic [ref=f3e516]:
+          - generic [ref=f3e517]: Съвместимост
+          - generic [ref=f3e518]:
+            - generic [ref=f3e519]:
+              - generic [ref=f3e520]: check
+              - text: BRUTAL душ-панели
+            - generic [ref=f3e521]:
+              - generic [ref=f3e522]: check
+              - text: Традиционни системи с полимеров цимент
+      - generic [ref=f3e523]:
+        - img "BRUTAL рампа за душ" [ref=f3e525]
+        - generic [ref=f3e526]:
+          - generic [ref=f3e527]: НАЛИЧНИ РАЗМЕРИ
+          - table [ref=f3e528]:
+            - rowgroup [ref=f3e529]:
+              - row [ref=f3e530]:
+                - columnheader "Размер" [ref=f3e531]
+                - columnheader "Модел" [ref=f3e532]
+            - rowgroup [ref=f3e533]:
+              - row [ref=f3e534]:
+                - cell "305 × 1830" [ref=f3e535]
+                - cell "slope38-6" [ref=f3e536]
+  - generic [ref=f3e538]:
+    - generic [ref=f3e540]:
+      - generic [ref=f3e541]: 11 / Аксесоари
+      - heading "Монтажни аксесоари" [level=2] [ref=f3e542]
+    - generic [ref=f3e544]:
+      - generic [ref=f3e545]:
+        - generic [ref=f3e546]: hardware
+        - generic [ref=f3e547]: Поцинкована метална шайба
+        - generic [ref=f3e548]: Диаметър 36 мм
+      - generic [ref=f3e549]:
+        - generic [ref=f3e550]: build
+        - generic [ref=f3e551]: Метални дюбели
+        - generic [ref=f3e552]: 8×50мм
+        - generic [ref=f3e553]: 8×80мм
+        - generic [ref=f3e554]: 8×110мм
+      - generic [ref=f3e555]:
+        - generic [ref=f3e556]: grid_on
+        - generic [ref=f3e557]: Водоустойчива мембрана с решетка
+        - generic [ref=f3e558]: 1м × 10м
+      - generic [ref=f3e559]:
+        - generic [ref=f3e560]: layers
+        - generic [ref=f3e561]: Водоустойчива мембрана
+        - generic [ref=f3e562]: 12,5 см × 50 м
+      - generic [ref=f3e563]:
+        - generic [ref=f3e564]: crop_square
+        - generic [ref=f3e565]: Вътрешен и Външен ъгъл
+        - generic [ref=f3e566]: Стандартен размер
+      - generic [ref=f3e567]:
+        - generic [ref=f3e568]: plumbing
+        - generic [ref=f3e569]: Водоустойчив калъф
+        - generic [ref=f3e570]: 120×120 φ=12мм
+        - generic [ref=f3e571]: 120×120 φ=30мм
+        - generic [ref=f3e572]: 150×150 φ=50мм
+        - generic [ref=f3e573]: 190×190 φ=70мм
+      - generic [ref=f3e574]:
+        - generic [ref=f3e575]: format_paint
+        - generic [ref=f3e576]: Плоска шпатула
+        - generic [ref=f3e577]: Стандартен размер · Пластмаса
+      - generic [ref=f3e578]:
+        - generic [ref=f3e579]: square_foot
+        - generic [ref=f3e580]: Ъглова шпатула
+        - generic [ref=f3e581]: Стандартен размер · Пластмаса
+  - generic [ref=f3e583]:
+    - generic [ref=f3e584]:
+      - heading "Готови да стартирате?" [level=2] [ref=f3e585]
+      - paragraph [ref=f3e586]: Свържете се с нас за безплатна консултация и оферта.
+    - generic [ref=f3e587]:
+      - link "Направи запитване" [ref=f3e588] [cursor=pointer]:
+        - /url: index.html#contact
+      - link "+359 878 107 395" [ref=f3e589] [cursor=pointer]:
+        - /url: tel:+359878107395
+  - contentinfo [ref=f3e590]:
+    - generic [ref=f3e591]:
+      - generic [ref=f3e592]:
+        - img "SSG Solutions" [ref=f3e593]
+        - generic [ref=f3e594]: © 2025 SSG Solutions. Всички права запазени.
+      - generic [ref=f3e595]:
+        - generic [ref=f3e596]:
+          - heading "Навигация" [level=4] [ref=f3e597]
+          - list [ref=f3e598]:
+            - listitem [ref=f3e599]:
+              - link "Начало" [ref=f3e600] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=f3e601]:
+              - link "Каталог" [ref=f3e602] [cursor=pointer]:
+                - /url: catalog.html
+            - listitem [ref=f3e603]:
+              - link "Контакти" [ref=f3e604] [cursor=pointer]:
+                - /url: index.html#contact
+        - generic [ref=f3e605]:
+          - heading "Контакти" [level=4] [ref=f3e606]
+          - list [ref=f3e607]:
+            - listitem [ref=f3e608]:
+              - link "+359 878 107 395" [ref=f3e609] [cursor=pointer]:
+                - /url: tel:+359878107395
+            - listitem [ref=f3e610]:
+              - link "info@ssg-solutions.eu" [ref=f3e611] [cursor=pointer]:
+                - /url: mailto:info@ssg-solutions.eu

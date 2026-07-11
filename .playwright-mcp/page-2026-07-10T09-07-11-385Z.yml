@@ -1,0 +1,177 @@
+- generic [active] [ref=f10e1]:
+  - link "Skip to content" [ref=f10e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=f10e3]:
+    - banner:
+      - generic [ref=f10e8]:
+        - link [ref=f10e12] [cursor=pointer]:
+          - /url: https://ssg-solutions.eu/
+          - img "ssg-solutions.eu" [ref=f10e13]
+        - navigation "Main Menu" [ref=f10e16]:
+          - list [ref=f10e17]:
+            - listitem [ref=f10e18]:
+              - link "Начало" [ref=f10e19] [cursor=pointer]:
+                - /url: https://ssg-solutions.eu/
+            - listitem [ref=f10e20]:
+              - link "Услуги" [ref=f10e21] [cursor=pointer]:
+                - /url: https://ssg-solutions.eu/services/
+            - listitem [ref=f10e22]:
+              - link "За нас" [ref=f10e23] [cursor=pointer]:
+                - /url: https://ssg-solutions.eu/about/
+            - listitem [ref=f10e24]:
+              - link "Каталог" [ref=f10e25] [cursor=pointer]:
+                - /url: https://ssg-solutions.eu/%d0%ba%d0%b0%d1%82%d0%b0%d0%bb%d0%be%d0%b3/
+            - listitem [ref=f10e26]:
+              - link "Контакти" [ref=f10e27] [cursor=pointer]:
+                - /url: https://ssg-solutions.eu/contact/
+        - generic [ref=f10e29]:
+          - paragraph [ref=f10e32]:
+            - strong [ref=f10e33]:
+              - link "+359878107395" [ref=f10e34] [cursor=pointer]:
+                - /url: tel:359878107395
+          - button "Search" [ref=f10e35] [cursor=pointer]
+    - main [ref=f10e38]:
+      - article [ref=f10e40]:
+        - generic [ref=f10e42]:
+          - generic [ref=f10e51]:
+            - tabpanel [ref=f10e52]
+            - tabpanel [ref=f10e57]
+          - heading "Цялостни ремонти на жилища и бани със система BRUTAL" [level=5] [ref=f10e73]
+          - generic [ref=f10e78]:
+            - generic [ref=f10e79]:
+              - group "1 / 3" [ref=f10e80]:
+                - generic [ref=f10e81]: 
+                - generic [ref=f10e85]:
+                  - generic [ref=f10e86]: Подготовка на баня за 3-4 дни
+                  - paragraph [ref=f10e97]: Демонтаж и почистване, изравняване на основите, полагане на ВиК и електроинсталации, хидроизолация и готовност за монтаж.
+              - group "2 / 3" [ref=f10e98]:
+                - generic [ref=f10e99]: 
+                - generic [ref=f10e103]:
+                  - generic [ref=f10e104]: Без мокри процеси
+                  - paragraph [ref=f10e107]:
+                    - text: Бърз монтаж на плоскости
+                    - strong [ref=f10e108]: Brutal
+                    - text: върху подготвена основа – чисто, сухо и готово за финален монтаж.
+              - group "3 / 3" [ref=f10e109]:
+                - generic [ref=f10e110]: 
+                - generic [ref=f10e114]:
+                  - generic [ref=f10e115]: Сигурен резултат
+                  - paragraph [ref=f10e118]: Прецизен финален монтаж и детайли, гарантиращи дълготрайност, устойчивост и безупречна визия.
+            - button "Previous slide" [disabled]:
+              - generic: 
+            - button "Next slide" [disabled]:
+              - generic: 
+          - generic [ref=f10e123]:
+            - generic [ref=f10e125]:
+              - generic [ref=f10e126]: Години опит
+              - generic [ref=f10e127]:
+                - generic [ref=f10e129]: "0"
+                - generic [ref=f10e130]: +
+            - generic [ref=f10e132]:
+              - generic [ref=f10e133]: Доволни клиента
+              - generic [ref=f10e134]:
+                - generic [ref=f10e136]: "0"
+                - generic [ref=f10e137]: +
+            - generic [ref=f10e139]:
+              - generic [ref=f10e140]: Готови проекта
+              - generic [ref=f10e141]:
+                - generic [ref=f10e143]: "0"
+                - generic [ref=f10e144]: +
+            - generic [ref=f10e146]:
+              - generic [ref=f10e147]: Положителни отзиви
+              - generic [ref=f10e148]:
+                - generic [ref=f10e150]: "0"
+                - generic [ref=f10e151]: +
+          - generic [ref=f10e155]:
+            - heading "Повече от подготовка на баня" [level=4] [ref=f10e157]
+            - generic [ref=f10e158]:
+              - list [ref=f10e159]:
+                - listitem [ref=f10e160]: мивки
+                - listitem [ref=f10e161]: маси
+                - listitem [ref=f10e162]: вани
+                - listitem [ref=f10e163]: тавани
+                - listitem [ref=f10e164]: ниши
+                - listitem [ref=f10e165]: обръщане на прозорци
+                - listitem [ref=f10e166]: дизайнерски конструкции
+              - paragraph [ref=f10e167]:
+                - strong [ref=f10e168]: Система BRUTAL позволява изграждане на различни форми
+            - link "Виж повече" [ref=f10e170] [cursor=pointer]:
+              - /url: https://ssg-solutions.eu/%d0%ba%d0%b0%d1%82%d0%b0%d0%bb%d0%be%d0%b3/
+          - generic [ref=f10e175]:
+            - heading "Свържи се с нас" [level=3] [ref=f10e177]
+            - paragraph [ref=f10e179]: Не губи време, започни желаният проект сега!
+            - form [ref=f10e182]:
+              - generic [ref=f10e186]:
+                - generic [ref=f10e187]: Полетата, маркирани със * са задължителни
+                - generic [ref=f10e191]:
+                  - generic [ref=f10e193]:
+                    - generic [ref=f10e195]:
+                      - generic [ref=f10e196]: Име *
+                      - textbox "Име *" [ref=f10e199]
+                    - generic:
+                      - generic:
+                        - alert
+                  - generic [ref=f10e201]:
+                    - generic [ref=f10e203]:
+                      - generic [ref=f10e204]: Телефон *
+                      - textbox "Телефон *" [ref=f10e207]
+                    - generic:
+                      - generic:
+                        - alert
+                  - generic [ref=f10e209]:
+                    - generic [ref=f10e211]:
+                      - generic [ref=f10e212]: Имейл *
+                      - textbox "Имейл *" [ref=f10e215]
+                    - generic:
+                      - generic:
+                        - alert
+                  - generic [ref=f10e217]:
+                    - generic [ref=f10e219]:
+                      - generic [ref=f10e220]: Съобщение *
+                      - textbox "Съобщение *" [ref=f10e223]
+                    - generic:
+                      - generic:
+                        - alert
+                  - generic [ref=f10e225]:
+                    - button "Изпрати" [ref=f10e229] [cursor=pointer]
+                    - generic:
+                      - generic:
+                        - alert
+                - generic:
+                  - generic:
+                    - alert
+          - generic [ref=f10e230]: No feed selected to display.
+          - generic [ref=f10e238]:
+            - paragraph [ref=f10e241]: Търсите начин да превърнете мечтaният дом в реалност?
+            - link [ref=f10e245] [cursor=pointer]:
+              - /url: https://ssg-solutions.eu/contact/
+    - contentinfo [ref=f10e253]:
+      - generic [ref=f10e255]:
+        - figure [ref=f10e258]
+        - list [ref=f10e261]:
+          - listitem [ref=f10e262]:
+            - link "Facebook" [ref=f10e263] [cursor=pointer]:
+              - /url: https://www.facebook.com/profile.php?id=61588379605038
+          - listitem [ref=f10e266]:
+            - link "Instagram" [ref=f10e267] [cursor=pointer]:
+              - /url: https://www.instagram.com/ssgssolutions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==
+        - generic [ref=f10e272]:
+          - paragraph [ref=f10e273]:
+            - text: "Телефон:"
+            - strong [ref=f10e274]:
+              - link "+359878107395" [ref=f10e275] [cursor=pointer]:
+                - /url: tel:359878107395
+          - paragraph [ref=f10e276]:
+            - text: "Имейл:"
+            - link:
+              - /url: mailto:info@ssg-solutions.eu
+          - paragraph [ref=f10e277]:
+            - link [ref=f10e278] [cursor=pointer]:
+              - /url: mailto:info@ssg-solutions.eu
+              - strong [ref=f10e279]: info@
+              - text: ssg-solutions.eu
+      - paragraph [ref=f10e284]:
+        - text: Copyright ©
+        - link "Innovate Visionary" [ref=f10e285] [cursor=pointer]:
+          - /url: http://www.innovatevisionary.com
+  - generic [ref=f10e286]: desktop
