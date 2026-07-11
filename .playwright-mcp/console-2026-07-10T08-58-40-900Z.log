@@ -1,7 +1,0 @@
-[     462ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://ssg-solutions.eu/%d0%ba%d0%b0%d1%82%d0%b0%d0%bb%d0%be%d0%b3/:0
-[     968ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://ssg-solutions.eu/favicon.ico:0
-[    5696ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://ssg-solutions.eu/wp-content/plugins/feeds-for-youtube/css/https:/ssg-solutions.eu/wp-content/plugins/feeds-for-youtube/public/build/css/sb-youtube-common.css?ver=2.6.4:0
-[   43006ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://ssg-solutions.eu/wp-content/plugins/feeds-for-youtube/css/https:/ssg-solutions.eu/wp-content/plugins/feeds-for-youtube/public/build/css/sb-youtube-free.css?ver=2.6.4:0
-[   43019ms] [LOG] JQMIGRATE: Migrate is installed, version 3.4.1 @ https://ssg-solutions.eu/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1:1
-[   43986ms] [LOG] THREE.WebGLRenderer 125 @ :183
-[   44185ms] [LOG] THREE.WebGLRenderer 125 @ :183

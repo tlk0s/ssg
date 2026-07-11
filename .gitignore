@@ -3,6 +3,10 @@ preview-*.png
 screen.png
 *.jpeg
 *.jpg
+*.png
+
+# Playwright MCP logs
+.playwright-mcp/
 
 # Source design files (not needed on GitHub Pages)
 DESIGN.md
