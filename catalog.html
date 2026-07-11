@@ -339,12 +339,39 @@ function buildProductLayout(p){
     );
   }
 
-  if(['wc-panel','membrana'].includes(p.id)){
+  if(p.id==='membrana'){
     return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'},
       h('div',{class:'reveal'},
-        p.id!=='membrana' ? productImg(p) : null,
+        productImg(p,'4/3')
+      ),
+      h('div',{class:'reveal',style:'transition-delay:.12s'},
         h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
-        p.id==='membrana' && p.features ? h('div',{class:'space-y-3'},
+        p.features ? h('div',{class:'space-y-3'},
+          ...p.features.map(f=>h('div',{class:'flex items-start gap-3 product-card p-4'},
+            h('span',{class:'ms text-gold mt-0.5',style:'font-size:20px'},f.icon),
+            h('div',{},
+              h('div',{class:'text-white font-bold mb-1',style:'font-size:13px'},f.title),
+              h('div',{class:'text-architectural-grey',style:'font-size:12px'},f.body)
+            )
+          ))
+        ) : null,
+        p.note ? h('div',{class:'bg-surface-container border border-gold/30 p-8 mt-4'},
+          h('div',{class:'text-gold mb-4 label-caps'},p.noteLabel),
+          h('p',{style:'font-size:14px;line-height:22px;color:#8C8C8C'},p.note)
+        ) : null
+      )
+    );
+  }
+
+  if(p.id==='wc-panel'){
+    return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'},
+      h('div',{class:'reveal'},
+        productImg(p),
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
+      ),
+      h('div',{class:'reveal',style:'transition-delay:.12s'},
+        sizeTable(p.sizes),
+        p.features ? h('div',{class:'space-y-3 mt-6'},
           ...p.features.map(f=>h('div',{class:'flex items-start gap-3 product-card p-4'},
             h('span',{class:'ms text-gold mt-0.5',style:'font-size:20px'},f.icon),
             h('div',{},
@@ -353,26 +380,6 @@ function buildProductLayout(p){
             )
           ))
         ) : null
-      ),
-      h('div',{class:'reveal',style:'transition-delay:.12s'},
-        p.id==='membrana' ? h('div',{},
-          productImg(p,'4/3'),
-          p.note ? h('div',{class:'bg-surface-container border border-gold/30 p-8 mt-4'},
-            h('div',{class:'text-gold mb-4 label-caps'},p.noteLabel),
-            h('p',{style:'font-size:14px;line-height:22px;color:#8C8C8C'},p.note)
-          ) : null
-        ) : h('div',{},
-          sizeTable(p.sizes),
-          p.features ? h('div',{class:'space-y-3 mt-6'},
-            ...p.features.map(f=>h('div',{class:'flex items-start gap-3 product-card p-4'},
-              h('span',{class:'ms text-gold mt-0.5',style:'font-size:20px'},f.icon),
-              h('div',{},
-                h('div',{class:'text-white font-bold mb-1',style:'font-size:13px'},f.title),
-                h('div',{class:'text-architectural-grey',style:'font-size:12px'},f.body)
-              )
-            ))
-          ) : null
-        )
       )
     );
   }
