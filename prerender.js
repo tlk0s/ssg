@@ -77,10 +77,15 @@ async function prerender() {
     await tab.waitForSelector('#app > *', { timeout: 15000 }).catch(() => {});
 
     const html = await tab.evaluate(() => {
-      // Remove prerender script tag to keep output clean
-      document.querySelectorAll('script[src*="tailwindcss"]').forEach(s => {
-        // Keep tailwind — needed for styles
+      // Remove all inline <script> tags containing app JS (keep only tailwind config)
+      document.querySelectorAll('script:not([type="application/ld+json"])').forEach(s => {
+        // Keep tailwind CDN and config scripts
+        if (s.src && s.src.includes('tailwindcss')) return;
+        if (!s.src && s.textContent.includes('tailwind.config')) return;
+        s.remove();
       });
+      // Mark as prerendered so app JS skips re-render if ever re-added
+      document.getElementById('app').setAttribute('data-prerendered', '1');
       return '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
     });
 
