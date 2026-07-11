@@ -78,7 +78,7 @@ function buildNav(d, activePage) {
   const logoEl = h('a',{href:'index.html','class':'flex items-center'},
     img(d.site.logo, d.site.name,'h-10 w-auto object-contain'));
 
-  const desktopLinks = h('ul',{class:'hidden md:flex gap-8'},
+  const desktopLinks = h('ul',{class:'hidden lg:flex gap-8'},
     ...d.nav.map(n => {
       const cls = n.page===activePage
         ? 'text-gold border-b border-gold pb-0.5 label-caps'
@@ -89,9 +89,9 @@ function buildNav(d, activePage) {
     })
   );
 
-  const ctaBtn = a('index.html#contact','hidden md:block bg-gold text-deep-charcoal px-6 py-3 hover:bg-primary-container transition-colors label-caps','Направи запитване');
+  const ctaBtn = a('index.html#contact','hidden lg:block bg-gold text-deep-charcoal px-6 py-3 hover:bg-primary-container transition-colors label-caps','Направи запитване');
 
-  const mobileBtn = h('button',{id:'menu-btn','class':'md:hidden text-gold','aria-label':'Меню'},
+  const mobileBtn = h('button',{id:'menu-btn','class':'lg:hidden text-gold','aria-label':'Меню'},
     span('ms text-3xl','menu'));
 
   const mobileMenu = h('div',{id:'mobile-menu','class':'border-t border-secondary-container px-5 py-6 bg-deep-charcoal'},
