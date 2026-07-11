@@ -19,14 +19,14 @@ tailwind.config={darkMode:"class",theme:{extend:{
 <style>
 *{box-sizing:border-box}
 body{background:#0A0A0A;color:#e2e2e2;font-family:'Lexend',sans-serif;touch-action:pan-y}
-.ms{font-family:'Material Symbols Outlined';font-size:inherit;font-style:normal;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
+.ms{font-family:'Material Symbols Outlined';font-size:inherit;font-style:normal;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;overflow:hidden;display:inline-block}
 #mobile-menu{display:none}#mobile-menu.open{display:block}
 html{scroll-behavior:smooth;overflow-x:hidden}
 .reveal{opacity:1;transform:none}
 .reveal.animate{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .reveal.animate.visible{opacity:1;transform:none}
 .label-caps{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.product-card{background:#1e2020;border:1px solid #4a4949;transition:border-color .4s}
+.product-card{background:#1e2020;border:1px solid #4a4949;transition:border-color .4s;overflow:hidden;min-width:0}
 .product-card:hover{border-color:rgba(232,195,59,.45)}
 .size-table{width:100%;border-collapse:collapse}
 .size-table th{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8C8C8C;padding:8px 12px;text-align:left;border-bottom:1px solid #4a4949}
@@ -35,7 +35,13 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 .size-table tr:hover td{background:#1e2020}
 #cat-nav{position:sticky;top:80px;z-index:40;background:rgba(10,10,10,.92);backdrop-filter:blur(16px);border-bottom:1px solid #4a4949}
 #cat-nav-inner{overflow-x:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y}
-.cat-nav-link{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8C8C8C;white-space:nowrap;padding:14px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;text-decoration:none;display:inline-block}
+.cat-nav-flex{display:flex;gap:12px;flex-wrap:wrap;padding:10px 20px;min-width:0}
+@media(min-width:640px){
+  #cat-nav-inner{overflow-x:auto}
+  .cat-nav-flex{flex-wrap:nowrap;gap:32px;padding:0 80px;min-width:max-content}
+}
+.cat-nav-link{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8C8C8C;white-space:nowrap;padding:8px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;text-decoration:none;display:inline-block}
+@media(min-width:640px){.cat-nav-link{padding:14px 0}}
 .cat-nav-link:hover,.cat-nav-link.active{color:#e8c33b;border-bottom-color:#e8c33b}
 </style>
 </head>
@@ -160,7 +166,7 @@ function buildCatalogHero(cat,site){
 function buildCatNav(products){
   return h('div',{id:'cat-nav'},
     h('div',{id:'cat-nav-inner'},
-      h('div',{class:'flex gap-8 min-w-max px-5 md:px-20'},
+      h('div',{class:'cat-nav-flex'},
         ...products.map(p=>{
           const lnk=h('a',{href:`#${p.id}`,class:'cat-nav-link'},p.label);
           return lnk;
@@ -179,12 +185,12 @@ function buildIntro(intro){
         h('p',{class:'mb-5',style:'font-size:15px;line-height:25px;color:#8C8C8C'},intro.body1),
         h('p',{style:'font-size:15px;line-height:25px;color:#8C8C8C'},intro.body2)
       ),
-      h('div',{class:'grid grid-cols-2 gap-4 reveal',style:'transition-delay:.15s'},
+      h('div',{class:'grid grid-cols-2 gap-3 reveal',style:'transition-delay:.15s'},
         ...intro.features.map(f=>
-          h('div',{class:'product-card p-6 flex flex-col gap-3'},
-            h('span',{class:'ms text-gold',style:'font-size:32px'},f.icon),
-            h('div',{class:'text-white font-bold',style:'font-size:14px'},f.title),
-            h('div',{class:'text-architectural-grey',style:'font-size:13px;line-height:20px'},f.body)
+          h('div',{class:'product-card p-3 sm:p-6 flex flex-col gap-2'},
+            h('span',{class:'ms text-gold',style:'font-size:clamp(20px,6vw,32px)'},f.icon),
+            h('div',{class:'text-white font-bold',style:'font-size:13px'},f.title),
+            h('div',{class:'text-architectural-grey',style:'font-size:12px;line-height:19px'},f.body)
           )
         )
       )
@@ -442,9 +448,9 @@ function buildProductLayout(p){
         h('div',{class:'border border-secondary-container overflow-hidden mb-6',style:'aspect-ratio:16/9'},
           img(p.image, p.imageAlt,'w-full h-full object-cover')
         ),
-        p.features ? h('div',{class:'grid grid-cols-2 gap-4'},
-          ...p.features.map(f=>h('div',{class:'product-card p-6'},
-            h('span',{class:'ms text-gold block mb-3',style:'font-size:28px'},f.icon),
+        p.features ? h('div',{class:'grid grid-cols-2 gap-3'},
+          ...p.features.map(f=>h('div',{class:'product-card p-3 sm:p-6'},
+            h('span',{class:'ms text-gold block mb-2',style:'font-size:clamp(18px,5vw,28px)'},f.icon),
             h('div',{class:'text-white font-bold mb-1',style:'font-size:13px'},f.title),
             h('div',{class:'text-architectural-grey',style:'font-size:12px;line-height:19px'},f.body)
           ))
@@ -477,8 +483,8 @@ function buildProductLayout(p){
   if(p.id==='aksesоari'){
     return h('div',{class:'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 reveal'},
       ...p.items.map(it=>
-        h('div',{class:'product-card p-6'},
-          h('span',{class:'ms text-gold block mb-3',style:'font-size:28px'},it.icon),
+        h('div',{class:'product-card p-3 sm:p-6'},
+          h('span',{class:'ms text-gold block mb-2',style:'font-size:clamp(18px,5vw,28px)'},it.icon),
           h('div',{class:'text-white font-bold mb-2',style:'font-size:14px'},it.title),
           ...it.specs.map(sp=>h('div',{class:'text-architectural-grey',style:'font-size:12px;margin-bottom:3px'},sp))
         )
