@@ -251,6 +251,12 @@ function buildServices(d) {
           div('absolute inset-0 pointer-events-none','style','background:linear-gradient(to top,#0A0A0A,transparent 60%)')
         ),
         ...rest.map((s,i) => buildStepCard(s, 6, (i+1)*.08))
+      ),
+      div('mt-10 reveal',
+        a('dizainerski-remont.html','inline-flex items-center gap-3 border border-gold text-gold px-8 py-4 label-caps hover:bg-gold hover:text-deep-charcoal transition-colors',
+          'Виж всички услуги',
+          h('span',{class:'ms',style:'font-size:16px'},'arrow_forward')
+        )
       )
     )
   );

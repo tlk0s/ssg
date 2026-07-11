@@ -15,7 +15,7 @@
 
   "nav": [
     { "label": "Начало",        "href": "index.html",           "page": "index" },
-    { "label": "Услуги",        "href": "index.html#services",  "page": "index" },
+    { "label": "Услуги",        "href": "dizainerski-remont.html", "page": "services" },
     { "label": "За нас",        "href": "index.html#about",     "page": "index" },
     { "label": "Каталог BRUTAL","href": "catalog.html",         "page": "catalog" },
     { "label": "Проекти",       "href": "https://www.instagram.com/ssgssolutions", "page": "external", "target": "_blank" },
