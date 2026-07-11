@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ssgsolutions.bg/sitemap.xml

@@ -7,10 +7,20 @@
 <meta name="description" content="Дизайнерски и цялостни ремонти до ключ в София. Ремонт на апартамент, баня и сухо строителство с гаранция. Безплатна консултация на място."/>
 <meta name="keywords" content="дизайнерски ремонт апартамент, ремонт до ключ, цялостен ремонт, ремонт баня София, ремонт апартамент цена, сухо строителство, интериорен ремонт"/>
 <link rel="canonical" href="https://ssgsolutions.bg/dizainerski-remont.html"/>
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Дизайнерски ремонт до ключ — SSG Solutions"/>
 <meta property="og:description" content="Цялостни и дизайнерски ремонти на апартаменти и бани в София. Бързо, чисто, с гаранция."/>
 <meta property="og:url" content="https://ssgsolutions.bg/dizainerski-remont.html"/>
+<meta property="og:image" content="https://ssg-solutions.eu/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-22-at-09.41.04.jpeg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="bg_BG"/>
+<meta property="og:site_name" content="SSG Solutions"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Дизайнерски ремонт до ключ — SSG Solutions"/>
+<meta name="twitter:description" content="Цялостни и дизайнерски ремонти на апартаменти и бани в София. Безплатна консултация."/>
+<meta name="twitter:image" content="https://ssg-solutions.eu/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-22-at-09.41.04.jpeg"/>
 <meta name="robots" content="index, follow"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -338,7 +348,10 @@ function injectSchema(){
   s.textContent=JSON.stringify({
     "@context":"https://schema.org","@type":"LocalBusiness",
     "name":"SSG Solutions","url":"https://ssgsolutions.bg",
+    "logo":"https://ssg-solutions.eu/wp-content/uploads/2026/02/A-66843-_VJ_YSP_6-2-e1770826247689.png",
+    "image":"https://ssg-solutions.eu/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-22-at-09.41.04.jpeg",
     "description":"Дизайнерски и цялостни ремонти до ключ в София.",
+    "address":{"@type":"PostalAddress","addressLocality":"София","addressCountry":"BG"},
     "areaServed":{"@type":"City","name":"София"},
     "hasOfferCatalog":{"@type":"OfferCatalog","name":"Ремонтни услуги",
       "itemListElement":[
@@ -350,6 +363,23 @@ function injectSchema(){
     }
   });
   document.head.appendChild(s);
+  // FAQPage schema
+  const faqS=document.createElement('script');
+  faqS.type='application/ld+json';
+  faqS.textContent=JSON.stringify({
+    "@context":"https://schema.org","@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Колко струва ремонт на апартамент?",
+        "acceptedAnswer":{"@type":"Answer","text":"Стандартен ремонт: 200–350 лв/кв.м. Дизайнерски ремонт: 350–600 лв/кв.м. Правим безплатна оглед и оферта без ангажимент."}},
+      {"@type":"Question","name":"Колко трае ремонт на баня?",
+        "acceptedAnswer":{"@type":"Answer","text":"С BRUTAL системата — 3–4 работни дни за стандартна баня. Традиционен ремонт отнема 2–4 седмици."}},
+      {"@type":"Question","name":"Имате ли гаранция на ремонтите?",
+        "acceptedAnswer":{"@type":"Answer","text":"Даваме писмена гаранция: 2 г. монтаж, 5 г. конструктивни работи, 10 г. хидроизолация с BRUTAL мембрана."}},
+      {"@type":"Question","name":"Какво включва ремонт до ключ?",
+        "acceptedAnswer":{"@type":"Answer","text":"Всичко — събаряне, зидария, ВиК, ел. инсталации, мазилки, шпакловки, облицовки, настилки, санитария, врати, боядисване."}}
+    ]
+  });
+  document.head.appendChild(faqS);
 }
 
 /* ── INIT ── */
