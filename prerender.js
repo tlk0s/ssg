@@ -77,14 +77,20 @@ async function prerender() {
     await tab.waitForSelector('#app > *', { timeout: 15000 }).catch(() => {});
 
     const html = await tab.evaluate(() => {
+      // Make all reveal elements visible (JS animation won't run without app scripts)
+      document.querySelectorAll('.reveal').forEach(el => {
+        el.classList.remove('animate');
+        el.classList.add('visible');
+      });
+
       // Remove all inline <script> tags containing app JS (keep only tailwind config)
       document.querySelectorAll('script:not([type="application/ld+json"])').forEach(s => {
-        // Keep tailwind CDN and config scripts
         if (s.src && s.src.includes('tailwindcss')) return;
         if (!s.src && s.textContent.includes('tailwind.config')) return;
         s.remove();
       });
-      // Mark as prerendered so app JS skips re-render if ever re-added
+
+      // Mark as prerendered
       document.getElementById('app').setAttribute('data-prerendered', '1');
       return '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
     });
