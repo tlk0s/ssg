@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+
+@theme {
+  --color-deep-charcoal: #0A0A0A;
+  --color-surface: #121414;
+  --color-surface-container: #1e2020;
+  --color-surface-container-low: #1a1c1c;
+  --color-surface-container-high: #282a2b;
+  --color-secondary-container: #4a4949;
+  --color-architectural-grey: #8C8C8C;
+  --color-primary: #fff3d5;
+  --color-primary-container: #fad44b;
+  --color-gold: #e8c33b;
+  --color-soft-white: #FFFFFF;
+  --color-outline: #99907b;
+  --color-on-surface: #e2e2e2;
+
+  --radius-DEFAULT: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-full: 9999px;
+
+  --font-sans: "Lexend", sans-serif;
+}

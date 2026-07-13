@@ -28,9 +28,12 @@ function copyDir(src, dest) {
 }
 
 const PAGES = [
-  { file: 'index.html',               url: `http://localhost:${PORT}/index.html`,               out: 'index.html' },
-  { file: 'catalog.html',             url: `http://localhost:${PORT}/catalog.html`,             out: 'catalog.html' },
-  { file: 'dizainerski-remont.html',  url: `http://localhost:${PORT}/dizainerski-remont.html`,  out: 'dizainerski-remont.html' },
+  { file: 'index.html',                    url: `http://localhost:${PORT}/index.html`,                    out: 'index.html' },
+  { file: 'catalog.html',                  url: `http://localhost:${PORT}/catalog.html`,                  out: 'catalog.html' },
+  { file: 'dizainerski-remont.html',       url: `http://localhost:${PORT}/dizainerski-remont.html`,       out: 'dizainerski-remont.html' },
+  { file: 'remont-banya-sofiya.html',      url: `http://localhost:${PORT}/remont-banya-sofiya.html`,      out: 'remont-banya-sofiya.html' },
+  { file: 'tsyalosten-remont-sofiya.html', url: `http://localhost:${PORT}/tsyalosten-remont-sofiya.html`, out: 'tsyalosten-remont-sofiya.html' },
+  { file: 'suho-stroitelstvo-sofiya.html', url: `http://localhost:${PORT}/suho-stroitelstvo-sofiya.html`, out: 'suho-stroitelstvo-sofiya.html' },
 ];
 
 // Minimal static file server
