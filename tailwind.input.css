@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
+@source "./*.html";
+@source "./dist/*.html";
 
 @theme {
   --color-deep-charcoal: #0A0A0A;
@@ -26,3 +28,6 @@
 
   --font-sans: "Lexend", sans-serif;
 }
+
+/* Safelist from prerendered DOM — covers all dynamically generated classes */
+@source inline("-translate-x-1/2 absolute antialiased bg-deep-charcoal bg-deep-charcoal/80 bg-gold bg-gold/5 bg-gold/10 bg-gradient-to-r bg-gradient-to-t bg-primary bg-secondary-container bg-surface bg-surface-container bg-transparent block border-0 border-2 border-b border-deep-charcoal border-gold border-gold/20 border-gold/25 border-gold/30 border-gold/40 border-l-2 border-secondary-container border-t border-t-2 border-white/20 border-white/30 bottom-0 bottom-8 col-span-1 col-span-2 cursor-pointer divide-secondary-container divide-y duration-300 duration-500 duration-700 flex flex-1 flex-col flex-shrink-0 flex-wrap font-bold gap-1 gap-2 gap-3 gap-4 gap-5 gap-6 gap-8 gap-12 gap-16 grayscale grid grid-cols-1 grid-cols-2 grid-cols-3 h-10 h-12 h-20 h-full h-px hidden hover:bg-deep-charcoal/10 hover:bg-gold hover:bg-gold/10 hover:bg-primary-container hover:bg-surface-container hover:border-gold hover:border-gold/40 hover:border-gold/50 hover:grayscale-0 hover:text-deep-charcoal hover:text-gold hover:text-white inline-block inline-flex items-center items-end items-start justify-between justify-center leading-tight left-0 left-1/2 left-4 lg:block lg:col-span-4 lg:col-span-5 lg:col-span-7 lg:col-span-8 lg:flex lg:flex-row lg:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4 lg:grid-cols-5 lg:grid-cols-12 lg:hidden lg:mb-0 max-w-2xl max-w-3xl max-w-4xl max-w-[1440px] max-w-md max-w-sm max-w-xl max-w-xs mb-1 mb-2 mb-3 mb-4 mb-5 mb-6 mb-8 mb-10 mb-12 mb-16 md:block md:col-span-2 md:col-span-4 md:col-span-6 md:col-span-8 md:flex md:flex-row md:grid-cols-2 md:grid-cols-3 md:grid-cols-4 md:grid-cols-12 md:hidden md:mt-0 md:px-20 md:py-40 min-h-[400px] mr-4 mr-6 mt-0.5 mt-1 mt-4 mt-6 mt-8 mt-10 mt-12 mx-auto object-contain object-cover opacity-5 opacity-60 opacity-70 overflow-hidden overflow-x-auto p-3 p-4 p-5 p-6 p-8 p-10 pb-0 pb-0.5 pb-1 pb-3 pb-16 pb-20 pl-6 pointer-events-none pt-5 pt-6 pt-8 pt-20 pt-28 px-0 px-3 px-4 px-5 px-6 px-8 py-1 py-1.5 py-2 py-3 py-4 py-5 py-6 py-12 py-14 py-16 py-20 py-24 py-28 relative right-0 sm:flex-row sm:grid-cols-2 sm:p-5 sm:p-6 space-x-2 space-x-6 space-x-8 space-y-2 space-y-3 space-y-4 space-y-5 space-y-8 sticky table text-3xl text-4xl text-architectural-grey text-base text-center text-deep-charcoal text-gold text-left text-lg text-on-surface text-secondary-container text-sm text-soft-white text-white text-white/25 text-white/60 text-white/70 top-0 top-4 tracking-tighter tracking-widest transition-all transition-colors transition-opacity transition-transform translate-x-4 translate-y-4 uppercase w-0.5 w-8 w-10 w-12 w-auto w-full w-1/3 z-0 z-10 z-50");
