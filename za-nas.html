@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="dark" lang="bg">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>За нас — SSG Solutions | Ремонтна компания в София</title>
+<meta name="description" content="SSG Solutions — специализирана компания за дизайнерски ремонти в София. Основател Стоян Грозев, 15+ години опит, 150+ проекта. Система BRUTAL с 10 г. гаранция."/>
+<meta name="keywords" content="SSG Solutions за нас, ремонтна компания София, Стоян Грозев, BRUTAL система ремонти, дизайнерски ремонти история"/>
+<link rel="canonical" href="https://ssgsolutions.bg/za-nas.html"/>
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
+<link rel="apple-touch-icon" href="/assets/favicon.svg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="За нас — SSG Solutions"/>
+<meta property="og:description" content="Дизайнерски ремонти в София с 15+ години опит. Система BRUTAL — подготовка за 3–4 дни, 10 г. гаранция."/>
+<meta property="og:url" content="https://ssgsolutions.bg/za-nas.html"/>
+<meta property="og:image" content="https://ssg-solutions.eu/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-22-at-09.41.04.jpeg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="bg_BG"/>
+<meta property="og:site_name" content="SSG Solutions"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="За нас — SSG Solutions"/>
+<meta name="twitter:description" content="Специализирана компания за дизайнерски ремонти в София. 15+ години опит, BRUTAL система."/>
+<meta name="twitter:image" content="https://ssg-solutions.eu/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-22-at-09.41.04.jpeg"/>
+<meta name="robots" content="index, follow"/>
+<link rel="stylesheet" href="/assets/tailwind.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box}
+body{background:#0A0A0A;color:#e2e2e2;font-family:'Lexend',sans-serif;touch-action:pan-y}
+html{scroll-behavior:smooth;overflow-x:hidden}
+.ms{font-family:'Material Symbols Outlined';font-size:inherit;font-style:normal;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;overflow:hidden;display:inline-block}
+#mobile-menu{display:none}#mobile-menu.open{display:block}
+.label-caps{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "За нас — SSG Solutions",
+  "description": "SSG Solutions е специализирана компания за дизайнерски ремонти на апартаменти и бани в София.",
+  "url": "https://ssgsolutions.bg/za-nas.html",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "name": "SSG Solutions",
+    "founder": {"@type": "Person", "name": "Стоян Грозев"},
+    "foundingDate": "2010",
+    "description": "Дизайнерски ремонти до ключ в София с BRUTAL система.",
+    "areaServed": {"@type": "City", "name": "София"},
+    "address": {"@type": "PostalAddress", "addressLocality": "София", "addressCountry": "BG"}
+  }
+}
+</script>
+</head>
+<body class="antialiased">
+<div id="app"></div>
+<script>
+const h = (tag, attrs={}, ...ch) => {
+  const el = document.createElement(tag);
+  for (const [k,v] of Object.entries(attrs)) {
+    if (k==='class') el.className=v;
+    else if (k.startsWith('on')) el.addEventListener(k.slice(2),v);
+    else el.setAttribute(k,v);
+  }
+  ch.flat().filter(Boolean).forEach(c => el.appendChild(typeof c==='string'?document.createTextNode(c):c));
+  return el;
+};
+const div  = (cls,...c) => h('div',{class:cls},...c);
+const span = (cls,...c) => h('span',{class:cls},...c);
+const p    = (cls,attrs,...c) => { const el=h('p',{class:cls,...attrs},...c); return el; };
+const img  = (src,alt,cls) => h('img',{src,alt,class:cls||'',loading:'lazy'});
+const a    = (href,cls,...c) => h('a',{href,class:cls},...c);
+const wrap = (...c) => div('max-w-[1440px] mx-auto px-5 md:px-20',...c);
+const lbl  = (txt) => div('text-gold label-caps mb-3',txt);
+
+function buildNav(d) {
+  const logoEl = h('a',{href:'index.html',class:'flex items-center'},
+    h('img',{src:d.site.logo,alt:d.site.name,class:'h-10 w-auto object-contain'}));
+  const desktopLinks = h('ul',{class:'hidden lg:flex gap-8'},
+    ...d.nav.map(n => {
+      const cls = n.page==='za-nas'
+        ? 'text-gold border-b border-gold pb-0.5 label-caps'
+        : 'text-white/60 hover:text-white transition-colors label-caps';
+      const attrs = {href:n.href, class:cls};
+      if (n.target) { attrs.target=n.target; attrs.rel='noopener noreferrer'; }
+      return h('li',{}, h('a',attrs,n.label));
+    })
+  );
+  const ctaBtn = a('kontakti.html','hidden lg:block bg-gold text-deep-charcoal px-6 py-3 hover:bg-primary-container transition-colors label-caps','Направи запитване');
+  const mobileBtn = h('button',{id:'menu-btn',class:'lg:hidden text-gold','aria-label':'Меню'},
+    h('span',{class:'ms text-3xl'},'menu'));
+  const mobileMenu = h('div',{id:'mobile-menu',class:'border-t border-secondary-container px-5 py-6 bg-deep-charcoal'},
+    h('ul',{class:'space-y-5'},
+      ...d.nav.map(n => {
+        const attrs = {href:n.href,class:'text-white/70 hover:text-gold block label-caps'};
+        if (n.target) { attrs.target=n.target; attrs.rel='noopener noreferrer'; }
+        return h('li',{}, h('a',attrs,n.label));
+      })
+    ),
+    a('kontakti.html','mt-6 block bg-gold text-deep-charcoal py-4 text-center label-caps','Направи запитване')
+  );
+  const nav = h('nav',{class:'sticky top-0 z-50 border-b border-secondary-container',style:'background:rgba(10,10,10,.88);backdrop-filter:blur(20px)'},
+    wrap(h('div',{class:'flex justify-between items-center h-20'},logoEl,desktopLinks,ctaBtn,mobileBtn)),
+    mobileMenu
+  );
+  return nav;
+}
+
+function buildFooter(d) {
+  const col = (c) => h('div',{},
+    h('h4',{class:'text-white mb-5 label-caps'},c.title),
+    h('ul',{class:'space-y-3',style:'font-size:14px'},
+      ...c.links.map(l => h('li',{}, a(l.href,'text-architectural-grey hover:text-white transition-colors',l.label)))
+    )
+  );
+  return h('footer',{class:'bg-deep-charcoal border-t border-secondary-container'},
+    h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20 py-14 grid grid-cols-1 md:grid-cols-4 gap-8'},
+      h('div',{class:'md:col-span-2'},
+        h('img',{src:d.site.logo,alt:d.site.name,class:'h-10 w-auto mb-5 object-contain'}),
+        p('text-architectural-grey max-w-xs mb-6',{style:'font-size:14px;line-height:22px'},d.footer.about),
+        h('div',{class:'text-architectural-grey',style:'font-size:11px'},d.site.copyright)
+      ),
+      col(d.footer.colNav),
+      col(d.footer.colLegal)
+    )
+  );
+}
+
+function buildHero(d) {
+  const zn = d.zaNas;
+  return h('header',{class:'relative py-32 bg-deep-charcoal border-b border-secondary-container'},
+    div('absolute left-0 top-0 h-full w-0.5',
+      h('div',{style:'width:2px;height:100%;background:linear-gradient(180deg,transparent,#e8c33b 25%,#e8c33b 75%,transparent)'})
+    ),
+    wrap(
+      div('max-w-3xl reveal',
+        div('label-caps text-gold mb-5',zn.heroLabel),
+        h('h1',{class:'font-bold text-white uppercase mb-6',style:'font-size:clamp(32px,4.5vw,64px);line-height:1.05;letter-spacing:-.02em'},zn.heroHeading),
+        p('mb-10',{style:'font-size:clamp(15px,1.4vw,18px);line-height:1.75;color:#A3A3A3;max-width:600px'},zn.heroBody),
+        a('kontakti.html','inline-flex items-center gap-3 bg-gold text-deep-charcoal px-8 py-4 font-bold label-caps hover:bg-primary-container transition-colors',
+          h('span',{class:'ms',style:'font-size:18px'},'call'), 'Безплатна консултация')
+      )
+    )
+  );
+}
+
+function buildStats(d) {
+  return h('section',{class:'border-b border-secondary-container bg-surface'},
+    h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20 py-14 grid grid-cols-2 md:grid-cols-4 gap-8'},
+      ...d.stats.map((s,i) => {
+        const el = div('border-t-2 border-gold pt-5 reveal',
+          h('div',{class:'font-bold text-white',style:'font-size:clamp(28px,4vw,52px);line-height:1'},
+            s.value, h('span',{class:'text-gold'},s.suffix)
+          ),
+          div('text-architectural-grey mt-1 label-caps',s.label)
+        );
+        el.style.transitionDelay = `${i*.08}s`;
+        return el;
+      })
+    )
+  );
+}
+
+function buildMission(d) {
+  const zn = d.zaNas;
+  const ab = d.about;
+  return h('section',{class:'py-28 bg-deep-charcoal border-b border-secondary-container'},
+    h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center'},
+      div('reveal',
+        lbl(zn.missionLabel),
+        h('h2',{class:'font-bold text-white uppercase mb-6',style:'font-size:clamp(26px,3.2vw,46px);line-height:1.1;letter-spacing:-.01em'},zn.missionHeading),
+        p('mb-5',{style:'font-size:16px;line-height:26px;color:#A3A3A3'},zn.missionBody1),
+        p('mb-8',{style:'font-size:16px;line-height:26px;color:#A3A3A3'},zn.missionBody2)
+      ),
+      (() => {
+        const imgCol = div('relative reveal',
+          div('absolute top-4 left-4 right-0 bottom-0 border border-gold/25 pointer-events-none'),
+          h('img',{src:ab.image,alt:ab.imageAlt,class:'relative w-full object-cover',style:'aspect-ratio:4/3',loading:'lazy'})
+        );
+        imgCol.style.transitionDelay = '.2s';
+        return imgCol;
+      })()
+    )
+  );
+}
+
+function buildValues(d) {
+  const zn = d.zaNas;
+  return h('section',{class:'py-28 bg-surface border-b border-secondary-container'},
+    h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20'},
+      div('mb-16 reveal',
+        lbl(zn.valuesLabel),
+        h('h2',{class:'font-bold text-white uppercase',style:'font-size:clamp(26px,3.2vw,46px);line-height:1.1;letter-spacing:-.01em'},'Защо да изберете SSG Solutions')
+      ),
+      h('div',{class:'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'},
+        ...zn.values.map((v,i) => {
+          const card = h('div',{class:'bg-surface-container border border-secondary-container p-8 hover:border-gold/50 transition-colors reveal'},
+            h('span',{class:'ms text-gold block mb-5',style:'font-size:36px'},v.icon),
+            h('h3',{class:'text-white font-bold uppercase mb-3',style:'font-size:14px;line-height:20px;letter-spacing:.04em'},v.title),
+            p('',{style:'font-size:14px;line-height:22px;color:#A3A3A3'},v.body)
+          );
+          card.style.transitionDelay = `${i*.08}s`;
+          return card;
+        })
+      )
+    )
+  );
+}
+
+function buildFounder(d) {
+  const ab = d.about;
+  if (!ab.founder) return null;
+  const f = ab.founder;
+  return h('section',{class:'py-28 bg-deep-charcoal border-b border-secondary-container'},
+    h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20'},
+      div('max-w-2xl mx-auto text-center reveal',
+        div('w-16 h-16 bg-gold flex items-center justify-center mx-auto mb-6',
+          h('span',{class:'text-deep-charcoal font-bold',style:'font-size:28px'},f.name.charAt(0))
+        ),
+        h('h2',{class:'text-white font-bold mb-1',style:'font-size:24px'},f.name),
+        div('text-gold label-caps mb-6',f.role),
+        p('text-center',{style:'font-size:16px;line-height:26px;color:#A3A3A3'},f.bio),
+        div('mt-10',
+          a('kontakti.html','inline-flex items-center gap-3 bg-gold text-deep-charcoal px-8 py-4 font-bold label-caps hover:bg-primary-container transition-colors',
+            h('span',{class:'ms',style:'font-size:18px'},'call'), d.zaNas.ctaLabel)
+        )
+      )
+    )
+  );
+}
+
+fetch('content.json')
+  .then(r=>r.json())
+  .then(d=>{
+    const app = document.getElementById('app');
+    const sections = [
+      buildNav(d),
+      buildHero(d),
+      buildStats(d),
+      buildMission(d),
+      buildValues(d),
+      buildFounder(d),
+      buildFooter(d)
+    ].filter(Boolean);
+    sections.forEach(s => app.appendChild(s));
+
+    document.getElementById('menu-btn').addEventListener('click',()=>
+      document.getElementById('mobile-menu').classList.toggle('open'));
+
+    const obs = new IntersectionObserver(es=>es.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+    }),{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  });
+</script>
+</body>
+</html>
