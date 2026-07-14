@@ -168,19 +168,19 @@ function buildFooterCol(col) {
 /* ── hero ────────────────────────────────────── */
 function buildHero(d) {
   const kt = d.kontakti;
+  const accentLine = h('div',{class:'absolute left-0 top-0 h-full w-0.5',style:'background:linear-gradient(180deg,transparent,#e8c33b 25%,#e8c33b 75%,transparent)'});
+  const pricingBadge = h('div',{class:'inline-flex items-center gap-2 border border-gold/30 px-4 py-2',style:'background:rgba(232,195,59,.08)'},
+    h('span',{class:'ms text-gold',style:'font-size:15px'},'info'),
+    h('span',{class:'text-gold label-caps'},kt.pricingNote)
+  );
   return h('header',{class:'relative py-32 bg-deep-charcoal border-b border-secondary-container'},
-    div('absolute left-0 top-0 h-full',{},
-      h('div',{style:'width:2px;height:100%;background:linear-gradient(180deg,transparent,#e8c33b 25%,#e8c33b 75%,transparent)'})
-    ),
+    accentLine,
     wrap(
       div('max-w-2xl reveal',
         div('label-caps text-gold mb-5',kt.heroLabel),
         h('h1',{class:'font-bold text-white uppercase mb-6',style:'font-size:clamp(32px,4.5vw,64px);line-height:1.05;letter-spacing:-.02em'},kt.heroHeading),
-        p('mb-6',{style:'font-size:clamp(15px,1.4vw,18px);line-height:1.75;color:#A3A3A3'},kt.heroBody),
-        div('inline-flex items-center gap-2 border border-gold/30 px-4 py-2',{style:'background:rgba(232,195,59,.08)'},
-          h('span',{class:'ms text-gold',style:'font-size:15px'},'info'),
-          span('text-gold label-caps',kt.pricingNote)
-        )
+        h('p',{class:'mb-8',style:'font-size:clamp(15px,1.4vw,18px);line-height:1.75;color:#A3A3A3'},kt.heroBody),
+        pricingBadge
       )
     )
   );
