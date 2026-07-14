@@ -9,17 +9,18 @@
     "manager": "Стоян Грозев",
     "facebook": "https://www.facebook.com/profile.php?id=61588379605038",
     "instagram": "https://www.instagram.com/ssgssolutions",
+    "whatsapp": "https://wa.me/359878107395",
     "logo": "https://ssg-solutions.eu/wp-content/uploads/2026/02/A-66843-_VJ_YSP_6-2-e1770826247689.png",
     "copyright": "© 2025 SSG Solutions. Всички права запазени."
   },
 
   "nav": [
-    { "label": "Начало",        "href": "index.html",           "page": "index" },
-    { "label": "Услуги",        "href": "dizainerski-remont.html", "page": "services" },
-    { "label": "За нас",        "href": "index.html#about",     "page": "index" },
-    { "label": "Каталог BRUTAL","href": "catalog.html",         "page": "catalog" },
-    { "label": "Проекти",       "href": "https://www.instagram.com/ssgssolutions", "page": "external", "target": "_blank" },
-    { "label": "Контакти",      "href": "index.html#contact",   "page": "index" }
+    {"label": "Начало",        "href": "index.html",          "page": "index"},
+    {"label": "Услуги",        "href": "dizainerski-remont.html", "page": "services"},
+    {"label": "За нас",        "href": "za-nas.html",          "page": "za-nas"},
+    {"label": "Каталог BRUTAL","href": "catalog.html",         "page": "catalog"},
+    {"label": "Проекти",       "href": "https://www.instagram.com/ssgssolutions", "page": "external", "target": "_blank"},
+    {"label": "Контакти",      "href": "kontakti.html",        "page": "kontakti"}
   ],
 
   "hero": {
@@ -223,16 +224,50 @@
     "submitSuccessLabel": "ИЗПРАТЕНО ✓"
   },
 
+  "zaNas": {
+    "heroLabel": "За нас",
+    "heroHeading": "15 години опит в ремонти в София",
+    "heroBody": "SSG Solutions е специализирана компания за дизайнерски ремонти на апартаменти и бани в София. Работим с фиксирана цена, писмена гаранция и собствена BRUTAL система за бързо и чисто строителство.",
+    "missionLabel": "Нашата мисия",
+    "missionHeading": "Безкомпромисно качество на всеки проект",
+    "missionBody1": "Домът не е просто място за живеене — той е отражение на личността и стила на своите обитатели. Затова ние се фокусираме изключително върху дизайнерски ремонти, където всяка завършваща работа и всяка баня се превръщат в уникално произведение.",
+    "missionBody2": "Специализираме се в ремонт на баня в София и ремонт на апартамент в София — от концепция до финален монтаж. Нашата мисия е да превърнем всяка стая в стилен и функционален оазис.",
+    "valuesLabel": "Ценности",
+    "values": [
+      {"icon": "verified", "title": "Гарантирано качество", "body": "Писмена гаранция: 2 г. монтаж, 5 г. конструктивни работи, 10 г. хидроизолация."},
+      {"icon": "schedule", "title": "Спазване на срокове", "body": "Фиксирани срокове в договора. Ремонт на баня за 3–4 дни с BRUTAL система."},
+      {"icon": "payments", "title": "Прозрачни цени", "body": "Фиксирана оферта без скрити разходи. Ремонт баня от 2 500 лв., апартамент от 200 лв/кв.м."},
+      {"icon": "handshake", "title": "Лично отношение", "body": "Стоян Грозев участва лично във всеки проект от оглед до предаване на ключ."}
+    ],
+    "ctaLabel": "Свържи се с нас",
+    "ctaHref": "kontakti.html"
+  },
+
+  "kontakti": {
+    "heroLabel": "Контакти",
+    "heroHeading": "Свържете се с нас за ремонт в София",
+    "heroBody": "Безплатна консултация на място. Фиксирана оферта без скрити разходи. Обадете се или напишете — отговаряме в рамките на 1 час.",
+    "pricingNote": "Ремонт баня — от 2 500 лв. | Ремонт апартамент — от 200 лв/кв.м.",
+    "channels": [
+      {"type": "phone",     "label": "Обади се директно", "value": "+359 878 107 395", "href": "tel:+359878107395", "icon": "call",      "primary": true},
+      {"type": "whatsapp",  "label": "Изпрати запитване", "value": "WhatsApp",         "href": "https://wa.me/359878107395", "icon": "chat", "primary": true},
+      {"type": "email",     "label": "Имейл",             "value": "info@ssg-solutions.eu", "href": "mailto:info@ssg-solutions.eu", "icon": "mail", "primary": false},
+      {"type": "facebook",  "label": "Facebook",          "value": "SSG Solutions",    "href": "https://www.facebook.com/profile.php?id=61588379605038", "icon": "facebook", "primary": false},
+      {"type": "instagram", "label": "Instagram",         "value": "@ssgssolutions",   "href": "https://www.instagram.com/ssgssolutions", "icon": "instagram", "primary": false}
+    ]
+  },
+
   "footer": {
     "about": "Модерни строителни методологии за луксозни жилищни ремонти. Сертифициран дистрибутор на системата BRUTAL.",
     "colNav": {
       "title": "Навигация",
       "links": [
-        { "label": "Начало",         "href": "index.html" },
-        { "label": "Услуги",         "href": "index.html#services" },
-        { "label": "За нас",         "href": "index.html#about" },
-        { "label": "Каталог BRUTAL", "href": "catalog.html" },
-        { "label": "Контакти",       "href": "index.html#contact" }
+        {"label": "Начало",         "href": "index.html"},
+        {"label": "Услуги",         "href": "dizainerski-remont.html"},
+        {"label": "За нас",         "href": "za-nas.html"},
+        {"label": "Каталог BRUTAL", "href": "catalog.html"},
+        {"label": "Проекти",        "href": "https://www.instagram.com/ssgssolutions"},
+        {"label": "Контакти",       "href": "kontakti.html"}
       ]
     },
     "colLegal": {
