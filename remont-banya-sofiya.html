@@ -33,7 +33,7 @@ body{background:#0A0A0A;color:#e2e2e2;font-family:'Lexend',sans-serif;touch-acti
 html{scroll-behavior:smooth;overflow-x:hidden}
 .ms{font-family:'Material Symbols Outlined';font-size:inherit;font-style:normal;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;overflow:hidden;display:inline-block}
 #mobile-menu{display:none}#mobile-menu.open{display:block}
-.label-caps{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.label-caps{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 .card{background:#1e2020;border:1px solid #4a4949;transition:border-color .3s}
 .card:hover{border-color:#e8c33b}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
@@ -41,6 +41,7 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 .faq-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
 .faq-body.open{max-height:300px}
 .stat-num{font-size:clamp(36px,5vw,64px);font-weight:700;line-height:1;color:#e8c33b}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal.animate{opacity:1;transform:none;transition:none}}
 </style>
 <script type="application/ld+json">
 {
@@ -146,7 +147,7 @@ function buildHero(){
         h('h1',{class:'font-bold text-white uppercase mb-8',style:'font-size:clamp(36px,5.5vw,72px);line-height:1.02;letter-spacing:-.02em'},
           'РЕМОНТ НА БАНЯ',h('br'),h('span',{class:'text-gold'},'В СОФИЯ — 3–4 ДНИ')
         ),
-        p('mb-10 max-w-xl',{style:'font-size:clamp(15px,1.4vw,18px);line-height:1.75;color:#8C8C8C'},
+        p('mb-10 max-w-xl',{style:'font-size:clamp(15px,1.4vw,18px);line-height:1.75;color:#A3A3A3'},
           'Ремонт на баня в София с BRUTAL система — без мокри процеси, без прах, без чакане. Готова баня за 3–4 дни. Фиксирана цена и писмена гаранция 10 години.'
         ),
         div('flex flex-col sm:flex-row gap-4',
@@ -192,7 +193,7 @@ function buildBrutal(){
         ...items.map(s=>div('card p-8 reveal',
           ms(s.icon,'text-gold block mb-4',{style:'font-size:30px'}),
           h('h3',{class:'text-white font-bold uppercase mb-3',style:'font-size:14px;letter-spacing:.05em'},s.title),
-          p('',{style:'font-size:13px;line-height:21px;color:#8C8C8C'},s.body)
+          p('',{style:'font-size:13px;line-height:21px;color:#A3A3A3'},s.body)
         ))
       )
     )
@@ -217,7 +218,7 @@ function buildProcess(){
         ...steps.map(s=>div('border border-secondary-container p-6 reveal',
           div('font-bold mb-4',{style:'font-size:40px;line-height:1;color:#e8c33b;opacity:.35'},s.n),
           h('h3',{class:'text-white font-bold uppercase mb-2',style:'font-size:12px;letter-spacing:.06em'},s.title),
-          p('',{style:'font-size:12px;line-height:19px;color:#8C8C8C'},s.body)
+          p('',{style:'font-size:12px;line-height:19px;color:#A3A3A3'},s.body)
         ))
       )
     )
@@ -244,7 +245,7 @@ function buildComparison(){
           h('h3',{class:'text-architectural-grey font-bold uppercase mb-6',style:'font-size:13px;letter-spacing:.08em'},'✗ Традиционен ремонт'),
           h('ul',{class:'space-y-4'},
             ...['2–4 седмици подготовка','Мокри процеси — замазки, намазки','Прах и миризми в целия апартамент','Стандартна гаранция','Ръчна работа — по-малка точност','Цената може да расте'].map(t=>
-              h('li',{class:'flex items-center gap-3',style:'font-size:13px;color:#8C8C8C'},
+              h('li',{class:'flex items-center gap-3',style:'font-size:13px;color:#A3A3A3'},
                 ms('cancel','text-secondary-container text-base'),t)
             )
           )
@@ -264,7 +265,7 @@ function buildFaq(){
     {q:'Работите ли в целия Sofia grad?',a:'Да, работим в цяла София и Софийска област — Люлин, Надежда, Дружба, Младост, Студентски град, Витоша, Лозенец, Подуяне и всички останали квартали.'},
   ];
   const items=faqs.map(f=>{
-    const body=div('faq-body px-0 pb-0',p('',{style:'font-size:13px;line-height:22px;color:#8C8C8C;padding-bottom:16px'},f.a));
+    const body=div('faq-body px-0 pb-0',p('',{style:'font-size:13px;line-height:22px;color:#A3A3A3;padding-bottom:16px'},f.a));
     const icon=ms('add','text-gold');
     const b=h('button',{class:'w-full text-left bg-transparent border-0 cursor-pointer py-5 flex justify-between items-center gap-4',style:'color:#e2e2e2'},
       h('span',{style:'font-size:14px;font-weight:600'},f.q), icon);
@@ -303,8 +304,8 @@ function buildFooter(){
     div('max-w-[1440px] mx-auto px-5 md:px-20 py-14 grid grid-cols-1 md:grid-cols-3 gap-8',
       div('',
         h('img',{src:LOGO,alt:'SSG Solutions',class:'h-10 w-auto mb-5 object-contain'}),
-        p('max-w-xs mb-6',{style:'font-size:13px;line-height:21px;color:#8C8C8C'},'Ремонт на баня в София с BRUTAL система. Без мокри процеси, 3–4 дни, 10 г. гаранция.'),
-        p('',{style:'font-size:11px;color:#8C8C8C'},'© 2025 SSG Solutions')
+        p('max-w-xs mb-6',{style:'font-size:13px;line-height:21px;color:#A3A3A3'},'Ремонт на баня в София с BRUTAL система. Без мокри процеси, 3–4 дни, 10 г. гаранция.'),
+        p('',{style:'font-size:11px;color:#A3A3A3'},'© 2025 SSG Solutions')
       ),
       div('',
         h('h4',{class:'text-white mb-5 label-caps'},'Услуги'),

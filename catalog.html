@@ -36,11 +36,11 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 .reveal{opacity:1;transform:none}
 .reveal.animate{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .reveal.animate.visible{opacity:1;transform:none}
-.label-caps{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.label-caps{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 .product-card{background:#1e2020;border:1px solid #4a4949;transition:border-color .4s;overflow:hidden;min-width:0}
 .product-card:hover{border-color:rgba(232,195,59,.45)}
 .size-table{width:100%;border-collapse:collapse}
-.size-table th{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8C8C8C;padding:8px 12px;text-align:left;border-bottom:1px solid #4a4949}
+.size-table th{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#A3A3A3;padding:8px 12px;text-align:left;border-bottom:1px solid #4a4949}
 .size-table td{font-size:13px;color:#e2e2e2;padding:9px 12px;border-bottom:1px solid #282a2b;font-variant-numeric:tabular-nums}
 .size-table tr:last-child td{border-bottom:none}
 .size-table tr:hover td{background:#1e2020}
@@ -53,8 +53,9 @@ html{scroll-behavior:smooth;overflow-x:hidden}
 }
 #cat-nav-inner{}
 .cat-nav-flex{display:flex;gap:20px;flex-wrap:wrap;padding:0 40px;justify-content:center}
-.cat-nav-link{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8C8C8C;white-space:nowrap;padding:14px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;text-decoration:none;display:inline-block}
+.cat-nav-link{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#A3A3A3;white-space:nowrap;padding:14px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;text-decoration:none;display:inline-block}
 .cat-nav-link:hover,.cat-nav-link.active{color:#e8c33b;border-bottom-color:#e8c33b}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal.animate{opacity:1;transform:none;transition:none}}
 </style>
 <script type="application/ld+json">
 {
@@ -191,7 +192,7 @@ function buildCatalogHero(cat,site){
         h('h1',{class:'font-bold text-white uppercase mb-5',style:'font-size:clamp(34px,5vw,64px);line-height:1.05;letter-spacing:-.02em'},
           h1txt, span('text-gold',ch.headingAccent), rest[0]||''
         ),
-        h('p',{style:'font-size:16px;line-height:26px;color:#8C8C8C;max-width:480px'},ch.body)
+        h('p',{style:'font-size:16px;line-height:26px;color:#A3A3A3;max-width:480px'},ch.body)
       ),
       h('div',{class:'lg:col-span-5 grid grid-cols-3 gap-2'},
         ...ch.stats.map(s=>
@@ -224,8 +225,8 @@ function buildIntro(intro){
       h('div',{class:'reveal'},
         span('block text-gold mb-4 label-caps',intro.label),
         h('h2',{class:'font-bold text-white uppercase mb-6',style:'font-size:clamp(22px,2.8vw,38px);line-height:1.1;letter-spacing:-.01em'},intro.heading),
-        h('p',{class:'mb-5',style:'font-size:15px;line-height:25px;color:#8C8C8C'},intro.body1),
-        h('p',{style:'font-size:15px;line-height:25px;color:#8C8C8C'},intro.body2)
+        h('p',{class:'mb-5',style:'font-size:15px;line-height:25px;color:#A3A3A3'},intro.body1),
+        h('p',{style:'font-size:15px;line-height:25px;color:#A3A3A3'},intro.body2)
       ),
       h('div',{class:'grid grid-cols-2 gap-3 reveal',style:'transition-delay:.15s'},
         ...intro.features.map(f=>
@@ -280,7 +281,7 @@ function productImg(p, ratio='4/3'){
 function advantageList(items){
   return h('div',{class:'space-y-3 mb-8'},
     ...items.map(item=>
-      h('div',{class:'flex items-start gap-3',style:'font-size:14px;color:#8C8C8C'},
+      h('div',{class:'flex items-start gap-3',style:'font-size:14px;color:#A3A3A3'},
         h('span',{class:'ms text-gold mt-0.5',style:'font-size:17px'},'check_circle'), item
       )
     )
@@ -309,7 +310,7 @@ function buildProductLayout(p){
   if(p.id==='bordove'){
     const left = h('div',{class:'reveal'},
       productImg(p),
-      h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
+      h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#A3A3A3'},p.body)
     );
     if(p.advantages) left.appendChild(advantageList(p.advantages));
     return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-8'},
@@ -322,7 +323,7 @@ function buildProductLayout(p){
     return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'},
       h('div',{class:'reveal'},
         productImg(p),
-        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#A3A3A3'},p.body)
       ),
       h('div',{class:'reveal',style:'transition-delay:.12s'},
         sizeTable(p.sizes),
@@ -335,7 +336,7 @@ function buildProductLayout(p){
     return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'},
       h('div',{class:'reveal'},
         productImg(p),
-        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#A3A3A3'},p.body)
       ),
       h('div',{class:'reveal',style:'transition-delay:.12s'},
         sizeTable(p.sizes),
@@ -354,26 +355,26 @@ function buildProductLayout(p){
     return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-8'},
       h('div',{class:'reveal'},
         productImg(p),
-        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#A3A3A3'},p.body)
       ),
       h('div',{class:'reveal',style:'transition-delay:.12s'},
         p.advantages ? h('div',{class:'mb-5'},
           h('div',{class:'text-white font-bold mb-3 label-caps'},'Предимства'),
           h('div',{class:'space-y-2'},...p.advantages.map(adv=>
-            h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#8C8C8C'},
+            h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#A3A3A3'},
               h('span',{class:'ms text-gold',style:'font-size:15px'},'check'), adv)
           ))
         ) : null,
         p.specs ? h('div',{class:'mb-5'},
           h('div',{class:'text-white font-bold mb-3 label-caps'},'Характеристики'),
           h('div',{class:'space-y-2'},...p.specs.map(sp=>
-            h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#8C8C8C'},
+            h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#A3A3A3'},
               h('span',{class:'ms text-gold',style:'font-size:15px'},'info'), sp)
           ))
         ) : null,
         p.note ? h('div',{class:'bg-surface-container border border-gold/30 p-5 mb-5'},
           h('div',{class:'text-gold mb-2 label-caps'},p.noteLabel||'Забележка'),
-          h('p',{style:'font-size:13px;line-height:21px;color:#8C8C8C'},p.note)
+          h('p',{style:'font-size:13px;line-height:21px;color:#A3A3A3'},p.note)
         ) : null,
         sizeTable(p.sizes)
       )
@@ -386,7 +387,7 @@ function buildProductLayout(p){
         productImg(p,'4/3')
       ),
       h('div',{class:'reveal',style:'transition-delay:.12s'},
-        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#A3A3A3'},p.body),
         p.features ? h('div',{class:'space-y-3'},
           ...p.features.map(f=>h('div',{class:'flex items-start gap-3 product-card p-4'},
             h('span',{class:'ms text-gold mt-0.5',style:'font-size:20px'},f.icon),
@@ -398,7 +399,7 @@ function buildProductLayout(p){
         ) : null,
         p.note ? h('div',{class:'bg-surface-container border border-gold/30 p-8 mt-4'},
           h('div',{class:'text-gold mb-4 label-caps'},p.noteLabel),
-          h('p',{style:'font-size:14px;line-height:22px;color:#8C8C8C'},p.note)
+          h('p',{style:'font-size:14px;line-height:22px;color:#A3A3A3'},p.note)
         ) : null
       )
     );
@@ -408,7 +409,7 @@ function buildProductLayout(p){
     return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'},
       h('div',{class:'reveal'},
         productImg(p),
-        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#A3A3A3'},p.body)
       ),
       h('div',{class:'reveal',style:'transition-delay:.12s'},
         sizeTable(p.sizes),
@@ -428,10 +429,10 @@ function buildProductLayout(p){
   if(p.id==='dush-tabla'){
     return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-8'},
       h('div',{class:'reveal'},
-        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#A3A3A3'},p.body),
         p.advantages ? h('div',{class:'grid grid-cols-2 gap-3 mb-6'},
           ...p.advantages.map(adv=>
-            h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#8C8C8C'},
+            h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#A3A3A3'},
               h('span',{class:'ms text-gold',style:'font-size:15px'},'check'), adv)
           )
         ) : null,
@@ -459,14 +460,14 @@ function buildProductLayout(p){
     return h('div',{class:'grid grid-cols-1 lg:grid-cols-2 gap-12'},
       h('div',{class:'reveal'},
         productImg(p),
-        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body)
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#A3A3A3'},p.body)
       ),
       h('div',{class:'reveal',style:'transition-delay:.12s'},
         sizeTable(p.sizes),
         p.uses ? h('div',{class:'mt-6 mb-4'},
           h('div',{class:'text-white font-bold mb-3 label-caps'},'Препоръчителна употреба'),
           h('div',{class:'space-y-2'},...p.uses.map(u=>
-            h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#8C8C8C'},
+            h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#A3A3A3'},
               h('span',{class:'ms text-gold',style:'font-size:15px'},'arrow_right'), u)
           ))
         ) : null,
@@ -497,7 +498,7 @@ function buildProductLayout(p){
         ) : null
       ),
       h('div',{class:'reveal',style:'transition-delay:.12s'},
-        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#A3A3A3'},p.body),
         ...(p.models||[]).map(m=>
           h('div',{class:'product-card p-5 mb-3'},
             h('div',{class:'text-gold mb-2 label-caps'},m.tag),
@@ -517,12 +518,12 @@ function buildProductLayout(p){
         )
       ),
       h('div',{class:'reveal',style:'transition-delay:.12s'},
-        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#8C8C8C'},p.body),
+        h('p',{class:'mb-6',style:'font-size:15px;line-height:25px;color:#A3A3A3'},p.body),
         sizeTable(p.sizes),
         p.compatible ? h('div',{class:'bg-surface-container border border-secondary-container p-5 mt-6'},
           h('div',{class:'text-gold mb-3 label-caps'},'Съвместимост'),
           h('div',{class:'space-y-2'},...p.compatible.map(c=>
-            h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#8C8C8C'},
+            h('div',{class:'flex items-start gap-2',style:'font-size:13px;color:#A3A3A3'},
               h('span',{class:'ms text-gold',style:'font-size:15px'},'check'), c)
           ))
         ) : null
@@ -550,7 +551,7 @@ function buildCatalogCta(cta){
     h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20 flex flex-col md:flex-row items-center justify-between gap-8'},
       h('div',{class:'reveal'},
         h('h2',{class:'font-bold text-white uppercase mb-3',style:'font-size:clamp(20px,2.5vw,34px);line-height:1.1'},cta.heading),
-        h('p',{style:'font-size:15px;color:#8C8C8C'},cta.body)
+        h('p',{style:'font-size:15px;color:#A3A3A3'},cta.body)
       ),
       h('div',{class:'flex flex-col sm:flex-row gap-4 reveal',style:'transition-delay:.1s'},
         a(cta.ctaPrimary.href,'bg-gold text-deep-charcoal text-center px-8 py-4 hover:bg-primary-container transition-colors label-caps',cta.ctaPrimary.label),
