@@ -112,8 +112,8 @@ const lbl  = (txt) => div('text-gold label-caps mb-3',txt);
 function buildNav(){
   const navLinks=[
     {l:'НАЧАЛО',h:'index.html'},{l:'УСЛУГИ',h:'dizainerski-remont.html'},
-    {l:'ЗА НАС',h:'index.html#about'},{l:'КАТАЛОГ BRUTAL',h:'catalog.html'},
-    {l:'ПРОЕКТИ',h:INSTAGRAM,target:'_blank'},{l:'КОНТАКТИ',h:'index.html#contact'}
+    {l:'ЗА НАС',h:'za-nas.html'},{l:'КАТАЛОГ BRUTAL',h:'catalog.html'},
+    {l:'ПРОЕКТИ',h:INSTAGRAM,target:'_blank'},{l:'КОНТАКТИ',h:'kontakti.html'}
   ];
   const logo=h('a',{href:'index.html',class:'flex items-center'},h('img',{src:LOGO,alt:'SSG Solutions',class:'h-10 w-auto object-contain'}));
   const dlinks=h('ul',{class:'hidden lg:flex gap-8'},...navLinks.map(n=>{
@@ -122,7 +122,7 @@ function buildNav(){
     if(n.target){a.setAttribute('target',n.target);a.setAttribute('rel','noopener noreferrer');}
     return h('li',{},a);
   }));
-  const cta=h('a',{href:'index.html#contact',class:'hidden lg:block bg-gold text-deep-charcoal px-6 py-3 hover:bg-primary-container transition-colors label-caps'},'Направи запитване');
+  const cta=h('a',{href:'kontakti.html',class:'hidden lg:block bg-gold text-deep-charcoal px-6 py-3 hover:bg-primary-container transition-colors label-caps'},'Направи запитване');
   const mbtn=h('button',{class:'lg:hidden text-gold','aria-label':'Меню'},ms('menu','text-3xl'));
   const mmenu=h('div',{id:'mobile-menu',class:'border-t border-secondary-container px-5 py-6 bg-deep-charcoal'},
     h('ul',{class:'space-y-5'},...navLinks.map(n=>{
@@ -130,7 +130,7 @@ function buildNav(){
       if(n.target){a.setAttribute('target',n.target);a.setAttribute('rel','noopener noreferrer');}
       return h('li',{},a);
     })),
-    h('a',{href:'index.html#contact',class:'mt-6 block bg-gold text-deep-charcoal py-4 text-center label-caps'},'Направи запитване')
+    h('a',{href:'kontakti.html',class:'mt-6 block bg-gold text-deep-charcoal py-4 text-center label-caps'},'Направи запитване')
   );
   const nav=h('nav',{class:'sticky top-0 z-50 border-b border-secondary-container',style:'background:rgba(10,10,10,.88);backdrop-filter:blur(20px)'},
     wrap(h('div',{class:'flex justify-between items-center h-20'},logo,dlinks,cta,mbtn)),mmenu);
@@ -151,7 +151,7 @@ function buildHero(){
           'Ремонт на баня в София с BRUTAL система — без мокри процеси, без прах, без чакане. Готова баня за 3–4 дни. Фиксирана цена и писмена гаранция 10 години.'
         ),
         div('flex flex-col sm:flex-row gap-4',
-          h('a',{href:'index.html#contact',class:'bg-gold text-deep-charcoal px-8 py-4 font-bold label-caps hover:bg-primary-container transition-colors text-center'},'Безплатна консултация'),
+          h('a',{href:'kontakti.html',class:'bg-gold text-deep-charcoal px-8 py-4 font-bold label-caps hover:bg-primary-container transition-colors text-center'},'Безплатна консултация'),
           h('a',{href:PHONE,class:'border border-gold text-gold px-8 py-4 label-caps hover:bg-gold/10 transition-colors flex items-center justify-center gap-2'},
             ms('call','text-base'),' ',PHONE_DISPLAY
           )
@@ -290,7 +290,7 @@ function buildCta(){
         p('',{style:'font-size:15px;color:rgba(10,10,10,.65)'},'Обади се за безплатна консултация — идваме на оглед без ангажимент.')
       ),
       div('flex flex-col sm:flex-row gap-4 reveal',{style:'transition-delay:.1s'},
-        h('a',{href:'index.html#contact',class:'bg-deep-charcoal text-gold px-8 py-4 font-bold label-caps hover:bg-surface-container transition-colors text-center'},'Направи запитване'),
+        h('a',{href:'kontakti.html',class:'bg-deep-charcoal text-gold px-8 py-4 font-bold label-caps hover:bg-surface-container transition-colors text-center'},'Направи запитване'),
         h('a',{href:PHONE,class:'border-2 border-deep-charcoal text-deep-charcoal px-8 py-4 label-caps hover:bg-deep-charcoal/10 transition-colors flex items-center justify-center gap-2'},
           ms('call','text-base'),' ',PHONE_DISPLAY
         )
@@ -321,7 +321,7 @@ function buildFooter(){
         h('ul',{class:'space-y-3'},
           h('li',{},h('a',{href:'index.html',class:'text-architectural-grey hover:text-gold transition-colors',style:'font-size:13px'},'Начало')),
           h('li',{},h('a',{href:'catalog.html',class:'text-architectural-grey hover:text-gold transition-colors',style:'font-size:13px'},'Каталог BRUTAL')),
-          h('li',{},h('a',{href:'index.html#contact',class:'text-architectural-grey hover:text-gold transition-colors',style:'font-size:13px'},'Контакти')),
+          h('li',{},h('a',{href:'kontakti.html',class:'text-architectural-grey hover:text-gold transition-colors',style:'font-size:13px'},'Контакти')),
           h('li',{},h('a',{href:INSTAGRAM,target:'_blank',rel:'noopener noreferrer',class:'text-architectural-grey hover:text-gold transition-colors',style:'font-size:13px'},'Проекти (Instagram)'))
         )
       )

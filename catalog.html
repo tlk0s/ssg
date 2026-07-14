@@ -138,7 +138,7 @@ function buildNav(d){
       return h('li',{},h('a',attrs,n.label));
     })
   );
-  const cta=a('index.html#contact','hidden lg:block bg-gold text-deep-charcoal px-6 py-3 hover:bg-primary-container transition-colors label-caps','Направи запитване');
+  const cta=a('kontakti.html','hidden lg:block bg-gold text-deep-charcoal px-6 py-3 hover:bg-primary-container transition-colors label-caps','Направи запитване');
   const mbtn=h('button',{id:'menu-btn',class:'lg:hidden text-gold','aria-label':'Меню'},span('ms text-3xl','menu'));
   const mmenu=h('div',{id:'mobile-menu',class:'border-t border-secondary-container px-5 py-6 bg-deep-charcoal'},
     h('ul',{class:'space-y-5'},...d.nav.map(n=>{
@@ -146,7 +146,7 @@ function buildNav(d){
       if(n.target){attrs.target=n.target;attrs.rel='noopener noreferrer';}
       return h('li',{},h('a',attrs,n.label));
     })),
-    a('index.html#contact','mt-6 block bg-gold text-deep-charcoal py-4 text-center label-caps','Направи запитване')
+    a('kontakti.html','mt-6 block bg-gold text-deep-charcoal py-4 text-center label-caps','Направи запитване')
   );
   return h('nav',{class:'sticky top-0 z-50 border-b border-secondary-container',style:'background:rgba(10,10,10,.88);backdrop-filter:blur(20px)'},
     h('div',{class:'max-w-[1440px] mx-auto px-5 md:px-20'},
@@ -164,7 +164,7 @@ function buildFooter(d){
           h('ul',{class:'space-y-2',style:'font-size:13px'},
             h('li',{},a('index.html','text-architectural-grey hover:text-white transition-colors','Начало')),
             h('li',{},a('catalog.html','text-architectural-grey hover:text-white transition-colors','Каталог')),
-            h('li',{},a('index.html#contact','text-architectural-grey hover:text-white transition-colors','Контакти'))
+            h('li',{},a('kontakti.html','text-architectural-grey hover:text-white transition-colors','Контакти'))
           )
         ),
         h('div',{},h('h4',{class:'text-white mb-4 label-caps'},'Контакти'),

@@ -152,7 +152,7 @@ function buildNav(d, activePage) {
     })
   );
 
-  const ctaBtn = a('index.html#contact','hidden lg:block bg-gold text-deep-charcoal px-6 py-3 hover:bg-primary-container transition-colors label-caps','Направи запитване');
+  const ctaBtn = a('kontakti.html','hidden lg:block bg-gold text-deep-charcoal px-6 py-3 hover:bg-primary-container transition-colors label-caps','Направи запитване');
 
   const mobileBtn = h('button',{id:'menu-btn','class':'lg:hidden text-gold','aria-label':'Меню'},
     span('ms text-3xl','menu'));
@@ -165,7 +165,7 @@ function buildNav(d, activePage) {
         return h('li',{}, h('a', attrs, n.label));
       })
     ),
-    a('index.html#contact','mt-6 block bg-gold text-deep-charcoal py-4 text-center label-caps','Направи запитване')
+    a('kontakti.html','mt-6 block bg-gold text-deep-charcoal py-4 text-center label-caps','Направи запитване')
   );
 
   const nav = h('nav',{class:'sticky top-0 z-50 border-b border-secondary-container','style':'background:rgba(10,10,10,.88);backdrop-filter:blur(20px)'},
