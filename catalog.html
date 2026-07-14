@@ -122,7 +122,7 @@ const a=(href,cls,...c)=>{
 const img=(src,alt,cls,...extra)=>{
   let style=null;
   if(extra.length>=2&&extra[0]==='style')style=extra[1];
-  const el=h('img',{src,alt,class:cls||''});
+  const el=h('img',{src,alt,class:cls||'',loading:'lazy'});
   if(style)el.style.cssText=style;
   return el;
 };
